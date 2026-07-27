@@ -1,0 +1,252 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  Apexa AI Labs — Design Theme
+  Direction: Light-first tech lab with cinematic dark surfaces.
+  Accents: Cyan (intelligence) × Orange (energy) × Magenta (signal).
+*/
+
+@theme inline {
+  /* Brand palette → Tailwind color utilities */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-magenta: var(--magenta);
+  --color-magenta-foreground: var(--magenta-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Typography */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-arabic: var(--font-amiri), "Traditional Arabic", serif;
+  --font-arabic-ui: var(--font-cairo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Radius scale */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Motion */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-blink-cursor: blink-cursor 1.2s step-end infinite;
+  --animate-background-position-spin: background-position-spin 3000ms infinite alternate;
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  --animate-shiny-text: shiny-text 8s infinite;
+
+  @keyframes blink-cursor {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+
+  @keyframes background-position-spin {
+    0% { background-position: top center; }
+    100% { background-position: bottom center; }
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - var(--gap))); }
+  }
+
+  @keyframes marquee-vertical {
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(-100% - var(--gap))); }
+  }
+
+  @keyframes shiny-text {
+    0%, 90%, 100% {
+      background-position: calc(-100% - var(--shiny-width)) 0;
+    }
+    30%, 60% {
+      background-position: calc(100% + var(--shiny-width)) 0;
+    }
+  }
+}
+
+:root {
+  /* Surfaces */
+  --background: #f7fafc;
+  --foreground: #0b1220;
+  --card: #ffffff;
+  --card-foreground: #0b1220;
+  --popover: #ffffff;
+  --popover-foreground: #0b1220;
+
+  /* Brand */
+  --primary: #06b6d4;              /* Cyan — intelligence / AI */
+  --primary-foreground: #ffffff;
+  --secondary: #f97316;            /* Orange — energy / CTA heat */
+  --secondary-foreground: #ffffff;
+  --accent: #0891b2;               /* Deep teal — supporting accent */
+  --accent-foreground: #ffffff;
+  --magenta: #d946ef;              /* Magenta — highlight / signal */
+  --magenta-foreground: #ffffff;
+
+  /* UI chrome */
+  --muted: #eef3f7;
+  --muted-foreground: #5b6b7c;
+  --destructive: #e11d48;
+  --border: #d9e2ec;
+  --input: #d9e2ec;
+  --ring: #06b6d4;
+
+  /* Charts aligned to brand */
+  --chart-1: #06b6d4;
+  --chart-2: #f97316;
+  --chart-3: #0891b2;
+  --chart-4: #d946ef;
+  --chart-5: #0ea5e9;
+
+  --radius: 0.625rem;
+
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0b1220;
+  --sidebar-primary: #06b6d4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eef3f7;
+  --sidebar-accent-foreground: #0b1220;
+  --sidebar-border: #d9e2ec;
+  --sidebar-ring: #06b6d4;
+}
+
+.dark {
+  --background: #05070b;
+  --foreground: #f4f7fb;
+  --card: #0e141c;
+  --card-foreground: #f4f7fb;
+  --popover: #0e141c;
+  --popover-foreground: #f4f7fb;
+
+  --primary: #22d3ee;
+  --primary-foreground: #041016;
+  --secondary: #fb923c;
+  --secondary-foreground: #1a0b02;
+  --accent: #22d3ee;
+  --accent-foreground: #041016;
+  --magenta: #e879f9;
+  --magenta-foreground: #1a061f;
+
+  --muted: #151b24;
+  --muted-foreground: #9aa8b8;
+  --destructive: #fb7185;
+  --border: rgb(255 255 255 / 10%);
+  --input: rgb(255 255 255 / 14%);
+  --ring: #22d3ee;
+
+  --chart-1: #22d3ee;
+  --chart-2: #fb923c;
+  --chart-3: #67e8f9;
+  --chart-4: #e879f9;
+  --chart-5: #38bdf8;
+
+  --sidebar: #0e141c;
+  --sidebar-foreground: #f4f7fb;
+  --sidebar-primary: #22d3ee;
+  --sidebar-primary-foreground: #041016;
+  --sidebar-accent: #151b24;
+  --sidebar-accent-foreground: #f4f7fb;
+  --sidebar-border: rgb(255 255 255 / 10%);
+  --sidebar-ring: #22d3ee;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image:
+      linear-gradient(to right, rgb(15 23 42 / 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(15 23 42 / 0.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@utility text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+@utility font-arabic {
+  font-family: var(--font-arabic);
+}
+
+@utility font-arabic-ui {
+  font-family: var(--font-arabic-ui);
+}
+
+@utility ayah {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  line-height: 2;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+/* Site-wide Arabic locale */
+html.locale-ar body {
+  font-family: var(--font-arabic-ui);
+}
+
+html.locale-ar .font-heading {
+  font-family: var(--font-arabic-ui);
+}
+
