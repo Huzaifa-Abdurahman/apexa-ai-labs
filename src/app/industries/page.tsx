@@ -56,7 +56,7 @@ const industries: Industry[] = [
     title: "Hajj & Umrah Agencies",
     short: "Pilgrim packages & peak-season ops",
     icon: Users,
-    image: "/hu.PNG",
+    image: "/clock.jpg",
     cities: ["Makkah", "Madinah", "Jeddah"],
     story:
       "When thousands of pilgrims ask about packages, visas, rooms, and payments at once, your team lives inside WhatsApp. One missed message can mean a lost booking — and peak season never slows down for paperwork.",
@@ -100,7 +100,7 @@ const industries: Industry[] = [
     title: "Hotels & Hospitality",
     short: "Guest experience under pressure",
     icon: Hotel,
-    image: "/hotel.jpg",
+    image: "/makkah.jpg",
     cities: ["Makkah", "Madinah", "Jeddah", "Riyadh", "Dammam"],
     story:
       "Guests expect instant answers about rooms, check-in, late arrival, and nearby services. Front desks are busy; phones ring; WhatsApp never stops. Slow replies become bad reviews.",
@@ -188,7 +188,7 @@ const industries: Industry[] = [
     title: "Construction & Real Estate",
     short: "Sites, approvals & client updates",
     icon: Building2,
-    image: "/contruction.jpg",
+    image: "/office.jpg",
     cities: ["Riyadh", "Jeddah", "Dammam", "Makkah"],
     story:
       "Projects live on WhatsApp photos, verbal updates, and delayed Excel reports. Approvals wait. Clients ask “what’s the status?” and nobody has a single truthful answer.",
@@ -232,7 +232,7 @@ const industries: Industry[] = [
     title: "Logistics & Transportation",
     short: "Fleet, routes & delivery updates",
     icon: Truck,
-    image: "/tranposttaion.jpg",
+    image: "/transport.jpg",
     cities: ["Jeddah", "Dammam", "Riyadh", "Makkah", "Madinah"],
     story:
       "Customers only care about one question: where is my delivery? Drivers, dispatchers, and support teams answer that question all day — often with incomplete information.",
@@ -276,7 +276,7 @@ const industries: Industry[] = [
     title: "Manufacturing",
     short: "Inventory, production & quality",
     icon: Factory,
-    image: "/manufacturing.jpg",
+    image: "/dammam.jpg",
     cities: ["Dammam", "Riyadh", "Jeddah"],
     story:
       "Production plans change daily, but inventory and machine status still live in paper logs or outdated systems. By the time a shortage is visible, the line is already waiting.",
@@ -364,7 +364,7 @@ const industries: Industry[] = [
     title: "Retail & E-Commerce",
     short: "Stock, orders & customer care",
     icon: Store,
-    image: "/ecom.jpg",
+    image: "/riyadh.jpg",
     cities: ["Riyadh", "Jeddah", "Dammam", "Makkah", "Madinah"],
     story:
       "Customers buy across Instagram, WhatsApp, the website, and the store. Stock goes out of sync. Support answers “is this available?” all day while sales slip away.",
@@ -635,17 +635,7 @@ export default function IndustriesPage() {
                 ) : (
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-900 to-slate-950" />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#05070b] via-[#05070b]/40 to-transparent" />
-                <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-30" aria-hidden>
-                  <defs>
-                    <pattern id={`ind-grid-${active.id}`} width="28" height="28" patternUnits="userSpaceOnUse">
-                      <path d="M28 0H0V28" fill="none" stroke="white" strokeWidth="0.5" />
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill={`url(#ind-grid-${active.id})`} />
-                  <circle cx="82%" cy="16%" r="54" fill="none" stroke="#06b6d4" strokeWidth="1" />
-                  <circle cx="82%" cy="16%" r="32" fill="none" stroke="#f97316" strokeWidth="1" strokeDasharray="4 4" />
-                </svg>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#05070b] via-[#05070b]/45 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 text-white">
                   <div className="mb-3 flex size-12 items-center justify-center rounded-2xl border border-white/15 bg-white/10 backdrop-blur">
                     <ActiveIcon className="size-6 text-primary" />

@@ -7,6 +7,11 @@ import { Globe, WHITE_GLOBE_CONFIG } from "@/components/ui/globe";
 import { FAQSection } from "@/components/ui/faq";
 import { useLocale } from "@/i18n/locale-provider";
 import { cn } from "@/lib/utils";
+import {
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_SECONDARY,
+  CONTACT_PHONES,
+} from "@/lib/seo";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -59,24 +64,37 @@ export default function Contact() {
 
               <div className="mt-8 space-y-3">
                 <a
-                  href="mailto:contact@apexa.ai"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="flex items-center gap-3 text-sm font-medium text-foreground/80 transition hover:text-primary"
                 >
                   <Mail className="size-4 text-primary" />
-                  contact@apexa.ai
+                  {CONTACT_EMAIL}
                 </a>
                 <a
-                  href="https://wa.me/923100043155"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "flex items-center gap-3 text-sm font-medium text-foreground/80 transition hover:text-primary",
-                    isRtl && "font-arabic-ui"
-                  )}
+                  href={`mailto:${CONTACT_EMAIL_SECONDARY}`}
+                  className="flex items-center gap-3 text-sm font-medium text-foreground/80 transition hover:text-primary"
                 >
-                  <Phone className="size-4 text-primary" />
-                  {t("contact.whatsappLabel")}
+                  <Mail className="size-4 text-primary" />
+                  {CONTACT_EMAIL_SECONDARY}
                 </a>
+                {CONTACT_PHONES.map((phone) => (
+                  <a
+                    key={phone.e164}
+                    href={phone.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(
+                      "flex items-center gap-3 text-sm font-medium text-foreground/80 transition hover:text-primary",
+                      isRtl && "font-arabic-ui"
+                    )}
+                  >
+                    <Phone className="size-4 text-primary" />
+                    {phone.display}
+                    <span className="text-xs text-muted-foreground">
+                      ({isRtl ? phone.labelAr : phone.label})
+                    </span>
+                  </a>
+                ))}
                 <div
                   className={cn(
                     "flex items-center gap-3 text-sm font-medium text-foreground/80",

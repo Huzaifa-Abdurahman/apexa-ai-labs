@@ -31,9 +31,12 @@ const technologies = [
 ];
 
 const projectMeta = [
-  { id: "cursor-agent", video: "/videos/cursor-agent.webm", span: "md:col-span-2", featured: true },
-  { id: "make-hero", video: "/videos/make-hero.webm", span: "md:col-span-1", featured: false },
-  { id: "n8n-hero", video: "/videos/n8n-hero.webm", span: "md:col-span-1", featured: false },
+  { id: "leadenrich", video: "/videos/leadenrich.webm", lower: false },
+  { id: "3d-website", video: "/videos/3d-website.webm", lower: true },
+  { id: "video-project-3", video: "/videos/video-project-3.webm", lower: true },
+  { id: "cursor-agent", video: "/videos/cursor-agent.webm", lower: false },
+  { id: "make-hero", video: "/videos/make-hero.webm", lower: true },
+  { id: "n8n-hero", video: "/videos/n8n-hero.webm", lower: true },
 ];
 
 function ProjectVideoCard({
@@ -42,7 +45,6 @@ function ProjectVideoCard({
   video,
   tag,
   className,
-  featured,
   playLabel,
   pauseLabel,
   isRtl,
@@ -52,7 +54,6 @@ function ProjectVideoCard({
   video: string;
   tag: string;
   className?: string;
-  featured?: boolean;
   playLabel: string;
   pauseLabel: string;
   isRtl?: boolean;
@@ -81,9 +82,9 @@ function ProjectVideoCard({
         className
       )}
     >
-      <BorderBeam size={featured ? 140 : 90} duration={10} colorFrom="#06b6d4" colorTo="#f97316" />
+      <BorderBeam size={90} duration={10} colorFrom="#06b6d4" colorTo="#f97316" />
 
-      <div className={cn("relative overflow-hidden", featured ? "aspect-[16/9] md:aspect-[21/10]" : "aspect-[4/3]")}>
+      <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[3/4] lg:aspect-[4/5]">
         <video
           ref={videoRef}
           src={video}
@@ -94,7 +95,7 @@ function ProjectVideoCard({
           playsInline
           preload="metadata"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#05070b] via-[#05070b]/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#05070b] via-[#05070b]/40 to-transparent" />
 
         <button
           type="button"
@@ -105,14 +106,14 @@ function ProjectVideoCard({
           {playing ? <Pause className="size-4" /> : <Play className="size-4 ms-0.5" />}
         </button>
 
-        <div className="absolute inset-x-0 bottom-0 z-10 p-5 md:p-7">
+        <div className="absolute inset-x-0 bottom-0 z-10 p-5 md:p-6">
           <span className="mb-3 inline-flex rounded-full border border-primary/30 bg-primary/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-cyan-200">
             {tag}
           </span>
-          <h3 className={cn("font-heading text-xl font-bold text-white md:text-2xl", isRtl && "font-arabic-ui")}>
+          <h3 className={cn("font-heading text-lg font-bold text-white md:text-xl", isRtl && "font-arabic-ui")}>
             {title}
           </h3>
-          <p className={cn("mt-2 max-w-xl text-sm leading-relaxed text-white/65 md:text-base", isRtl && "font-arabic-ui")}>
+          <p className={cn("mt-2 line-clamp-3 text-sm leading-relaxed text-white/65", isRtl && "font-arabic-ui")}>
             {description}
           </p>
         </div>
@@ -301,7 +302,7 @@ export function ScalingCompanies() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:items-start">
             {projectMeta.map((meta, i) => {
               const project = projects[i];
               if (!project) return null;
@@ -312,8 +313,7 @@ export function ScalingCompanies() {
                   description={project.description}
                   tag={project.tag}
                   video={meta.video}
-                  featured={meta.featured}
-                  className={meta.span}
+                  className={cn(meta.lower && "lg:mt-16")}
                   playLabel={t("scaling.playVideo")}
                   pauseLabel={t("scaling.pauseVideo")}
                   isRtl={isRtl}

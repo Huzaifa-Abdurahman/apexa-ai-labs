@@ -13,9 +13,35 @@ export const SITE_TAGLINE =
 export const SITE_TAGLINE_AR =
   "مختبر ذكاء اصطناعي من مكة للبرمجيات المخصصة والأتمتة وسير العمل في المملكة";
 
-export const CONTACT_EMAIL = "contact@apexa.ai";
-export const WHATSAPP_E164 = "+923100043155";
-export const WHATSAPP_URL = "https://wa.me/923100043155";
+export const CONTACT_EMAIL = "info@apexaailabs.com";
+export const CONTACT_EMAIL_SECONDARY = "galaxysoftwarehub@gmail.com";
+export const CONTACT_EMAILS = [CONTACT_EMAIL, CONTACT_EMAIL_SECONDARY] as const;
+
+export const WHATSAPP_PK_E164 = "+923451569778";
+export const WHATSAPP_UK_E164 = "+447449703113";
+export const WHATSAPP_PK_URL = "https://wa.me/923451569778";
+export const WHATSAPP_UK_URL = "https://wa.me/447449703113";
+
+/** Primary WhatsApp (Pakistan / main line) */
+export const WHATSAPP_E164 = WHATSAPP_PK_E164;
+export const WHATSAPP_URL = WHATSAPP_PK_URL;
+
+export const CONTACT_PHONES = [
+  {
+    e164: WHATSAPP_PK_E164,
+    display: "+92 345 156 9778",
+    label: "WhatsApp PK",
+    labelAr: "واتساب باكستان",
+    href: WHATSAPP_PK_URL,
+  },
+  {
+    e164: WHATSAPP_UK_E164,
+    display: "+44 7449 703113",
+    label: "WhatsApp UK",
+    labelAr: "واتساب بريطانيا",
+    href: WHATSAPP_UK_URL,
+  },
+] as const;
 
 /** Primary local SEO geo focus */
 export const HQ = {
@@ -179,5 +205,29 @@ export const PAGE_SEO = {
     title: "Contact Apexa AI Labs | Book AI & Software Consultation in KSA",
     description:
       "Contact Apexa AI Labs in Makkah. Tell us your city, industry, and bottleneck — get a clear AI + custom software plan for your Saudi business. WhatsApp and email available.",
+  },
+  projects: {
+    path: "/projects",
+    title: "Projects & Portfolio | Websites and Digital Products by Apexa",
+    description:
+      "Browse 100+ websites and digital builds by Apexa AI Labs — software, e-commerce, hospitality, healthcare, publishing, and local service brands. Proof of craft for Saudi and global clients.",
+  },
+  privacy: {
+    path: "/privacy",
+    title: "Privacy Policy | Apexa AI Labs (PDPL Aligned)",
+    description:
+      "How Apexa AI Labs collects, uses, and protects personal data under Saudi Arabia’s Personal Data Protection Law (PDPL) and international privacy standards. Makkah HQ.",
+  },
+  terms: {
+    path: "/terms",
+    title: "Terms & Conditions | Apexa AI Labs",
+    description:
+      "Terms governing use of apexa.ai and Apexa AI Labs services — custom software, AI agents, and digital delivery. Governed by the laws of the Kingdom of Saudi Arabia.",
+  },
+  cookies: {
+    path: "/cookies",
+    title: "Cookie Policy | Apexa AI Labs",
+    description:
+      "How Apexa AI Labs uses cookies and similar technologies on apexa.ai, with transparency aligned to Saudi PDPL expectations and international cookie practices.",
   },
 } as const;

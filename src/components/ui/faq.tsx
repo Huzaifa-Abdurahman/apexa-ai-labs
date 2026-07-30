@@ -48,7 +48,7 @@ export function FAQSection() {
                 {t("faq.sideBody")}
               </p>
               <Link
-                href="https://wa.me/923100043155"
+                href="https://wa.me/923451569778"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(

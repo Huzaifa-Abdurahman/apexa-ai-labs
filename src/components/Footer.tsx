@@ -4,6 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLocale } from "@/i18n/locale-provider";
 import { cn } from "@/lib/utils";
+import {
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_SECONDARY,
+  CONTACT_PHONES,
+} from "@/lib/seo";
 
 type FooterLink = { label: string; href: string; external?: boolean };
 
@@ -99,6 +104,7 @@ export default function Footer() {
       title: t("footer.company"),
       links: [
         { label: t("footer.about"), href: "/about" },
+        { label: t("footer.projects"), href: "/projects" },
         { label: t("footer.team"), href: "/about" },
         { label: t("footer.mission"), href: "/about" },
         { label: t("footer.contact"), href: "/contact" },
@@ -109,8 +115,10 @@ export default function Footer() {
       links: [
         { label: t("footer.servicesOverview"), href: "/services" },
         { label: t("footer.industriesOverview"), href: "/industries" },
+        { label: t("footer.projects"), href: "/projects" },
         { label: t("footer.faq"), href: "/contact" },
-        { label: t("footer.privacy"), href: "/contact" },
+        { label: t("footer.privacy"), href: "/privacy" },
+        { label: t("footer.terms"), href: "/terms" },
       ],
     },
     {
@@ -118,11 +126,25 @@ export default function Footer() {
       links: [
         { label: t("footer.bookCall"), href: "/contact" },
         {
-          label: t("footer.whatsapp"),
-          href: "https://wa.me/923100043155",
+          label: `${t("footer.whatsapp")} PK`,
+          href: CONTACT_PHONES[0].href,
           external: true,
         },
-        { label: "contact@apexa.ai", href: "mailto:contact@apexa.ai", external: true },
+        {
+          label: `${t("footer.whatsapp")} UK`,
+          href: CONTACT_PHONES[1].href,
+          external: true,
+        },
+        {
+          label: CONTACT_EMAIL,
+          href: `mailto:${CONTACT_EMAIL}`,
+          external: true,
+        },
+        {
+          label: CONTACT_EMAIL_SECONDARY,
+          href: `mailto:${CONTACT_EMAIL_SECONDARY}`,
+          external: true,
+        },
         { label: t("footer.hq"), href: "/contact" },
       ],
     },
@@ -170,9 +192,6 @@ export default function Footer() {
             >
               {t("footer.tagline")}
             </p>
-            <p className="ayah mt-5 text-base text-foreground/40 md:text-lg" dir="rtl" lang="ar">
-              ﴿ وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ ﴾
-            </p>
           </div>
 
           <Link
@@ -210,13 +229,13 @@ export default function Footer() {
             )}
           >
             <span>{t("footer.rights")}</span>
-            <Link href="/contact" className="transition-colors hover:text-primary">
+            <Link href="/privacy" className="transition-colors hover:text-primary">
               {t("footer.privacy")}
             </Link>
-            <Link href="/contact" className="transition-colors hover:text-primary">
+            <Link href="/cookies" className="transition-colors hover:text-primary">
               {t("footer.cookies")}
             </Link>
-            <Link href="/contact" className="transition-colors hover:text-primary">
+            <Link href="/terms" className="transition-colors hover:text-primary">
               {t("footer.terms")}
             </Link>
           </div>

@@ -5,8 +5,8 @@ import Link from "next/link"
 import { MeshGradient, PulsingBorder } from "@paper-design/shaders-react"
 import { motion } from "framer-motion"
 import { Sparkles as SparklesIcon, Zap } from "lucide-react"
+import { HeroVisual } from "@/components/ui/hero-visual"
 import { HyperText } from "@/components/ui/hyper-text"
-import { MorphingText } from "@/components/ui/morphing-text"
 import { Sparkles } from "@/components/ui/sparkles"
 import { TypingAnimation } from "@/components/ui/typing-animation"
 import { useLocale } from "@/i18n/locale-provider"
@@ -40,7 +40,6 @@ export default function ShaderShowcase() {
   const { t, messages, isRtl } = useLocale()
   const capabilityLines = [...messages.hero.capabilityLines]
   const hyperWords = [...messages.hero.hyperWords]
-  const morphing = [...messages.hero.morphing]
   const cities = [
     t("common.makkah"),
     t("common.madinah"),
@@ -54,19 +53,14 @@ export default function ShaderShowcase() {
       <MeshGradient
         className="absolute inset-0 h-full w-full"
         colors={["#020617", "#06b6d4", "#f97316", "#0891b2", "#000000"]}
-        speed={0.55}
-      />
-      <MeshGradient
-        className="absolute inset-0 h-full w-full opacity-70"
-        colors={["#000000", "#22d3ee", "#fb923c", "#ffffff"]}
         speed={0.4}
       />
 
       <Sparkles
         className="absolute inset-0"
-        density={140}
-        speed={1.2}
-        opacity={0.55}
+        density={60}
+        speed={0.8}
+        opacity={0.4}
         color="#67e8f9"
       />
 
@@ -230,26 +224,11 @@ export default function ShaderShowcase() {
 
       <div
         className={cn(
-          "absolute top-1/2 z-20 hidden w-[420px] -translate-y-1/2 lg:block xl:w-[500px]",
+          "absolute top-1/2 z-20 hidden w-[400px] -translate-y-1/2 lg:block xl:w-[480px]",
           isRtl ? "left-8 lg:left-16" : "right-8 lg:right-16"
         )}
       >
-        <p
-          className={cn(
-            "mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-cyan-300/70",
-            isRtl ? "text-left font-arabic-ui" : "text-right"
-          )}
-        >
-          {t("hero.builtFor")}
-        </p>
-        <MorphingText
-          key={morphing.join("|")}
-          texts={[...morphing]}
-          className={cn(
-            "text-5xl font-bold text-white xl:text-6xl",
-            isRtl ? "text-left font-arabic-ui" : "text-right"
-          )}
-        />
+        <HeroVisual />
       </div>
 
       <div className={cn("absolute bottom-8 z-30", isRtl ? "left-6 sm:left-8" : "right-6 sm:right-8")}>

@@ -1,5 +1,7 @@
 import {
   CONTACT_EMAIL,
+  CONTACT_EMAIL_SECONDARY,
+  CONTACT_PHONES,
   HQ,
   SERVICE_CITIES,
   SITE_NAME,
@@ -37,7 +39,8 @@ export function SiteJsonLd() {
     },
     image: `${SITE_URL}/logo.png`,
     description: SITE_TAGLINE,
-    email: CONTACT_EMAIL,
+    email: [CONTACT_EMAIL, CONTACT_EMAIL_SECONDARY],
+    telephone: CONTACT_PHONES.map((p) => p.e164),
     foundingDate: "2022",
     slogan: "American-standard software with Arabic-first delivery",
     knowsLanguage: ["en", "ar"],
@@ -113,7 +116,7 @@ export function SiteJsonLd() {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "AI Pipelines & Workflow Automation",
+            name: "Live Reports, Insights & Workflow Automation",
             description:
               "Data pipelines and process automation for scalable KSA operations.",
             areaServed: "SA",
@@ -127,6 +130,7 @@ export function SiteJsonLd() {
         "@type": "ContactPoint",
         contactType: "sales",
         email: CONTACT_EMAIL,
+        telephone: CONTACT_PHONES[0].e164,
         url: absoluteUrl("/contact"),
         availableLanguage: ["English", "Arabic"],
         areaServed: "SA",
@@ -134,9 +138,11 @@ export function SiteJsonLd() {
       {
         "@type": "ContactPoint",
         contactType: "customer support",
+        email: CONTACT_EMAIL_SECONDARY,
+        telephone: CONTACT_PHONES[1].e164,
         url: WHATSAPP_URL,
         availableLanguage: ["English", "Arabic"],
-        areaServed: "SA",
+        areaServed: ["SA", "GB"],
       },
     ],
     sameAs: [

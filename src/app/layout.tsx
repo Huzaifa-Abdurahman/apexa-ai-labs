@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk, Playfair_Display, Amiri, Cairo } from "next/font/
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { TopContactBar } from "@/components/TopContactBar";
 import { Providers } from "@/components/providers";
 import { SiteJsonLd } from "@/components/seo/json-ld";
 import { cn } from "@/lib/utils";
@@ -108,6 +109,7 @@ export default function RootLayout({
           >
             Skip to content
           </a>
+          <TopContactBar />
           <Navbar />
           <main className="flex-1" id="main-content">
             {children}

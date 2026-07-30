@@ -34,12 +34,7 @@ export function AIServicesSection() {
           >
             {t("aiServices.title")}
           </h2>
-          <p
-            className={cn(
-              "mt-3 text-muted-foreground",
-              isRtl && "font-arabic-ui"
-            )}
-          >
+          <p className={cn("mt-3 text-muted-foreground", isRtl && "font-arabic-ui")}>
             {t("aiServices.subtitle")}
           </p>
         </div>

@@ -11,6 +11,7 @@ import {
   CheckCircle2,
   Code2,
   Factory,
+  Globe,
   Hotel,
   MapPin,
   Mic,
@@ -39,201 +40,63 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { Marquee } from "@/components/ui/marquee";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { Sparkles } from "@/components/ui/sparkles";
-import { TextAnimate } from "@/components/ui/text-animate";
 import { useLocale } from "@/i18n/locale-provider";
 import { cn } from "@/lib/utils";
 
-type ServiceVectorId =
+type ServiceId =
   | "software"
   | "automations"
   | "apps"
   | "pipelines"
-  | "workflows"
+  | "web"
   | "voice";
 
 type CityId = "makkah" | "madinah" | "jeddah" | "dammam" | "riyadh";
 
-/** Distinct vector illustration for each service card */
-function ServiceVector({ id }: { id: ServiceVectorId }) {
-  const frame = "h-full w-full";
-
-  if (id === "software") {
-    return (
-      <svg className={frame} viewBox="0 0 360 200" fill="none" aria-hidden>
-        <rect x="28" y="28" width="170" height="120" rx="14" fill="#fff" stroke="#06b6d4" strokeWidth="2" />
-        <rect x="28" y="28" width="170" height="28" rx="14" fill="#06b6d4" />
-        <circle cx="46" cy="42" r="4" fill="#fff" opacity="0.9" />
-        <circle cx="60" cy="42" r="4" fill="#fff" opacity="0.55" />
-        <rect x="44" y="72" width="70" height="10" rx="3" fill="#06b6d4" opacity="0.35" />
-        <rect x="44" y="92" width="110" height="8" rx="3" fill="#0f172a" opacity="0.12" />
-        <rect x="44" y="108" width="90" height="8" rx="3" fill="#0f172a" opacity="0.1" />
-        <rect x="44" y="124" width="50" height="10" rx="5" fill="#f97316" />
-        <rect x="210" y="48" width="110" height="88" rx="12" fill="#fff" stroke="#f97316" strokeWidth="2" />
-        <path d="M230 78 H300 M230 98 H280 M230 118 H290" stroke="#0f172a" strokeWidth="3" strokeLinecap="round" opacity="0.2" />
-        <circle cx="300" cy="48" r="16" fill="#f97316" />
-        <path d="M294 48 L298 52 L308 42" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  if (id === "automations") {
-    return (
-      <svg className={frame} viewBox="0 0 360 200" fill="none" aria-hidden>
-        <circle cx="90" cy="100" r="42" fill="#06b6d4" opacity="0.15" stroke="#06b6d4" strokeWidth="2" />
-        <circle cx="90" cy="100" r="22" fill="#06b6d4" />
-        <path d="M80 100 H100 M90 90 V110" stroke="#fff" strokeWidth="3" strokeLinecap="round" />
-        <path d="M132 100 H168" stroke="#0f172a" strokeWidth="2" strokeDasharray="5 4" opacity="0.35" />
-        <rect x="168" y="58" width="88" height="84" rx="16" fill="#fff" stroke="#f97316" strokeWidth="2" />
-        <circle cx="212" cy="88" r="14" fill="#f97316" opacity="0.2" stroke="#f97316" strokeWidth="2" />
-        <path d="M206 88 L210 92 L220 82" stroke="#f97316" strokeWidth="2" strokeLinecap="round" />
-        <rect x="186" y="112" width="52" height="8" rx="4" fill="#0f172a" opacity="0.12" />
-        <rect x="194" y="126" width="36" height="8" rx="4" fill="#06b6d4" opacity="0.4" />
-        <path d="M256 100 H286" stroke="#0f172a" strokeWidth="2" strokeDasharray="5 4" opacity="0.35" />
-        <circle cx="310" cy="100" r="28" fill="#fff" stroke="#06b6d4" strokeWidth="2" />
-        <path d="M298 100 C298 92 304 86 310 86 C316 86 322 92 322 100" stroke="#06b6d4" strokeWidth="2.5" />
-        <circle cx="310" cy="108" r="4" fill="#f97316" />
-      </svg>
-    );
-  }
-
-  if (id === "apps") {
-    return (
-      <svg className={frame} viewBox="0 0 360 200" fill="none" aria-hidden>
-        <rect x="118" y="18" width="100" height="164" rx="22" fill="#0f172a" />
-        <rect x="124" y="34" width="88" height="132" rx="6" fill="#ecfeff" />
-        <rect x="138" y="24" width="36" height="5" rx="2.5" fill="#64748b" />
-        <rect x="136" y="48" width="64" height="10" rx="3" fill="#06b6d4" opacity="0.5" />
-        <rect x="136" y="66" width="48" height="7" rx="2" fill="#0f172a" opacity="0.12" />
-        <rect x="136" y="90" width="64" height="36" rx="8" fill="#06b6d4" opacity="0.18" stroke="#06b6d4" strokeWidth="1.5" />
-        <circle cx="154" cy="108" r="8" fill="#06b6d4" />
-        <rect x="168" y="102" width="24" height="5" rx="2" fill="#0f172a" opacity="0.2" />
-        <rect x="168" y="112" width="18" height="4" rx="2" fill="#0f172a" opacity="0.12" />
-        <rect x="136" y="136" width="64" height="18" rx="9" fill="#f97316" />
-        <circle cx="250" cy="56" r="20" fill="#f97316" opacity="0.2" stroke="#f97316" strokeWidth="2" />
-        <path d="M250 46 V66 M240 56 H260" stroke="#f97316" strokeWidth="2.5" strokeLinecap="round" />
-        <circle cx="86" cy="140" r="16" fill="#06b6d4" opacity="0.2" stroke="#06b6d4" strokeWidth="2" />
-        <path d="M80 140 L84 144 L94 134" stroke="#06b6d4" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    );
-  }
-
-  if (id === "pipelines") {
-    return (
-      <svg className={frame} viewBox="0 0 360 200" fill="none" aria-hidden>
-        <ellipse cx="72" cy="58" rx="36" ry="14" fill="#06b6d4" opacity="0.25" stroke="#06b6d4" strokeWidth="2" />
-        <path d="M36 58 V98 C36 106 52 112 72 112 C92 112 108 106 108 98 V58" fill="#06b6d4" opacity="0.12" stroke="#06b6d4" strokeWidth="2" />
-        <ellipse cx="72" cy="98" rx="36" ry="14" fill="#06b6d4" opacity="0.2" stroke="#06b6d4" strokeWidth="2" />
-        <ellipse cx="72" cy="128" rx="36" ry="14" fill="#06b6d4" opacity="0.15" stroke="#06b6d4" strokeWidth="2" />
-        <path d="M36 128 V148 C36 156 52 162 72 162 C92 162 108 156 108 148 V128" fill="none" stroke="#06b6d4" strokeWidth="2" />
-        <path d="M112 100 H150" stroke="#0f172a" strokeWidth="2" strokeDasharray="4 4" opacity="0.3" />
-        <path d="M150 60 V140" stroke="#f97316" strokeWidth="3" strokeLinecap="round" />
-        <circle cx="150" cy="60" r="7" fill="#f97316" />
-        <circle cx="150" cy="100" r="7" fill="#06b6d4" />
-        <circle cx="150" cy="140" r="7" fill="#f97316" />
-        <path d="M157 100 H190" stroke="#0f172a" strokeWidth="2" strokeDasharray="4 4" opacity="0.3" />
-        <rect x="190" y="48" width="120" height="104" rx="14" fill="#fff" stroke="#0f172a" strokeWidth="1.5" opacity="0.9" />
-        <path d="M210 130 L230 80 L250 110 L270 70 L290 120" stroke="#06b6d4" strokeWidth="2.5" strokeLinejoin="round" />
-        <circle cx="230" cy="80" r="4" fill="#f97316" />
-        <circle cx="270" cy="70" r="4" fill="#06b6d4" />
-        <rect x="210" y="148" width="80" height="8" rx="4" fill="#0f172a" opacity="0.1" />
-      </svg>
-    );
-  }
-
-  if (id === "workflows") {
-    return (
-      <svg className={frame} viewBox="0 0 360 200" fill="none" aria-hidden>
-        <rect x="36" y="40" width="72" height="40" rx="12" fill="#06b6d4" />
-        <rect x="48" y="54" width="48" height="6" rx="3" fill="#fff" opacity="0.85" />
-        <path d="M72 80 V104" stroke="#0f172a" strokeWidth="2" opacity="0.25" />
-        <rect x="36" y="104" width="72" height="40" rx="12" fill="#fff" stroke="#06b6d4" strokeWidth="2" />
-        <rect x="48" y="118" width="40" height="6" rx="3" fill="#06b6d4" opacity="0.45" />
-        <path d="M108 124 H148" stroke="#0f172a" strokeWidth="2" strokeDasharray="4 4" opacity="0.3" />
-        <rect x="148" y="84" width="72" height="40" rx="12" fill="#f97316" />
-        <rect x="160" y="98" width="48" height="6" rx="3" fill="#fff" opacity="0.85" />
-        <path d="M184 124 V148" stroke="#0f172a" strokeWidth="2" opacity="0.25" />
-        <path d="M184 148 H232" stroke="#0f172a" strokeWidth="2" opacity="0.25" />
-        <path d="M232 148 V100" stroke="#0f172a" strokeWidth="2" opacity="0.25" />
-        <rect x="232" y="40" width="72" height="40" rx="12" fill="#fff" stroke="#f97316" strokeWidth="2" />
-        <rect x="244" y="54" width="40" height="6" rx="3" fill="#f97316" opacity="0.5" />
-        <rect x="232" y="128" width="72" height="40" rx="12" fill="#fff" stroke="#06b6d4" strokeWidth="2" />
-        <circle cx="268" cy="148" r="8" fill="#06b6d4" />
-        <path d="M264 148 L267 151 L274 144" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    );
-  }
-
-  // voice
-  return (
-    <svg className={frame} viewBox="0 0 360 200" fill="none" aria-hidden>
-      <circle cx="110" cy="100" r="54" fill="#06b6d4" opacity="0.12" />
-      <rect x="92" y="58" width="36" height="56" rx="18" fill="#06b6d4" />
-      <path d="M78 100 C78 122 92 138 110 138 C128 138 142 122 142 100" stroke="#06b6d4" strokeWidth="3" strokeLinecap="round" />
-      <path d="M110 138 V156" stroke="#06b6d4" strokeWidth="3" strokeLinecap="round" />
-      <path d="M96 156 H124" stroke="#06b6d4" strokeWidth="3" strokeLinecap="round" />
-      <path d="M168 70 C190 90 190 110 168 130" stroke="#f97316" strokeWidth="3" strokeLinecap="round" opacity="0.7" />
-      <path d="M186 58 C218 86 218 114 186 142" stroke="#f97316" strokeWidth="3" strokeLinecap="round" opacity="0.45" />
-      <rect x="220" y="48" width="100" height="104" rx="14" fill="#fff" stroke="#0f172a" strokeWidth="1.5" opacity="0.95" />
-      <circle cx="244" cy="72" r="10" fill="#06b6d4" opacity="0.25" stroke="#06b6d4" strokeWidth="2" />
-      <rect x="262" y="66" width="42" height="6" rx="3" fill="#0f172a" opacity="0.15" />
-      <rect x="262" y="78" width="28" height="5" rx="2.5" fill="#0f172a" opacity="0.1" />
-      <rect x="236" y="100" width="68" height="18" rx="9" fill="#ecfeff" stroke="#06b6d4" strokeWidth="1.5" />
-      <rect x="236" y="126" width="52" height="14" rx="7" fill="#fff7ed" stroke="#f97316" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
 const serviceMeta: Record<
-  ServiceVectorId,
+  ServiceId,
   {
     icon: typeof Code2;
-    vector: ServiceVectorId;
     image: string;
     accent: string;
-    canvas: string;
+    glow: string;
   }
 > = {
   software: {
     icon: Code2,
-    vector: "software",
-    image: "/deal.PNG",
+    image: "/svc-software.webp",
     accent: "from-cyan-500 to-blue-600",
-    canvas: "from-cyan-50 via-sky-50 to-white",
+    glow: "bg-cyan-400/20",
   },
   automations: {
     icon: Bot,
-    vector: "automations",
-    image: "/s1.PNG",
+    image: "/svc-automations.webp",
     accent: "from-orange-500 to-amber-500",
-    canvas: "from-orange-50 via-amber-50 to-white",
+    glow: "bg-orange-400/20",
   },
   apps: {
     icon: SparklesIcon,
-    vector: "apps",
-    image: "/s2.PNG",
-    accent: "from-fuchsia-500 to-purple-600",
-    canvas: "from-fuchsia-50 via-cyan-50 to-white",
+    image: "/svc-apps.webp",
+    accent: "from-emerald-500 to-teal-600",
+    glow: "bg-emerald-400/20",
   },
   pipelines: {
     icon: Database,
-    vector: "pipelines",
-    image: "/data.jpg",
-    accent: "from-teal-500 to-cyan-600",
-    canvas: "from-teal-50 via-cyan-50 to-white",
-  },
-  workflows: {
-    icon: Workflow,
-    vector: "workflows",
-    image: "/s3.PNG",
+    image: "/svc-pipelines.webp",
     accent: "from-sky-500 to-indigo-500",
-    canvas: "from-sky-50 via-indigo-50 to-white",
+    glow: "bg-sky-400/20",
+  },
+  web: {
+    icon: Globe,
+    image: "/svc-web.webp",
+    accent: "from-violet-500 to-purple-600",
+    glow: "bg-violet-400/20",
   },
   voice: {
     icon: Mic,
-    vector: "voice",
-    image: "/deal1.PNG",
+    image: "/svc-voice.webp",
     accent: "from-amber-500 to-orange-600",
-    canvas: "from-amber-50 via-orange-50 to-white",
+    glow: "bg-amber-400/20",
   },
 };
 
@@ -244,11 +107,11 @@ const cityMeta: Record<
     icons: (typeof Hotel)[];
   }
 > = {
-  makkah: { image: "/hu.PNG", icons: [Hotel, Store, Stethoscope, Plane] },
-  madinah: { image: "/hotel.jpg", icons: [Hotel, Stethoscope, Plane, Store] },
-  jeddah: { image: "/tranposttaion.jpg", icons: [Ship, Store, Building2, Stethoscope] },
-  dammam: { image: "/manufacturing.jpg", icons: [Factory, Building2, Ship, Stethoscope] },
-  riyadh: { image: "/ksa.jfif", icons: [Building2, Network, Stethoscope, Store] },
+  makkah: { image: "/clock.jpg", icons: [Hotel, Store, Stethoscope, Plane] },
+  madinah: { image: "/madina.jpg", icons: [Hotel, Stethoscope, Plane, Store] },
+  jeddah: { image: "/transport.jpg", icons: [Ship, Store, Building2, Stethoscope] },
+  dammam: { image: "/dammam.jpg", icons: [Factory, Building2, Ship, Stethoscope] },
+  riyadh: { image: "/riyadh.jpg", icons: [Building2, Network, Stethoscope, Store] },
 };
 
 const painIcons = [PhoneCall, Boxes, Zap, Layers] as const;
@@ -330,7 +193,7 @@ export default function Services() {
     () =>
       messages.servicesPage.serviceItems.map((item) => ({
         ...item,
-        ...serviceMeta[item.id as ServiceVectorId],
+        ...serviceMeta[item.id as ServiceId],
       })),
     [messages]
   );
@@ -370,70 +233,100 @@ export default function Services() {
   return (
     <div className="overflow-hidden pb-24">
       {/* HERO */}
-      <section className="relative isolate min-h-[78vh] flex items-center justify-center overflow-hidden bg-[#05070b] pt-28 pb-20">
+      <section className="relative isolate overflow-hidden bg-[#05070b] pt-28 pb-20">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(6,182,212,0.2),_transparent_55%),radial-gradient(ellipse_at_bottom_right,_rgba(249,115,22,0.14),_transparent_45%)]" />
         <Sparkles
           className="absolute inset-0"
-          density={120}
-          speed={0.8}
-          opacity={0.45}
+          density={45}
+          speed={0.6}
+          opacity={0.35}
           color="#06b6d4"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(6,182,212,0.18),_transparent_55%),radial-gradient(ellipse_at_bottom_right,_rgba(249,115,22,0.14),_transparent_45%)]" />
-        <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur">
-            <MapPin className="size-3.5 text-primary" />
-            <AnimatedShinyText
-              className={cn(
-                "mx-0 max-w-none text-sm text-white/70 dark:text-white/70",
-                isRtl && "font-arabic-ui"
-              )}
-            >
-              {t("servicesPage.badge")}
-            </AnimatedShinyText>
-          </div>
-
-          <h1
-            className={cn(
-              "font-heading text-4xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl",
-              isRtl && "font-arabic-ui"
-            )}
-          >
-            {t("servicesPage.title")}{" "}
-            <Cover className="text-neutral-900">{t("servicesPage.titleHighlight")}</Cover>
-          </h1>
-
-          <TextAnimate
-            animation="blurInUp"
-            by="word"
-            className={cn(
-              "mx-auto mt-6 max-w-2xl text-lg font-medium text-white/65 md:text-xl",
-              isRtl && "font-arabic-ui"
-            )}
-            as="p"
-          >
-            {t("servicesPage.subtitle")}
-          </TextAnimate>
-
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contact" className="inline-block">
-              <InteractiveHoverButton
+        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 px-4 lg:grid-cols-2 lg:gap-12">
+          <div className={cn("text-center lg:text-start", isRtl && "lg:text-end")}>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+              <MapPin className="size-3.5 text-primary" />
+              <AnimatedShinyText
                 className={cn(
-                  "border-white/15 bg-white text-black hover:bg-white",
+                  "mx-0 max-w-none text-sm text-white/70 dark:text-white/70",
                   isRtl && "font-arabic-ui"
                 )}
               >
-                {t("servicesPage.bookCta")}
-              </InteractiveHoverButton>
-            </Link>
-            <a
-              href="#cities"
+                {t("servicesPage.badge")}
+              </AnimatedShinyText>
+            </div>
+
+            <h1
               className={cn(
-                "inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10",
+                "font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl",
                 isRtl && "font-arabic-ui"
               )}
             >
-              {t("servicesPage.exploreCities")} <ArrowRight className="size-4" />
-            </a>
+              {t("servicesPage.title")}{" "}
+              <Cover className="text-neutral-900">{t("servicesPage.titleHighlight")}</Cover>
+            </h1>
+
+            <p
+              className={cn(
+                "mx-auto mt-6 max-w-xl text-lg font-medium text-white/65 md:text-xl lg:mx-0",
+                isRtl && "font-arabic-ui"
+              )}
+            >
+              {t("servicesPage.subtitle")}
+            </p>
+
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+              <Link href="/contact" className="inline-block">
+                <InteractiveHoverButton
+                  className={cn(
+                    "border-white/15 bg-white text-black hover:bg-white",
+                    isRtl && "font-arabic-ui"
+                  )}
+                >
+                  {t("servicesPage.bookCta")}
+                </InteractiveHoverButton>
+              </Link>
+              <a
+                href="#cities"
+                className={cn(
+                  "inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10",
+                  isRtl && "font-arabic-ui"
+                )}
+              >
+                {t("servicesPage.exploreCities")} <ArrowRight className="size-4" />
+              </a>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+            <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-cyan-400/15 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[28px] border border-white/20 bg-white/10 p-3 shadow-2xl backdrop-blur-xl">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-gradient-to-br from-slate-950 via-cyan-950/40 to-slate-950">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/robot.gif"
+                  alt={isRtl ? "مساعد روبوت ذكي" : "AI robot assistant"}
+                  className="absolute inset-0 h-full w-full object-contain object-center p-4 md:p-6"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                <div className="absolute bottom-4 start-4 end-4 flex flex-wrap gap-2">
+                  {(isRtl
+                    ? ["وكلاء ذكاء", "شات بوت", "برمجيات مخصصة"]
+                    : ["AI agents", "Chatbots", "Custom software"]
+                  ).map((label) => (
+                    <span
+                      key={label}
+                      className={cn(
+                        "rounded-full border border-white/20 bg-black/40 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md",
+                        isRtl && "font-arabic-ui"
+                      )}
+                    >
+                      {label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -468,7 +361,7 @@ export default function Services() {
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className="relative overflow-hidden rounded-3xl border border-black/5 bg-white p-6 shadow-sm"
+            className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/70 p-6 shadow-sm backdrop-blur-md"
           >
             <div
               className={cn(
@@ -492,14 +385,9 @@ export default function Services() {
         ))}
       </section>
 
-      {/* CORE SERVICES */}
+      {/* CORE SERVICES — glassmorphic cards */}
       <section className="relative mx-auto max-w-7xl px-4 pb-24">
-        <DotPattern
-          width={22}
-          height={22}
-          cr={1}
-          className="text-cyan-500/15 [mask-image:radial-gradient(ellipse_at_center,white,transparent_75%)]"
-        />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(6,182,212,0.08),_transparent_55%)]" />
         <div className="relative z-10 mb-12 max-w-3xl">
           <Badge className={cn("mb-4 bg-primary/10 text-primary", isRtl && "font-arabic-ui")}>
             {t("servicesPage.deliverBadge")}
@@ -535,54 +423,52 @@ export default function Services() {
             return (
               <motion.article
                 key={service.id}
-                initial={{ opacity: 0, y: 28 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ delay: index * 0.06, duration: 0.45 }}
-                className="group relative overflow-hidden rounded-[28px] border border-black/5 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-2xl"
+                transition={{ delay: index * 0.05, duration: 0.4 }}
+                className="group relative overflow-hidden rounded-[28px] border border-white/50 bg-white/55 shadow-[0_8px_40px_-12px_rgba(15,23,42,0.18)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/75 hover:shadow-[0_20px_50px_-16px_rgba(6,182,212,0.28)]"
               >
-                {/* Vector illustration canvas */}
-                <div
-                  className={cn(
-                    "relative aspect-[16/10] overflow-hidden bg-gradient-to-br",
-                    service.canvas
-                  )}
-                >
-                  <Image
-                    src={service.image}
-                    alt=""
-                    fill
-                    aria-hidden
-                    className="object-cover opacity-[0.12] transition duration-700 group-hover:scale-105 group-hover:opacity-[0.18]"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(6,182,212,0.18),_transparent_45%)]" />
-                  <div className="relative z-10 flex h-full items-center justify-center p-4 md:p-5">
-                    <div className="h-full w-full max-w-[340px] transition duration-500 group-hover:scale-[1.03]">
-                      <ServiceVector id={service.vector} />
+                <div className={cn("pointer-events-none absolute -end-10 -top-10 size-40 rounded-full blur-3xl", service.glow)} />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/70 via-white/20 to-transparent" />
+
+                <Link href={`/services/${service.id}`} className="relative z-10 block">
+                  <div className="relative flex aspect-[16/11] items-center justify-center overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+                    <div className={cn("absolute inset-0 opacity-40 blur-2xl", service.glow)} />
+                    <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/90 to-transparent" />
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={420}
+                      height={300}
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="relative z-10 h-[78%] w-auto max-w-[88%] object-contain drop-shadow-[0_18px_30px_rgba(0,0,0,0.45)] transition duration-500 group-hover:scale-[1.04]"
+                    />
+                    <div
+                      className={cn(
+                        "absolute bottom-4 start-4 z-20 flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-lg ring-1 ring-white/30",
+                        service.accent
+                      )}
+                    >
+                      <Icon className="size-5" />
                     </div>
+                    <span className="absolute end-4 top-4 z-20 rounded-full border border-white/20 bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white/90 backdrop-blur-md">
+                      0{index + 1}
+                    </span>
                   </div>
-                  <div
-                    className={cn(
-                      "absolute bottom-4 left-4 z-20 flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-lg ring-1 ring-black/5",
-                      service.accent
-                    )}
-                  >
-                    <Icon className="size-5" />
-                  </div>
-                  <span className="absolute right-4 top-4 z-20 rounded-full border border-black/5 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-foreground/70 backdrop-blur">
-                    0{index + 1}
-                  </span>
-                </div>
-                <div className="p-6">
-                  <h3
-                    className={cn(
-                      "font-heading text-xl font-bold text-foreground",
-                      isRtl && "font-arabic-ui"
-                    )}
-                  >
-                    {service.title}
-                  </h3>
+                </Link>
+
+                <div className="relative z-10 p-6 pt-5">
+                  <Link href={`/services/${service.id}`}>
+                    <h3
+                      className={cn(
+                        "font-heading text-xl font-bold text-foreground transition hover:text-primary",
+                        isRtl && "font-arabic-ui"
+                      )}
+                    >
+                      {service.title}
+                    </h3>
+                  </Link>
                   <p
                     className={cn(
                       "mt-2 text-sm leading-relaxed text-muted-foreground",
@@ -593,24 +479,35 @@ export default function Services() {
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {service.features.map((f) => (
-                      <Badge
+                      <span
                         key={f}
-                        variant="secondary"
-                        className={cn("bg-muted text-foreground/80", isRtl && "font-arabic-ui")}
+                        className={cn(
+                          "rounded-full border border-black/5 bg-white/70 px-3 py-1 text-[11px] font-semibold text-foreground/75 backdrop-blur-sm",
+                          isRtl && "font-arabic-ui"
+                        )}
                       >
                         {f}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
-                  <Link
-                    href="/contact"
-                    className={cn(
-                      "mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition group-hover:gap-3",
-                      isRtl && "font-arabic-ui"
-                    )}
-                  >
-                    {t("servicesPage.discussService")} <ArrowRight className="size-4" />
-                  </Link>
+                  <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+                    <Link
+                      href="/contact"
+                      className={cn(
+                        "text-sm font-medium text-muted-foreground transition hover:text-foreground",
+                        isRtl && "font-arabic-ui"
+                      )}
+                    >
+                      {t("servicesPage.discussService")}
+                    </Link>
+                    <Link
+                      href={`/services/${service.id}`}
+                      aria-label={t("servicesPage.learnMore")}
+                      className="inline-flex size-11 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 text-white shadow-lg shadow-cyan-500/25 transition duration-300 hover:scale-105 hover:shadow-cyan-500/40 group-hover:from-cyan-400 group-hover:to-orange-500"
+                    >
+                      <ArrowRight className={cn("size-5", isRtl && "rotate-180")} />
+                    </Link>
+                  </div>
                 </div>
               </motion.article>
             );
@@ -724,17 +621,6 @@ export default function Services() {
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0c1017] via-[#0c1017]/50 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#0c1017]/35 lg:to-[#0c1017]" />
-                  {/* vector overlay */}
-                  <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-25" aria-hidden>
-                    <defs>
-                      <pattern id={`city-grid-${city.id}`} width="32" height="32" patternUnits="userSpaceOnUse">
-                        <path d="M32 0H0V32" fill="none" stroke="white" strokeWidth="0.5" />
-                      </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill={`url(#city-grid-${city.id})`} />
-                    <circle cx="85%" cy="18%" r="60" fill="none" stroke="#06b6d4" strokeWidth="1" opacity="0.6" />
-                    <circle cx="85%" cy="18%" r="36" fill="none" stroke="#f97316" strokeWidth="1" strokeDasharray="4 4" opacity="0.7" />
-                  </svg>
                   <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8">
                     <p className="font-arabic-ui text-sm font-semibold text-primary" dir="rtl">
                       {city.arabic}

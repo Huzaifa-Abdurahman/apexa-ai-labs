@@ -14,7 +14,7 @@ export function CapabilitiesSection() {
   const items = messages.capabilities.items;
 
   return (
-    <section className="py-32 relative">
+    <section className="py-32 relative bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="grid lg:grid-cols-2 gap-8 mb-24 items-end pb-8 border-b border-black/10">

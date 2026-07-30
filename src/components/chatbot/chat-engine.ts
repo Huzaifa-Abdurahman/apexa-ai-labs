@@ -41,8 +41,8 @@ const knowledge: { match: RegExp; reply: Reply }[] = [
   {
     match: /contact|book|call|consult|تواصل|احجز|استشار/i,
     reply: {
-      en: "Happy to connect you. Open Contact to book a call, email contact@apexa.ai, or WhatsApp us — our Makkah team replies quickly.",
-      ar: "يسعدنا التواصل. افتح صفحة تواصل لحجز مكالمة، أو راسل contact@apexa.ai، أو واتساب — فريق مكة يرد بسرعة.",
+      en: "Happy to connect you. Open Contact to book a call, email info@apexaailabs.com or galaxysoftwarehub@gmail.com, or WhatsApp +92 345 156 9778 / +44 7449 703113 — our team replies quickly.",
+      ar: "يسعدنا التواصل. افتح صفحة تواصل لحجز مكالمة، أو راسل info@apexaailabs.com أو galaxysoftwarehub@gmail.com، أو واتساب +92 345 156 9778 / +44 7449 703113 — فريقنا يرد بسرعة.",
     },
   },
   {

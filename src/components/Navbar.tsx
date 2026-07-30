@@ -57,6 +57,7 @@ export default function Navbar() {
     { name: t("nav.about"), href: "/about" },
     { name: t("nav.services"), href: "/services" },
     { name: t("nav.industries"), href: "/industries" },
+    { name: t("nav.projects"), href: "/projects" },
     { name: t("nav.contact"), href: "/contact" },
   ];
 
@@ -68,8 +69,8 @@ export default function Navbar() {
   return (
     <div
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-500 ease-in-out",
-        scrolled ? "pt-2 px-2" : "pt-6 px-4"
+        "fixed top-9 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-500 ease-in-out",
+        scrolled ? "pt-2 px-2" : "pt-4 px-4 sm:pt-5"
       )}
     >
       <motion.nav

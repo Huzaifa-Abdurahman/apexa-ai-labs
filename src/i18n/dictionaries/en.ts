@@ -1,8 +1,11 @@
+import { serviceDetailsEn } from "@/i18n/service-details-en";
+
 export const en = {
   nav: {
     about: "About",
     services: "Services",
     industries: "Industries",
+    projects: "Projects",
     contact: "Contact",
     bookCall: "Book a call",
     language: "Language",
@@ -20,11 +23,11 @@ export const en = {
     resources: "Resources",
     getStarted: "Get started",
     customSoftware: "Custom software",
-    aiAutomations: "AI automations",
+    aiAutomations: "AI agents & automations",
     voiceWhatsapp: "Voice & WhatsApp AI",
-    aiPipelines: "AI pipelines",
-    workflows: "Automation workflows",
-    aiApps: "AI apps",
+    aiPipelines: "Live reports & insights",
+    workflows: "Web development",
+    aiApps: "Smart business apps",
     umrahHotels: "Umrah & hotels",
     healthcare: "Healthcare & clinics",
     logistics: "Logistics & transport",
@@ -34,6 +37,7 @@ export const en = {
     about: "About Apexa",
     team: "Meet the team",
     mission: "Our mission",
+    projects: "Projects & portfolio",
     contact: "Contact us",
     faq: "FAQ",
     bookCall: "Book a consultation",
@@ -41,8 +45,8 @@ export const en = {
     servicesOverview: "All services",
     industriesOverview: "All industries",
     privacy: "Privacy Policy",
-    cookies: "Cookie Preferences",
-    terms: "Terms of Use",
+    cookies: "Cookie Policy",
+    terms: "Terms & Conditions",
     privacyPolicy: "Privacy Policy",
     rights: "© 2026 Apexa AI Labs",
     linkedin: "LinkedIn",
@@ -125,6 +129,93 @@ export const en = {
       "This is the best agency ever when it comes to shipping custom software. Ten on ten recommended.",
     quoteAuthor: "Barakah Transport",
     quoteRole: "Logistics Partner · Saudi Arabia",
+    showcase: {
+      eyebrow: "What we do — in plain words",
+      title: "You run the business.",
+      titleHighlight: "We remove the busywork.",
+      subtitle:
+        "Four clear ways Apexa helps companies grow. Read each one — when it sounds like your problem, that is where we start.",
+      cards: [
+        {
+          id: "assistant",
+          badge: "Most requested",
+          title: "An AI employee that never sleeps",
+          desc: "It replies on WhatsApp and answers phone calls in Arabic or English, books appointments, and follows up with customers — day and night.",
+          points: [
+            "Instant WhatsApp replies",
+            "Natural voice calls",
+            "Books & confirms appointments",
+          ],
+          imageAlt: "3D robot assistant replying to customer messages on a phone",
+        },
+        {
+          id: "software",
+          badge: "",
+          title: "One system instead of ten spreadsheets",
+          desc: "Custom software built around how your team already works — bookings, inventory, staff, and billing in one clean place.",
+          points: ["Built around your workflow", "Arabic & English", "Works on any device"],
+          imageAlt: "3D dashboard for business operations",
+        },
+        {
+          id: "automation",
+          badge: "",
+          title: "Repetitive work, done automatically",
+          desc: "Invoices, reminders, reports, and follow-ups happen on their own — so your people spend time with customers, not copy-paste.",
+          points: ["Auto invoices & reminders", "Reports without chasing", "Fewer human errors"],
+          imageAlt: "Animated chatbot conversation illustration",
+        },
+        {
+          id: "growth",
+          badge: "",
+          title: "Websites & apps that win customers",
+          desc: "Fast, beautiful, Arabic-ready websites and apps that turn visitors into bookings and calls.",
+          points: ["Loads fast", "Looks premium", "Made to convert"],
+          imageAlt: "Interactive 3D laptop mockup",
+        },
+      ],
+      sectorsEyebrow: "Built for your industry",
+      sectorsTitle: "We already speak your sector's language",
+      sectors: [
+        {
+          id: "hospitality",
+          title: "Hotels & Umrah operators",
+          desc: "Bookings, guest questions, and peak-season chaos — handled by AI while your team welcomes guests.",
+          imageAlt: "Grand hotel towers in Makkah, Saudi Arabia",
+        },
+        {
+          id: "legal",
+          title: "Law firms & professional services",
+          desc: "Client intake, appointment scheduling, and document follow-ups — organized and automatic.",
+          imageAlt: "Scales of justice in front of the Saudi flag",
+        },
+      ],
+      statsTitle: "The numbers behind the trust",
+      stats: [
+        { value: 4, suffix: "+", label: "Years building" },
+        { value: 100, suffix: "+", label: "Projects delivered" },
+        { value: 5, suffix: "+", label: "Cities served" },
+        { value: 8, suffix: "+", label: "Countries reached" },
+      ],
+      stepsEyebrow: "How it starts",
+      stepsTitle: "Three simple steps — no tech knowledge needed",
+      steps: [
+        {
+          title: "Tell us what hurts",
+          desc: "A free 20-minute call. You explain the problem in your own words.",
+        },
+        {
+          title: "We build it for you",
+          desc: "You see progress every week and approve everything before launch.",
+        },
+        {
+          title: "You grow, we stay close",
+          desc: "Your team gets training, and we support you after going live.",
+        },
+      ],
+      ctaPrimary: "Book a free consultation",
+      ctaSecondary: "Explore all services",
+      interactiveHint: "Built for web & mobile",
+    },
   },
   hero: {
     badge: "Powering businesses across KSA",
@@ -132,7 +223,7 @@ export const en = {
     line2: "Custom Software",
     subtitle: "Built for Saudi teams who value trust, speed & excellence",
     body:
-      "From Makkah HQ we build American-standard software with full Arabic support — voice AI, WhatsApp agents, custom platforms, and workflows that remove operational pain.",
+      "From our Makkah HQ we build software your team can actually use — WhatsApp & voice AI that answer customers, custom systems that replace spreadsheets, and automations that remove daily busywork. Full Arabic support.",
     bookCta: "Book a consultation",
     exploreCta: "Explore services",
     builtFor: "Built for",
@@ -144,11 +235,22 @@ export const en = {
       "Custom ERP / CRM platforms",
       "Automation that scales with you",
     ],
-    hyperWords: ["Software", "Automations", "Voice AI", "Pipelines", "Workflows"],
+    hyperWords: ["Software", "Automations", "Voice AI", "Reports", "Workflows"],
     morphing: ["Trust", "Speed", "Scale", "إتقان", "Makkah", "KSA"],
+    visualLabel: "Live AI command center",
+    visualAlt:
+      "Apexa AI command center dashboard connecting WhatsApp, voice AI, CRM, and analytics",
+    locationsLabel: "Where we operate",
+    locations: [
+      { id: "ksa", name: "Saudi Arabia", city: "Makkah · Jeddah · Riyadh" },
+      { id: "uae", name: "UAE", city: "Dubai" },
+      { id: "uk", name: "United Kingdom", city: "London" },
+      { id: "usa", name: "USA", city: "New York" },
+      { id: "pk", name: "Pakistan", city: "Islamabad" },
+    ],
   },
   ticker: {
-    label: "Cities & sectors we serve",
+    label: "Brands & builds we ship for",
     hospitality: "Hospitality",
     healthcare: "Healthcare",
     logistics: "Logistics",
@@ -205,6 +307,25 @@ export const en = {
     playVideo: "Play video",
     pauseVideo: "Pause video",
     projects: [
+      {
+        title: "LeadEnrich",
+        titleAr: "ليد إنريتش",
+        description:
+          "Premium AI B2B SaaS for lead enrichment and scraping — product-grade UI built to convert demos into paid seats.",
+        tag: "AI SaaS",
+      },
+      {
+        title: "3D Website Experience",
+        titleAr: "تجربة موقع ثلاثي الأبعاد",
+        description: "Immersive 3D web presence — motion, depth, and premium storytelling for brands that need to stand out.",
+        tag: "3D Web",
+      },
+      {
+        title: "Client Product Build",
+        titleAr: "بناء منتج للعميل",
+        description: "End-to-end product walkthrough — clean flows, fast interactions, and a polished delivery ready for users.",
+        tag: "Product",
+      },
       {
         title: "AI Agent Ops",
         titleAr: "عمليات وكلاء الذكاء",
@@ -325,18 +446,51 @@ export const en = {
     sending: "Sending…",
   },
   about: {
-    eyebrow: "About us",
-    title: "About Apexa AI Labs",
-    subtitle: "A Makkah-based AI lab building custom software and automations for Saudi Arabia.",
+    eyebrow: "About Apexa",
+    title: "Apexa AI Labs",
+    titleLine: "Makkah-based AI & software for Saudi operators",
+    subtitle:
+      "We build custom software, AI agents, and workflows that remove busywork — so your team can focus on customers, not inboxes.",
     morphing: ["Knowledge", "Innovation", "Trust", "Excellence", "Makkah", "KSA"],
-    ayahLabel: "Business guidance from the Quran",
+    ayahLabel: "Our work ethic",
     ayahRef: "At-Tawbah 9:105",
-    storyBadge: "Makkah HQ · Serving the Kingdom",
-    storyTitle: "Built in the heart of the Kingdom",
+    ayahTranslation:
+      "And say, “Do [as you will], for Allah will see your deeds, and [so will] His Messenger and the believers.”",
+    storyBadge: "Makkah HQ · Serving KSA",
+    storyTitle: "Close to the work that never sleeps",
+    storyLead:
+      "Apexa started in Makkah to stay near the businesses that run under real pressure — hotels, clinics, logistics, law firms, and multi-city operations.",
     storyBody:
-      "We started in Makkah to stay close to the operators who keep hospitality, clinics, logistics, and enterprise teams running — especially when demand peaks.",
-    valuesTitle: "What guides us",
-    valuesSubtitle: "Principles we bring into every engagement",
+      "Peak season, Arabic customers, WhatsApp chaos, and systems that don’t talk to each other. We design for that reality first, then scale cleanly across Jeddah, Madinah, Dammam, and Riyadh.",
+    storyPoints: [
+      "Arabic-first delivery with English when needed",
+      "Built for Vision 2030 operators, not demo decks",
+      "Software your team can own after go-live",
+    ],
+    stats: [
+      { value: "4+", label: "Years building for KSA" },
+      { value: "5", label: "Cities we serve" },
+      { value: "100+", label: "Digital builds shipped" },
+      { value: "AR/EN", label: "Delivery languages" },
+    ],
+    focusTitle: "What we build",
+    focusSubtitle: "Practical systems — not hype.",
+    focus: [
+      {
+        title: "Custom software",
+        desc: "Platforms around bookings, staff, inventory, and billing — one place instead of scattered chats and sheets.",
+      },
+      {
+        title: "AI agents & automations",
+        desc: "WhatsApp, voice, and workflow agents that reply, book, and follow up while your team handles the human moments.",
+      },
+      {
+        title: "Websites & apps that convert",
+        desc: "Fast, Arabic-ready experiences that turn visitors into calls, bookings, and qualified leads.",
+      },
+    ],
+    valuesTitle: "How we work",
+    valuesSubtitle: "Three promises we keep on every project.",
     values: [
       {
         title: "Clarity over hype",
@@ -354,14 +508,30 @@ export const en = {
         desc: "Custom software and AI that your team can own, extend, and trust under pressure.",
       },
     ],
-    teamTitle: "Meet the team",
-    teamSubtitle: "Builders, operators, and partners focused on Saudi outcomes",
+    processTitle: "A simple path from pain to product",
+    processSubtitle: "No jargon. Clear stages. Visible progress.",
+    process: [
+      { step: "01", title: "Listen", desc: "We map your city, industry, and the bottleneck slowing the team." },
+      { step: "02", title: "Design", desc: "You see a clear plan: what to build first, what to automate, what to leave alone." },
+      { step: "03", title: "Build", desc: "We ship working software and AI in stages your staff can click and trust." },
+      { step: "04", title: "Hand over", desc: "Training, support, and ownership — so the system stays yours." },
+    ],
+    teamTitle: "The people behind Apexa",
+    teamSubtitle: "A focused Makkah lab of builders who care about Saudi outcomes.",
+    teamRoles: [
+      { role: "Product & strategy", desc: "Turns business pain into a clear build plan." },
+      { role: "Engineering", desc: "Ships reliable software, integrations, and AI systems." },
+      { role: "Design & web", desc: "Crafts interfaces that feel premium and convert." },
+      { role: "Delivery & support", desc: "Keeps go-live smooth and teams confident." },
+    ],
     missionTitle: "Our mission",
     missionBody:
       "Help Saudi businesses move from busywork to clarity — with AI, custom software, and workflows that scale without losing the human standard of service.",
     missionAr: "نساعد أعمال المملكة على الانتقال من الانشغال إلى الوضوح — بذكاء اصطناعي وبرمجيات مخصصة وسير عمل قابلة للتوسع.",
+    ctaTitle: "Ready to remove one bottleneck?",
+    ctaBody: "Tell us your city and what’s slowing the team — we’ll map a practical next step from Makkah.",
     ctaServices: "Explore our services",
-    ctaContact: "Contact us",
+    ctaContact: "Book a discovery call",
   },
   servicesPage: {
     badge: "Based in Makkah · Serving KSA only",
@@ -382,6 +552,7 @@ export const en = {
     deliverBody:
       "American-standard engineering with Arabic-first delivery — custom software, AI, and workflows mapped to how Saudi teams actually work.",
     discussService: "Discuss this service",
+    learnMore: "See full details",
     citiesBadge: "City-by-city",
     citiesTitle: "Solutions mapped to each city’s industries",
     citiesSubtitleAr: "Solutions for each city by its needs",
@@ -417,42 +588,42 @@ export const en = {
         id: "software",
         title: "Custom Software Development",
         description:
-          "Bespoke platforms, ERP/CRM modules, and internal tools designed around how KSA businesses actually operate — not generic templates.",
+          "Systems built for how Saudi offices actually work — bookings, clients, inventory, and billing in one place. Not generic templates.",
         features: ["ERP & CRM", "Internal portals", "Mobile + web apps", "Legacy modernization"],
       },
       {
         id: "automations",
-        title: "AI Automations",
+        title: "AI Agents & Automations",
         description:
-          "Voice agents, WhatsApp bots, API integrations, and intelligent assistants that answer customers and move work forward 24/7.",
-        features: ["AI voice", "WhatsApp agents", "API integrations", "Support automation"],
+          "AI agents that handle customer chats, WhatsApp, and calls — plus automations that book appointments, follow up, and move work forward day and night.",
+        features: ["AI agents", "WhatsApp automation", "Auto replies", "Customer support AI"],
       },
       {
         id: "apps",
-        title: "AI Apps",
+        title: "Smart Business Apps",
         description:
-          "Productized AI experiences for your staff and customers — from ops copilots to industry-specific decision apps.",
-        features: ["Staff copilots", "Customer AI apps", "Arabic-ready UX", "Role-based access"],
+          "Practical AI apps your team uses every day — reception copilots, RAG knowledge assistants, and industry apps for clinics, law firms, and hotels.",
+        features: ["Staff copilots", "RAG knowledge base", "Industry apps", "Arabic-ready UX"],
       },
       {
         id: "pipelines",
-        title: "AI Pipelines",
+        title: "Live Reports & Insights",
         description:
-          "Reliable data and model pipelines that turn bookings, sales, sensors, and tickets into clean, actionable intelligence.",
-        features: ["ETL / ELT", "Realtime feeds", "Forecasting", "Dashboards"],
+          "Connect CRMs, bookings, documents, and tickets into one clear view — so leaders get live reports without chasing spreadsheets.",
+        features: ["CRM sync", "Live dashboards", "Sales & ops reports", "Forecasting"],
       },
       {
-        id: "workflows",
-        title: "Automation Workflows",
+        id: "web",
+        title: "Web Development",
         description:
-          "End-to-end process automation that removes handoffs, approvals delays, and repetitive busywork across your teams.",
-        features: ["Approvals", "Ops playbooks", "Multi-tool sync", "SLA tracking"],
+          "Fast, modern, Arabic-ready websites that look premium and turn visitors into calls, bookings, and WhatsApp chats.",
+        features: ["Business websites", "Landing pages", "Arabic & English", "SEO-ready"],
       },
       {
         id: "voice",
         title: "Voice & Integration Layer",
         description:
-          "Connect your phones, CRMs, payment tools, and ops systems so AI can take real actions — not just chat.",
+          "Connect phones, WhatsApp, CRM, and payments so AI can take real actions — not just chat.",
         features: ["Telephony AI", "CRM sync", "Payments hooks", "Event triggers"],
       },
     ],
@@ -640,6 +811,36 @@ export const en = {
     ctaPrimary: "Book a free consultation",
     ctaSecondary: "Explore services",
   },
+  projectsPage: {
+    eyebrow: "Selected work",
+    title: "Projects that turn visitors into",
+    titleHighlight: "customers",
+    subtitle:
+      "100+ real websites and digital builds — including live premium SaaS, Makkah transport, Quran education, Islamic RAG, and more. Built to look premium and convert.",
+    ctaPrimary: "Start your project",
+    ctaSecondary: "See our services",
+    statProjects: "Shipped builds",
+    statIndustries: "Industry types",
+    statReach: "Client markets",
+    searchPlaceholder: "Search a brand…",
+    galleryTitle: "Portfolio gallery",
+    liveEyebrow: "Live client work",
+    liveTitle: "Featured live projects",
+    archiveTitle: "More portfolio work",
+    premiumBadge: "Premium",
+    liveBadge: "Live",
+    visitSite: "Visit live site",
+    showing: "Showing {count} of {total} projects",
+    empty: "No projects match that filter. Try another category or search.",
+    viewProject: "View project",
+    close: "Close",
+    requestSimilar: "Request a similar build",
+    bottomCtaTitle: "Want a site that wins trust on first scroll?",
+    bottomCtaBody:
+      "Tell us your industry and city — we’ll map a conversion-first website or product experience for your brand.",
+    bottomCtaButton: "Book a discovery call",
+  },
+  serviceDetails: serviceDetailsEn,
 };
 
 export type Dictionary = typeof en;
