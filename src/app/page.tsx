@@ -10,7 +10,6 @@ import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
 import { HomeShowcase } from "@/components/ui/home-showcase";
 import { CapabilitiesSection } from "@/components/ui/capabilities-section";
 import { ScalingCompanies } from "@/components/ui/scaling-companies";
-import { AIServicesSection } from "@/components/ui/ai-services-section";
 import { AnimatedTestimonialsDemo } from "@/components/ui/animated-testimonials-demo";
 import QRCode from "react-qr-code";
 import { useLocale } from "@/i18n/locale-provider";
@@ -25,14 +24,14 @@ export default function Home() {
         <ShaderShowcase />
       </div>
 
-      <div className="relative w-full overflow-hidden border-y border-white/10 bg-black">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(6,182,212,0.14),_transparent_45%),radial-gradient(ellipse_at_bottom,_rgba(249,115,22,0.08),_transparent_40%)]" />
+      <div className="relative w-full overflow-hidden border-y border-slate-200 bg-[#F8FAFC]">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(139,92,246,0.1),_transparent_45%),radial-gradient(ellipse_at_bottom,_rgba(6,182,212,0.05),_transparent_40%)]" />
         <Sparkles
           className="absolute inset-0"
           density={40}
           speed={0.55}
-          opacity={0.32}
-          color="#06b6d4"
+          opacity={0.6}
+          color="#8B5CF6"
         />
         <div className="relative z-10">
           <LogoTicker />
@@ -41,11 +40,9 @@ export default function Home() {
 
       <HomeShowcase />
 
-      <CapabilitiesSection />
       <ScalingCompanies />
-      <AIServicesSection />
-
-      <section className="py-24 bg-background border-y border-black/5">
+      <CapabilitiesSection />
+      <section className="py-24 bg-[#F8FAFC] border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2
@@ -70,12 +67,15 @@ export default function Home() {
             <AnimatedTestimonialsDemo />
           </div>
 
-          <NeonGradientCard className="mt-12 w-full h-full items-center justify-center text-center">
+          <NeonGradientCard 
+            className="mt-8 w-full max-w-7xl mx-auto h-full items-center justify-center text-center"
+            neonColors={{ firstColor: "#8b5cf6", secondColor: "#06b6d4" }}
+          >
             <div className="grid lg:grid-cols-2 relative z-10 w-full text-start">
-              <div className="p-10 md:p-14 lg:p-20 lg:border-e border-white/5 flex flex-col justify-center">
+              <div className="p-5 sm:p-6 lg:p-8 lg:border-e border-white/5 flex flex-col justify-center">
                 <h2
                   className={cn(
-                    "text-3xl md:text-4xl font-semibold text-gray-800 mb-4 leading-tight tracking-tight",
+                    "text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 mb-2 leading-tight tracking-tight",
                     isRtl && "font-arabic-ui"
                   )}
                 >
@@ -84,48 +84,50 @@ export default function Home() {
                 </h2>
                 <div
                   className={cn(
-                    "text-lg md:text-xl text-gray-600 mb-8 leading-relaxed font-medium",
+                    "text-base md:text-lg text-gray-600 mb-4 leading-relaxed font-medium",
                     isRtl && "font-arabic-ui"
                   )}
                 >
                   {t("home.scaleBody")}
                 </div>
 
-                <div className="flex flex-wrap items-start gap-8 mt-4">
-                  <Link href="/contact" className="inline-block">
-                    <InteractiveHoverButton>{t("home.startProject")}</InteractiveHoverButton>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-1 w-full">
+                  <Link href="/contact" className="block w-full sm:inline-block sm:w-auto">
+                    <InteractiveHoverButton className="w-full justify-center">{t("home.startProject")}</InteractiveHoverButton>
                   </Link>
 
-                  <div className="p-6 bg-[#18181b] rounded-3xl inline-flex flex-col items-center justify-center border border-black/10 shadow-2xl relative overflow-hidden group">
-                    <div className="bg-white p-3 rounded-2xl mb-4 relative z-10 shadow-sm">
-                      <QRCode value="https://wa.me/923451569778" size={130} level="H" />
+                  <div className="p-3 sm:p-4 bg-white border border-slate-200 rounded-3xl flex sm:inline-flex flex-row items-center gap-4 shadow-xl relative overflow-hidden group w-full sm:w-auto text-start">
+                    <div className="bg-white p-1.5 rounded-xl shrink-0 relative z-10 shadow-sm border border-slate-100">
+                      <QRCode value="https://wa.me/923451569778" size={64} level="H" />
                     </div>
-                    <h3
-                      className={cn(
-                        "text-white font-semibold text-[15px] mb-1.5 relative z-10",
-                        isRtl && "font-arabic-ui"
-                      )}
-                    >
-                      {t("home.qrTitle")}
-                    </h3>
-                    <p className={cn("text-primary text-sm relative z-10", isRtl && "font-arabic-ui")}>
-                      {t("home.whatsappCta")}
-                    </p>
+                    <div>
+                      <h3
+                        className={cn(
+                          "text-slate-900 font-bold text-[14px] mb-0.5 relative z-10 leading-tight",
+                          isRtl && "font-arabic-ui"
+                        )}
+                      >
+                        {t("home.qrTitle")}
+                      </h3>
+                      <p className={cn("text-purple-600 font-medium text-[11px] relative z-10 leading-tight", isRtl && "font-arabic-ui")}>
+                        {t("home.whatsappCta")}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="p-10 md:p-14 lg:p-20 flex flex-col justify-center bg-black/[0.02]">
+              <div className="p-5 sm:p-6 lg:p-8 flex flex-col justify-center bg-slate-50/50">
                 <div
                   className={cn(
-                    "mb-8 text-gray-600 text-lg md:text-xl leading-relaxed",
+                    "mb-4 text-gray-600 text-base sm:text-lg leading-relaxed",
                     isRtl && "font-arabic-ui"
                   )}
                 >
                   &quot;{t("home.quote")}&quot;
                 </div>
                 <div>
-                  <div className="text-gray-900 font-bold text-lg">{t("home.quoteAuthor")}</div>
+                  <div className="text-gray-900 font-bold text-base">{t("home.quoteAuthor")}</div>
                   <div className={cn("text-gray-600 text-sm", isRtl && "font-arabic-ui")}>
                     {t("home.quoteRole")}
                   </div>

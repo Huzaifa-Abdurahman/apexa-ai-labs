@@ -42,7 +42,7 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
   roiTitle: "ROI you actually feel",
   whyTitle: "Why Apexa over other companies",
   ctaTitle: "Ready to start this service?",
-  ctaBody: "Tell us your city and bottleneck — we’ll map a clear plan from Makkah.",
+  ctaBody: "Tell us your industry and bottleneck — we’ll map a clear plan for your global operations.",
   ctaPrimary: "Book a free consultation",
   ctaSecondary: "WhatsApp us",
   weekLabel: "Week",
@@ -50,13 +50,13 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
     software: {
       eyebrow: "Custom systems",
       headline: "Custom Software Development",
-      tagline: "One system that matches how your Saudi office really works.",
+      tagline: "One system that matches how your business really works.",
       plain:
         "Instead of forcing your team into a generic tool, we build software around your bookings, clients, inventory, and billing — so staff stop jumping between WhatsApp, Excel, and half-broken apps.",
       forWho: [
-        "Small and mid-size offices that outgrew spreadsheets",
-        "Law firms, clinics, and hotels needing cleaner operations",
-        "Companies that want Arabic + English in the same system",
+        "Small and mid-size businesses that outgrew spreadsheets",
+        "Organizations and enterprises needing cleaner operations",
+        "Companies that want a robust, multilingual system",
       ],
       timeline: [
         {
@@ -76,7 +76,7 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
           desc: "Training, go-live support, and a clear ownership plan for your team.",
         },
       ],
-      tech: ["Next.js / React", "Node.js APIs", "PostgreSQL", "Role-based access", "Arabic RTL UI", "Cloud hosting (KSA-friendly)"],
+      tech: ["Next.js / React", "Node.js APIs", "PostgreSQL", "Role-based access", "Multilingual UI", "Secure Cloud hosting"],
       roi: [
         { label: "Less busywork", value: "30–60%", note: "fewer hours wasted on copy-paste and chasing files" },
         { label: "Faster ops", value: "2–5×", note: "quicker booking, billing, and handoffs" },
@@ -84,10 +84,10 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
         { label: "Payback window", value: "3–6 mo", note: "typical for focused office systems" },
       ],
       why: [
-        "We design for Saudi seasons, Arabic customers, and multi-city ops — not US SaaS assumptions.",
+        "We design for global operations, diverse markets, and multi-city scale — not generic SaaS assumptions.",
         "You own the system. No black-box lock-in that dies when the vendor disappears.",
         "We start with the bottleneck that costs you money, then expand — not a 12-month fantasy roadmap.",
-        "Local delivery from Makkah with clear English + Arabic communication.",
+        "Global delivery with clear multilingual communication.",
       ],
     },
     automations: {
@@ -97,9 +97,9 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
       plain:
         "Think of an employee who never sleeps: it answers WhatsApp and calls in Arabic or English, books appointments, and follows up automatically. Your team handles the important conversations — the AI handles the repetitive ones.",
       forWho: [
-        "Clinics flooded with appointment messages",
-        "Law firms and offices drowning in WhatsApp follow-ups",
-        "Hotels and Umrah operators during peak seasons",
+        "Businesses flooded with repetitive customer messages",
+        "Companies and offices drowning in manual follow-ups",
+        "Custom and other services during peak seasons",
       ],
       timeline: [
         {
@@ -128,8 +128,8 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
       ],
       why: [
         "We build agents that act inside your real tools — not chatbots that only give FAQ answers.",
-        "Arabic-first quality, not English bots with weak translation.",
-        "Designed for KSA peak seasons (Umrah, holidays) when inbox volume explodes.",
+        "Multilingual-first quality, not basic bots with weak translation.",
+        "Designed for global peak seasons and holidays when inbox volume explodes.",
         "Clear escalation to humans so customers never feel abandoned.",
       ],
     },
@@ -140,8 +140,8 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
       plain:
         "We build practical apps: a reception copilot, a RAG knowledge assistant that answers from your documents, or an industry app for clinics and law firms. Staff type a question — the app answers from your real data.",
       forWho: [
-        "Teams that repeat the same answers all day",
-        "Offices with SOPs and documents nobody can find fast",
+        "Teams that repeat the same processes all day",
+        "Organizations with documents nobody can find fast",
         "Managers who want staff tools without training manuals",
       ],
       timeline: [
@@ -151,7 +151,7 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
         },
         {
           title: "Knowledge + UI build",
-          desc: "Upload docs / connect data, then ship a clean Arabic-ready app.",
+          desc: "Upload docs / connect data, then ship a clean multilingual-ready app.",
         },
         {
           title: "Pilot with real staff",
@@ -162,7 +162,7 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
           desc: "Permissions, training, and expansion to more departments.",
         },
       ],
-      tech: ["RAG / vector search", "LLM copilots", "Next.js apps", "Document ingestion", "Role-based access", "Arabic UX"],
+      tech: ["RAG / vector search", "LLM copilots", "Next.js apps", "Document ingestion", "Role-based access", "Multilingual UX"],
       roi: [
         { label: "Answer speed", value: "Seconds", note: "vs minutes searching folders and chats" },
         { label: "Onboarding", value: "Faster", note: "new staff learn by asking the app" },
@@ -171,7 +171,7 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
       ],
       why: [
         "RAG grounded in your files — fewer hallucinations than generic ChatGPT for business.",
-        "Built for non-tech staff: simple screens, Arabic support, role permissions.",
+        "Built for non-tech staff: simple screens, multilingual support, role permissions.",
         "Industry-aware for clinics, law, and hospitality — not one generic chatbot skin.",
         "We measure usage. If people don’t open it, we fix it.",
       ],
@@ -183,9 +183,9 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
       plain:
         "We connect your CRM, bookings, documents, and support tickets so leaders see what is happening today — sales, operations, and risks — without asking five people for updates.",
       forWho: [
-        "Owners tired of late weekly spreadsheet reports",
-        "Sales teams using CRM + WhatsApp with no single truth",
-        "Ops managers who need live dashboards across branches",
+        "Business owners tired of late weekly spreadsheet reports",
+        "Sales and operations teams with no single source of truth",
+        "Managers who need live dashboards across operations",
       ],
       timeline: [
         {
@@ -198,7 +198,7 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
         },
         {
           title: "Dashboard live",
-          desc: "Leaders get a simple Arabic/English dashboard on phone or desktop.",
+          desc: "Leaders get a simple multilingual dashboard on phone or desktop.",
         },
         {
           title: "Alerts & forecasts",
@@ -214,20 +214,20 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
       ],
       why: [
         "We start from decisions you make weekly — not a 40-chart vanity BI project.",
-        "CRM + ops together, because Saudi teams live in WhatsApp and CRM at once.",
-        "Arabic-ready leadership views for owners who prefer clear numbers over jargon.",
+        "CRM + ops together, because modern teams live in WhatsApp and CRM at once.",
+        "Multilingual leadership views for owners who prefer clear numbers over jargon.",
         "Secure, practical architecture you can grow — without enterprise pricing theater.",
       ],
     },
     web: {
       eyebrow: "Websites",
       headline: "Web Development",
-      tagline: "A premium Arabic-ready website that wins trust and turns visitors into calls.",
+      tagline: "A premium multilingual website that wins trust and turns visitors into calls.",
       plain:
-        "Your website is often the first handshake with a customer. We build fast, modern sites that look professional, load quickly on mobile, and make it easy to book, call, or WhatsApp — in Arabic and English.",
+        "Your website is often the first handshake with a customer. We build fast, modern sites that look professional, load quickly on mobile, and make it easy to book, call, or WhatsApp — globally.",
       forWho: [
-        "Law firms, clinics, and offices that need a trustworthy online presence",
-        "Hotels and service companies that need bookings and inquiries",
+        "Businesses and enterprises that need a trustworthy online presence",
+        "Custom and other services that need bookings and inquiries",
         "Brands upgrading from outdated or template-looking sites",
       ],
       timeline: [
@@ -237,7 +237,7 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
         },
         {
           title: "Design & build",
-          desc: "Premium UI, Arabic RTL, and mobile-first pages that feel local and modern.",
+          desc: "Premium UI, multilingual RTL/LTR, and mobile-first pages that feel local and modern.",
         },
         {
           title: "SEO & conversion",
@@ -248,15 +248,15 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
           desc: "Go live, analytics, and a simple way for your team to update content.",
         },
       ],
-      tech: ["Next.js", "Tailwind CSS", "Arabic RTL", "Core Web Vitals", "SEO basics", "WhatsApp / form CTAs"],
+      tech: ["Next.js", "Tailwind CSS", "Multilingual RTL/LTR", "Core Web Vitals", "SEO basics", "WhatsApp / form CTAs"],
       roi: [
         { label: "Trust signal", value: "Stronger", note: "visitors take you seriously in seconds" },
-        { label: "Mobile speed", value: "Fast", note: "less bounce on Saudi mobile traffic" },
+        { label: "Mobile speed", value: "Fast", note: "less bounce on mobile traffic" },
         { label: "Inquiries", value: "↑", note: "clear CTAs to call, book, or WhatsApp" },
         { label: "Payback window", value: "1–3 mo", note: "when the old site was losing leads" },
       ],
       why: [
-        "Designed for KSA buyers: Arabic first, trust, and WhatsApp-ready conversion.",
+        "Designed for global buyers: multilingual, trust, and WhatsApp-ready conversion.",
         "Performance matters — pretty but slow sites lose customers.",
         "We write pages for non-tech visitors: clear offer, clear next step.",
         "Same team can later connect AI chat or booking — the site is not a dead end.",
@@ -270,7 +270,7 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
         "AI is useless if it only chats. We connect your phone line, WhatsApp, CRM, and payment tools so an agent can book, update records, and trigger the next step automatically.",
       forWho: [
         "Businesses with too many tools that don’t sync",
-        "Teams that re-enter the same customer data in 3 places",
+        "Teams that re-enter the same customer data in multiple places",
         "Companies ready to let AI take real actions safely",
       ],
       timeline: [
@@ -301,7 +301,7 @@ export const serviceDetailsEn: ServiceDetailsDictionary = {
       why: [
         "We integrate for outcomes (booked, paid, updated) — not “API connected” theater.",
         "Safety rules and audit trails so AI actions stay trustworthy.",
-        "KSA-ready stack choices that fit how local teams already work.",
+        "Modern stack choices that fit how global teams already work.",
         "One partner for agents + software + integrations — fewer vendor finger-pointing.",
       ],
     },

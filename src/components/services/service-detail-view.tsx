@@ -12,6 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { ServiceImageCarousel } from "@/components/ui/service-image-carousel";
 import { useLocale } from "@/i18n/locale-provider";
 import {
   SERVICE_IMAGES,
@@ -31,14 +32,14 @@ export function ServiceDetailView({ slug }: { slug: ServiceSlug }) {
   return (
     <div className="overflow-hidden pb-24">
       {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-[#05070b] pt-28 pb-16">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(6,182,212,0.2),_transparent_55%),radial-gradient(ellipse_at_bottom_right,_rgba(249,115,22,0.12),_transparent_45%)]" />
+      <section className="relative isolate overflow-hidden bg-background pt-28 pb-16">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(139,92,246,0.1),_transparent_55%),radial-gradient(ellipse_at_bottom_right,_rgba(6,182,212,0.1),_transparent_45%)]" />
         <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 px-4 lg:grid-cols-2">
           <div className={cn(isRtl ? "lg:text-end" : "lg:text-start")}>
             <Link
               href="/services"
               className={cn(
-                "mb-6 inline-flex items-center gap-2 text-sm font-semibold text-white/60 transition hover:text-white",
+                "mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-slate-900",
                 isRtl && "font-arabic-ui flex-row-reverse"
               )}
             >
@@ -48,7 +49,7 @@ export function ServiceDetailView({ slug }: { slug: ServiceSlug }) {
 
             <p
               className={cn(
-                "mb-3 text-xs font-bold uppercase tracking-[0.2em] text-cyan-300/80",
+                "mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary/80",
                 isRtl && "font-arabic-ui normal-case tracking-normal text-sm"
               )}
             >
@@ -56,7 +57,7 @@ export function ServiceDetailView({ slug }: { slug: ServiceSlug }) {
             </p>
             <h1
               className={cn(
-                "font-heading text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl",
+                "font-heading text-4xl font-bold tracking-tight text-slate-900 md:text-5xl lg:text-6xl",
                 isRtl && "font-arabic-ui"
               )}
             >
@@ -64,7 +65,7 @@ export function ServiceDetailView({ slug }: { slug: ServiceSlug }) {
             </h1>
             <p
               className={cn(
-                "mt-4 max-w-xl text-lg font-medium text-white/70",
+                "mt-4 max-w-xl text-lg font-medium text-slate-600",
                 isRtl && "font-arabic-ui"
               )}
             >
@@ -75,7 +76,7 @@ export function ServiceDetailView({ slug }: { slug: ServiceSlug }) {
               <Link href="/contact">
                 <InteractiveHoverButton
                   className={cn(
-                    "border-white/15 bg-white text-black hover:bg-white",
+                    "border-slate-200 bg-slate-900 text-white hover:bg-slate-800",
                     isRtl && "font-arabic-ui"
                   )}
                 >
@@ -87,7 +88,7 @@ export function ServiceDetailView({ slug }: { slug: ServiceSlug }) {
                 target="_blank"
                 rel="noreferrer"
                 className={cn(
-                  "inline-flex items-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10",
+                  "inline-flex items-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50",
                   isRtl && "font-arabic-ui"
                 )}
               >
@@ -97,17 +98,25 @@ export function ServiceDetailView({ slug }: { slug: ServiceSlug }) {
           </div>
 
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-cyan-400/15 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[28px] border border-white/20 bg-white/10 p-4 shadow-2xl backdrop-blur-xl">
-              <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-[22px] bg-slate-950">
-                <Image
-                  src={SERVICE_IMAGES[slug]}
-                  alt={item.headline}
-                  width={520}
-                  height={390}
-                  priority
-                  className="h-[85%] w-auto max-w-[90%] object-contain"
-                />
+            <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-purple-400/10 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white p-4 shadow-xl">
+              <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-[22px] bg-slate-50">
+                {Array.isArray(SERVICE_IMAGES[slug]) ? (
+                  <ServiceImageCarousel
+                    images={SERVICE_IMAGES[slug] as string[]}
+                    title={item.headline}
+                    className="h-[85%] w-[90%]"
+                  />
+                ) : (
+                  <Image
+                    src={SERVICE_IMAGES[slug] as string}
+                    alt={item.headline}
+                    width={520}
+                    height={390}
+                    priority
+                    className="h-[85%] w-auto max-w-[90%] object-contain drop-shadow-xl"
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -200,10 +209,10 @@ export function ServiceDetailView({ slug }: { slug: ServiceSlug }) {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="overflow-hidden rounded-[28px] border border-black/5 bg-[#05070b] p-8 text-white shadow-xl md:p-10"
+          className="overflow-hidden rounded-[28px] border border-slate-200 bg-white p-8 text-slate-900 shadow-sm md:p-10"
         >
           <div className="mb-8 flex items-center gap-3">
-            <div className="flex size-10 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-orange-500">
+            <div className="flex size-10 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-orange-500 shadow-sm text-white">
               <TrendingUp className="size-5" />
             </div>
             <h2 className={cn("font-heading text-2xl font-bold md:text-3xl", isRtl && "font-arabic-ui")}>
@@ -214,15 +223,15 @@ export function ServiceDetailView({ slug }: { slug: ServiceSlug }) {
             {item.roi.map((r) => (
               <div
                 key={r.label}
-                className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-md"
+                className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm"
               >
-                <p className={cn("text-xs font-bold uppercase tracking-wider text-cyan-200/70", isRtl && "font-arabic-ui normal-case")}>
+                <p className={cn("text-xs font-bold uppercase tracking-wider text-slate-500", isRtl && "font-arabic-ui normal-case")}>
                   {r.label}
                 </p>
-                <p className="mt-2 font-heading text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-orange-300">
+                <p className="mt-2 font-heading text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-orange-600">
                   {r.value}
                 </p>
-                <p className={cn("mt-2 text-sm leading-relaxed text-white/60", isRtl && "font-arabic-ui")}>
+                <p className={cn("mt-2 text-sm leading-relaxed text-slate-600 font-medium", isRtl && "font-arabic-ui")}>
                   {r.note}
                 </p>
               </div>

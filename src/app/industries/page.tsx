@@ -100,7 +100,7 @@ const industries: Industry[] = [
     title: "Hotels & Hospitality",
     short: "Guest experience under pressure",
     icon: Hotel,
-    image: "/makkah.jpg",
+    image: "/hotel.jpg",
     cities: ["Makkah", "Madinah", "Jeddah", "Riyadh", "Dammam"],
     story:
       "Guests expect instant answers about rooms, check-in, late arrival, and nearby services. Front desks are busy; phones ring; WhatsApp never stops. Slow replies become bad reviews.",
@@ -188,7 +188,7 @@ const industries: Industry[] = [
     title: "Construction & Real Estate",
     short: "Sites, approvals & client updates",
     icon: Building2,
-    image: "/office.jpg",
+    image: "/contruction.jpg",
     cities: ["Riyadh", "Jeddah", "Dammam", "Makkah"],
     story:
       "Projects live on WhatsApp photos, verbal updates, and delayed Excel reports. Approvals wait. Clients ask “what’s the status?” and nobody has a single truthful answer.",
@@ -276,7 +276,7 @@ const industries: Industry[] = [
     title: "Manufacturing",
     short: "Inventory, production & quality",
     icon: Factory,
-    image: "/dammam.jpg",
+    image: "/manufacturing.jpg",
     cities: ["Dammam", "Riyadh", "Jeddah"],
     story:
       "Production plans change daily, but inventory and machine status still live in paper logs or outdated systems. By the time a shortage is visible, the line is already waiting.",
@@ -364,7 +364,7 @@ const industries: Industry[] = [
     title: "Retail & E-Commerce",
     short: "Stock, orders & customer care",
     icon: Store,
-    image: "/riyadh.jpg",
+    image: "/ecom.jpg",
     cities: ["Riyadh", "Jeddah", "Dammam", "Makkah", "Madinah"],
     story:
       "Customers buy across Instagram, WhatsApp, the website, and the store. Stock goes out of sync. Support answers “is this available?” all day while sales slip away.",

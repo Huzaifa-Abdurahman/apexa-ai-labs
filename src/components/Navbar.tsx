@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
-import { ChevronDown, Globe, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { useLocale } from "@/i18n/locale-provider";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/i18n/config";
@@ -54,11 +54,12 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { name: t("nav.about"), href: "/about" },
-    { name: t("nav.services"), href: "/services" },
-    { name: t("nav.industries"), href: "/industries" },
-    { name: t("nav.projects"), href: "/projects" },
-    { name: t("nav.contact"), href: "/contact" },
+    { name: t("nav.about"), href: "/about", hasDropdown: false },
+    { name: t("nav.services"), href: "/services", hasDropdown: false },
+    { name: "AI Trainings", href: "/ai-trainings", hasDropdown: false },
+    { name: t("nav.industries"), href: "/industries", hasDropdown: false },
+    { name: t("nav.projects"), href: "/projects", hasDropdown: false },
+    { name: t("nav.contact"), href: "/contact", hasDropdown: false },
   ];
 
   const selectLanguage = (next: Locale) => {
@@ -69,29 +70,23 @@ export default function Navbar() {
   return (
     <div
       className={cn(
-        "fixed top-9 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-500 ease-in-out",
-        scrolled ? "pt-2 px-2" : "pt-4 px-4 sm:pt-5"
+        "fixed top-12 left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-500 ease-in-out px-4 sm:px-6"
       )}
     >
       <motion.nav
         initial={false}
         animate={{
           width: "100%",
-          maxWidth: scrolled || mobileMenuOpen ? "100%" : "1200px",
-          borderRadius: scrolled || mobileMenuOpen ? "16px" : "9999px",
+          maxWidth: "1280px",
+          borderRadius: "9999px",
         }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "relative pointer-events-auto flex flex-col transition-colors duration-300 bg-[#0a0a0a] border border-white/10 shadow-2xl",
-          scrolled ? "px-4 sm:px-6" : "px-4 sm:px-8"
+          "relative pointer-events-auto flex flex-col transition-all duration-300 bg-white/95 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100",
+          scrolled ? "py-2 px-4 sm:px-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)]" : "py-2 px-4 sm:px-8"
         )}
       >
-        <div
-          className={cn(
-            "flex items-center justify-between w-full",
-            scrolled ? "h-16" : "h-16 sm:h-20"
-          )}
-        >
+        <div className="flex items-center justify-between w-full h-14">
           <div className="flex items-center gap-3">
             <Link
               href="/"
@@ -102,86 +97,94 @@ export default function Navbar() {
               <Image
                 src="/logo.png"
                 alt="Apexa AI Labs"
-                width={220}
-                height={80}
+                width={180}
+                height={60}
                 priority
-                className={cn(
-                  "h-14 w-auto object-contain object-left transition duration-300 group-hover:opacity-90 sm:h-16",
-                  scrolled ? "sm:h-[3.75rem]" : "sm:h-16"
-                )}
+                className="h-10 w-auto object-contain object-left transition duration-300 group-hover:opacity-80"
               />
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center justify-center gap-8 lg:gap-12 absolute left-1/2 -translate-x-1/2">
+          {/* Desktop Links */}
+          <div className="hidden xl:flex items-center justify-center gap-1 absolute left-1/2 -translate-x-1/2">
             {links.map((link) => (
               <Link
-                key={link.href}
+                key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-gray-300 hover:text-white text-sm font-medium transition-colors",
+                  "relative group px-4 py-2 flex items-center gap-1.5 text-slate-700 hover:text-blue-600 text-[15px] font-bold transition-colors rounded-full",
                   isRtl && "font-arabic-ui"
                 )}
               >
-                {link.name}
+                <span className="absolute inset-0 rounded-full bg-blue-50/80 scale-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100" />
+                <span className="relative z-10">{link.name}</span>
+                {link.hasDropdown && (
+                  <ChevronDown className="relative z-10 w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                )}
               </Link>
             ))}
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-4 md:gap-6 ms-auto md:ms-0">
-            <div className="relative" ref={dropdownRef}>
+          <div className="flex items-center gap-3 ms-auto md:ms-0">
+            {/* Language Selector */}
+            <div className="hidden sm:block relative" ref={dropdownRef}>
               <button
                 type="button"
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                className="flex items-center gap-1.5 text-gray-300 hover:text-white text-sm font-medium transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full"
+                className="flex items-center gap-2 bg-white border border-slate-200 hover:border-blue-200 hover:bg-blue-50/50 px-3 py-1.5 rounded-full transition-all shadow-sm"
                 aria-label={t("nav.language")}
               >
-                <Globe className="w-4 h-4" />
-                <span>{locale === "ar" ? "AR" : "EN"}</span>
+                <span className="text-[10px] font-black text-slate-400">GB</span>
+                <span className="text-[13px] font-black text-slate-800">{locale === "ar" ? "AR" : "EN"}</span>
                 <ChevronDown
                   className={cn(
-                    "w-3 h-3 transition-transform duration-200",
+                    "w-3 h-3 text-slate-400 transition-transform duration-200",
                     langDropdownOpen && "rotate-180"
                   )}
                 />
               </button>
 
               {langDropdownOpen && (
-                <div className="absolute top-full end-0 mt-2 w-36 bg-[#1a1a1a] border border-white/10 rounded-xl shadow-xl overflow-hidden py-1 z-50">
+                <div className="absolute top-full end-0 mt-2 w-32 bg-white border border-slate-100 rounded-2xl shadow-xl overflow-hidden py-1 z-50">
                   <button
                     type="button"
                     onClick={() => selectLanguage("en")}
-                    className="w-full text-start px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors flex items-center justify-between"
+                    className="w-full text-start px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors flex items-center justify-between"
                   >
-                    {t("nav.english")}{" "}
-                    {locale === "en" && <span className="text-primary text-xs">✓</span>}
+                    {t("nav.english")}
+                    {locale === "en" && <span className="text-blue-600 text-xs">✓</span>}
                   </button>
                   <button
                     type="button"
                     onClick={() => selectLanguage("ar")}
-                    className="w-full text-start px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors flex items-center justify-between font-arabic-ui"
+                    className="w-full text-start px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors flex items-center justify-between font-arabic-ui"
                   >
-                    {t("nav.arabic")}{" "}
-                    {locale === "ar" && <span className="text-primary text-xs">✓</span>}
+                    {t("nav.arabic")}
+                    {locale === "ar" && <span className="text-blue-600 text-xs">✓</span>}
                   </button>
                 </div>
               )}
             </div>
 
+            {/* CTA */}
             <Link
               href="/contact"
               className={cn(
-                "hidden sm:inline-flex px-5 py-2 sm:px-6 sm:py-2.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-gray-200 transition-colors",
-                isRtl && "font-arabic-ui"
+                "group hidden sm:flex items-center gap-3 bg-[#0095FF] hover:bg-[#0080FF] text-white rounded-full pl-5 pr-1.5 py-1.5 transition-all shadow-[0_4px_14px_0_rgba(0,149,255,0.39)] hover:shadow-[0_6px_20px_rgba(0,149,255,0.23)] hover:-translate-y-0.5",
+                isRtl && "font-arabic-ui pr-5 pl-1.5"
               )}
             >
-              {t("nav.bookCall")}
+              <span className="text-[14px] font-bold tracking-wide">{t("nav.bookCall")}</span>
+              <div className="bg-white rounded-full p-1.5 text-[#0095FF] flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+                <ArrowRight className={cn("w-4 h-4", isRtl && "rotate-180")} />
+              </div>
             </Link>
 
+            {/* Mobile Menu Toggle */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen((open) => !open)}
-              className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors"
+              className="xl:hidden flex items-center justify-center w-10 h-10 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-700 transition-colors"
               aria-label={mobileMenuOpen ? t("nav.closeMenu") : t("nav.openMenu")}
               aria-expanded={mobileMenuOpen}
             >
@@ -190,6 +193,7 @@ export default function Navbar() {
           </div>
         </div>
 
+        {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -197,31 +201,35 @@ export default function Navbar() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              className="md:hidden overflow-hidden w-full"
+              className="xl:hidden overflow-hidden w-full"
             >
-              <div className="flex flex-col gap-1 pb-4 pt-2 border-t border-white/10">
+              <div className="flex flex-col gap-1 pb-4 pt-4 border-t border-slate-100 mt-2">
                 {links.map((link) => (
                   <Link
-                    key={link.href}
+                    key={link.name}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={cn(
-                      "px-3 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-xl text-base font-medium transition-colors",
+                      "px-4 py-3 text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-2xl text-base font-bold transition-colors flex items-center justify-between",
                       isRtl && "font-arabic-ui"
                     )}
                   >
                     {link.name}
+                    {link.hasDropdown && <ChevronDown className="w-4 h-4 text-slate-400" />}
                   </Link>
                 ))}
                 <Link
                   href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "mt-2 mx-1 px-5 py-3 bg-white text-black text-sm font-semibold rounded-full text-center hover:bg-gray-200 transition-colors",
-                    isRtl && "font-arabic-ui"
+                    "mt-4 mx-2 flex items-center justify-between bg-[#0095FF] hover:bg-[#0080FF] text-white rounded-full pl-6 pr-2 py-2 transition-all",
+                    isRtl && "font-arabic-ui pr-6 pl-2"
                   )}
                 >
-                  {t("nav.bookCall")}
+                  <span className="text-[15px] font-bold">{t("nav.bookCall")}</span>
+                  <div className="bg-white rounded-full p-2 text-[#0095FF]">
+                    <ArrowRight className={cn("w-5 h-5", isRtl && "rotate-180")} />
+                  </div>
                 </Link>
               </div>
             </motion.div>

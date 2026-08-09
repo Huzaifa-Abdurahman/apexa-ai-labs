@@ -10,6 +10,7 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
+  AnimatePresence,
 } from "framer-motion";
 import {
   ArrowRight,
@@ -21,6 +22,7 @@ import {
   Rocket,
   Sparkles as SparklesIcon,
   Workflow,
+  Zap,
 } from "lucide-react";
 import { useLocale } from "@/i18n/locale-provider";
 import { cn } from "@/lib/utils";
@@ -100,10 +102,10 @@ const CARD_ICONS: Record<string, React.ReactNode> = {
 };
 
 const CARD_ACCENTS: Record<string, string> = {
-  assistant: "from-cyan-400 to-blue-500 text-white shadow-cyan-500/25",
-  software: "from-orange-400 to-red-500 text-white shadow-orange-500/25",
-  automation: "from-violet-400 to-purple-600 text-white shadow-violet-500/25",
-  growth: "from-emerald-400 to-teal-500 text-white shadow-emerald-500/25",
+  assistant: "from-cyan-500 to-blue-500 text-white shadow-cyan-500/25",
+  software: "from-purple-500 to-fuchsia-500 text-white shadow-purple-500/25",
+  automation: "from-blue-500 to-indigo-500 text-white shadow-blue-500/25",
+  growth: "from-cyan-400 to-teal-500 text-white shadow-cyan-500/25",
 };
 
 const SECTOR_IMAGES: Record<string, string> = {
@@ -111,33 +113,89 @@ const SECTOR_IMAGES: Record<string, string> = {
   legal: "/law-saudia.PNG",
 };
 
+function AssistantCarousel({ imageAlt }: { imageAlt: string }) {
+  const images = [
+    "/smiling-chatbot-and-user-chatting-customer-support-automation-virtual-assistant-consultation.gif",
+    "/robot-assistant.webp",
+    "/robot.gif",
+  ];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((i) => (i + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative mx-auto w-40 shrink-0 sm:w-56 md:w-64 aspect-square flex items-center justify-center">
+      <div className="pointer-events-none absolute inset-4 rounded-full bg-cyan-400/15 blur-2xl" />
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={index}
+          src={images[index]}
+          alt={imageAlt}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.05 }}
+          transition={{ duration: 0.5 }}
+          className="absolute inset-0 h-full w-full object-contain drop-shadow-xl"
+        />
+      </AnimatePresence>
+      <div className="absolute -start-2 top-6 rounded-2xl border border-black/5 bg-white px-3 py-1.5 shadow-md z-10">
+        <div className="flex items-center gap-1.5">
+          <MessagesSquare className="size-3.5 text-emerald-500" />
+          <span className="text-[10px] font-bold text-foreground">24/7</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function WebCarousel() {
+  const images = [
+    "/web/3205857-removebg-preview.png",
+    "/web/3479661-removebg-preview.png",
+    "/web/5012925-removebg-preview.png",
+  ];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((i) => (i + 1) % images.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative w-full h-full flex items-center justify-center">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={index}
+          src={images[index]}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.05 }}
+          transition={{ duration: 0.5 }}
+          className="absolute inset-0 w-full h-full object-contain drop-shadow-2xl"
+        />
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export function HomeShowcase() {
   const { messages, isRtl } = useLocale();
   const s = messages.home.showcase;
   const [assistantCard, softwareCard, automationCard, growthCard] = s.cards;
 
   return (
-    <section className="relative overflow-x-hidden overflow-y-hidden bg-background py-24 md:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(6,182,212,0.1),_transparent_55%),radial-gradient(ellipse_at_bottom_right,_rgba(249,115,22,0.06),_transparent_45%)]" />
+    <section className="relative overflow-x-hidden overflow-y-hidden bg-background pt-12 md:pt-16 pb-24 md:pb-32">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(139,92,246,0.1),_transparent_55%),radial-gradient(ellipse_at_bottom_right,_rgba(6,182,212,0.06),_transparent_45%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-50 px-4 py-1.5"
-          >
-            <SparklesIcon className="size-3.5 text-cyan-600" />
-            <span
-              className={cn(
-                "text-xs font-bold uppercase tracking-widest text-cyan-700",
-                isRtl && "font-arabic-ui normal-case tracking-normal text-sm"
-              )}
-            >
-              {s.eyebrow}
-            </span>
-          </motion.div>
+        <div className="mx-auto mb-12 md:mb-16 w-full max-w-full md:max-w-3xl text-center px-2 md:px-0">
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -145,12 +203,12 @@ export function HomeShowcase() {
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
             className={cn(
-              "font-heading text-4xl font-bold leading-[1.08] tracking-tight text-foreground md:text-5xl lg:text-6xl",
+              "font-heading text-3xl sm:text-4xl font-bold leading-[1.08] tracking-tight text-foreground md:text-5xl lg:text-6xl",
               isRtl && "font-arabic-ui"
             )}
           >
             {s.title}{" "}
-            <span className="bg-gradient-to-r from-cyan-600 via-cyan-500 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-600 via-cyan-500 to-cyan-400 bg-clip-text text-transparent">
               {s.titleHighlight}
             </span>
           </motion.h2>
@@ -161,7 +219,7 @@ export function HomeShowcase() {
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
             className={cn(
-              "mt-5 text-base font-medium leading-relaxed text-muted-foreground md:text-lg",
+              "mt-4 md:mt-5 text-sm sm:text-base font-medium leading-relaxed text-muted-foreground md:text-lg",
               isRtl && "font-arabic-ui"
             )}
           >
@@ -179,11 +237,11 @@ export function HomeShowcase() {
             className="min-w-0 lg:col-span-2"
           >
             <TiltCard intensity={3} className="h-full">
-              <div className="relative flex h-full flex-col gap-6 p-8 md:flex-row md:items-center md:p-10">
+              <div className="relative flex h-full flex-col gap-4 p-5 md:flex-row md:items-center md:p-6">
                 <div className="relative z-10 min-w-0 flex-1">
                   <span
                     className={cn(
-                      "mb-4 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-3 py-1 text-[11px] font-bold text-white shadow-lg shadow-cyan-500/25",
+                      "mb-3 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 px-3 py-1 text-[11px] font-bold text-white shadow-lg shadow-purple-500/25",
                       isRtl && "font-arabic-ui"
                     )}
                   >
@@ -192,7 +250,7 @@ export function HomeShowcase() {
                   </span>
                   <h3
                     className={cn(
-                      "font-heading text-2xl font-bold text-foreground md:text-3xl",
+                      "font-heading text-xl font-bold text-foreground md:text-2xl",
                       isRtl && "font-arabic-ui"
                     )}
                   >
@@ -225,23 +283,7 @@ export function HomeShowcase() {
                   </ul>
                 </div>
 
-                <div className="relative mx-auto w-44 shrink-0 sm:w-52 md:w-64">
-                  <div className="pointer-events-none absolute inset-4 rounded-full bg-cyan-400/15 blur-2xl" />
-                  <Image
-                    src="/robot-assistant.webp"
-                    alt={assistantCard.imageAlt}
-                    width={320}
-                    height={320}
-                    sizes="(max-width: 768px) 176px, 256px"
-                    className="relative h-auto w-full"
-                  />
-                  <div className="absolute -start-2 top-6 rounded-2xl border border-black/5 bg-white px-3 py-1.5 shadow-md">
-                    <div className="flex items-center gap-1.5">
-                      <MessagesSquare className="size-3.5 text-emerald-500" />
-                      <span className="text-[10px] font-bold text-foreground">24/7</span>
-                    </div>
-                  </div>
-                </div>
+                <AssistantCarousel imageAlt={assistantCard.imageAlt} />
               </div>
             </TiltCard>
           </motion.div>
@@ -255,7 +297,7 @@ export function HomeShowcase() {
             className="min-w-0"
           >
             <TiltCard className="h-full">
-              <div className="flex h-full flex-col p-7">
+              <div className="flex h-full flex-col p-5">
                 <div
                   className={cn(
                     "mb-5 inline-flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br shadow-lg",
@@ -266,7 +308,7 @@ export function HomeShowcase() {
                 </div>
                 <h3
                   className={cn(
-                    "font-heading text-xl font-bold text-foreground",
+                    "font-heading text-lg font-bold text-foreground",
                     isRtl && "font-arabic-ui"
                   )}
                 >
@@ -316,7 +358,7 @@ export function HomeShowcase() {
             className="min-w-0"
           >
             <TiltCard className="h-full">
-              <div className="flex h-full flex-col p-7">
+              <div className="flex h-full flex-col p-5">
                 <div
                   className={cn(
                     "mb-5 inline-flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br shadow-lg",
@@ -327,7 +369,7 @@ export function HomeShowcase() {
                 </div>
                 <h3
                   className={cn(
-                    "font-heading text-xl font-bold text-foreground",
+                    "font-heading text-lg font-bold text-foreground",
                     isRtl && "font-arabic-ui"
                   )}
                 >
@@ -341,13 +383,13 @@ export function HomeShowcase() {
                 >
                   {automationCard.desc}
                 </p>
-                <div className="relative mx-auto mt-4 w-36 flex-1 sm:w-40">
+                <div className="relative mx-auto mt-4 w-48 flex-1 sm:w-56">
                   <Image
-                    src="/chatbot-3d-static.png"
+                    src="/sketchbook-male-designer-working-on-graphic-tablet-with-screen-1.gif"
                     alt={automationCard.title}
                     width={280}
                     height={280}
-                    sizes="160px"
+                    unoptimized
                     className="h-auto w-full"
                   />
                 </div>
@@ -378,7 +420,7 @@ export function HomeShowcase() {
           >
             <div className="h-full overflow-hidden rounded-3xl border border-black/5 bg-white shadow-lg shadow-emerald-500/5 transition duration-300 hover:border-emerald-400/30 hover:shadow-xl">
               <div className="grid h-full min-w-0 grid-cols-1 md:grid-cols-2">
-                <div className="flex min-w-0 flex-col justify-center p-7 md:p-9">
+                <div className="flex min-w-0 flex-col justify-center p-5 md:p-6">
                   <div
                     className={cn(
                       "mb-5 inline-flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br shadow-lg",
@@ -389,7 +431,7 @@ export function HomeShowcase() {
                   </div>
                   <h3
                     className={cn(
-                      "font-heading text-xl font-bold text-foreground md:text-2xl",
+                      "font-heading text-lg font-bold text-foreground md:text-xl",
                       isRtl && "font-arabic-ui"
                     )}
                   >
@@ -418,213 +460,46 @@ export function HomeShowcase() {
                   </div>
                 </div>
 
-                <div className="relative flex min-h-[220px] min-w-0 items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 to-emerald-50/50 p-4 md:min-h-0 md:p-6">
+                <div className="relative flex min-h-[220px] min-w-0 items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 to-emerald-50/50 p-4 md:min-h-0 md:p-5">
                   <div className="pointer-events-none absolute inset-8 rounded-full bg-emerald-400/10 blur-3xl" />
-                  <div className="relative w-full max-w-[360px]">
-                    <div className="overflow-hidden rounded-2xl border border-black/10 bg-slate-950 shadow-xl shadow-emerald-500/10">
-                      <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        className="aspect-[4/3] h-auto w-full object-cover"
-                        poster="/svc-desk.webp"
-                      >
-                        <source src="/3d-glassy-laptop-blue.webm" type="video/webm" />
-                      </video>
-                    </div>
-                    <div className="mt-3 flex items-center justify-center gap-1.5 text-emerald-700">
-                      <MonitorSmartphone className="size-3.5" />
-                      <span
-                        className={cn(
-                          "text-[10px] font-bold uppercase tracking-wider",
-                          isRtl && "font-arabic-ui normal-case tracking-normal"
-                        )}
-                      >
-                        {s.interactiveHint}
-                      </span>
-                    </div>
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <WebCarousel />
                   </div>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Industry sectors */}
-          {s.sectors.map((sector, i) => (
-            <motion.div
-              key={sector.id}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.08 * i }}
-              className={i === 0 ? "lg:col-span-2" : undefined}
-            >
-              <TiltCard intensity={4} className="h-full">
-                <div className="relative flex h-full min-h-[240px] flex-col justify-end overflow-hidden">
-                  <Image
-                    src={SECTOR_IMAGES[sector.id] ?? "/saudi-hotels.PNG"}
-                    alt={sector.imageAlt}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover transition duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-                  <div className="relative z-10 p-7">
-                    <span
-                      className={cn(
-                        "mb-2 inline-block rounded-full border border-orange-300/40 bg-orange-500/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-orange-100",
-                        isRtl && "font-arabic-ui normal-case tracking-normal"
-                      )}
-                    >
-                      {s.sectorsEyebrow}
-                    </span>
-                    <h3
-                      className={cn(
-                        "font-heading text-xl font-bold text-white md:text-2xl",
-                        isRtl && "font-arabic-ui"
-                      )}
-                    >
-                      {sector.title}
-                    </h3>
-                    <p
-                      className={cn(
-                        "mt-1.5 max-w-lg text-sm leading-relaxed text-white/75",
-                        isRtl && "font-arabic-ui"
-                      )}
-                    >
-                      {sector.desc}
-                    </p>
-                  </div>
-                </div>
-              </TiltCard>
-            </motion.div>
-          ))}
-        </div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative mt-16 overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-r from-cyan-50 via-white to-orange-50 p-8 shadow-sm md:p-10"
-        >
-          <p
-            className={cn(
-              "mb-7 text-center text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground",
-              isRtl && "font-arabic-ui normal-case tracking-normal text-sm"
-            )}
-          >
-            {s.statsTitle}
-          </p>
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {s.stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-heading bg-gradient-to-b from-cyan-600 to-orange-500 bg-clip-text text-4xl font-black text-transparent md:text-5xl">
-                  <CountUp value={stat.value} suffix={stat.suffix} />
-                </div>
-                <p
-                  className={cn(
-                    "mt-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground md:text-sm",
-                    isRtl && "font-arabic-ui normal-case tracking-normal"
-                  )}
-                >
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Steps */}
-        <div className="mt-20">
-          <div className="mb-10 text-center">
-            <p
-              className={cn(
-                "mb-2 text-xs font-bold uppercase tracking-[0.25em] text-orange-600/80",
-                isRtl && "font-arabic-ui normal-case tracking-normal text-sm"
-              )}
-            >
-              {s.stepsEyebrow}
-            </p>
-            <h3
-              className={cn(
-                "font-heading text-2xl font-bold text-foreground md:text-4xl",
-                isRtl && "font-arabic-ui"
-              )}
-            >
-              {s.stepsTitle}
-            </h3>
-          </div>
-
-          <div className="relative grid gap-5 md:grid-cols-3">
-            <div className="pointer-events-none absolute inset-x-16 top-10 hidden h-px bg-gradient-to-r from-cyan-400/0 via-cyan-400/50 to-orange-400/0 md:block" />
-            {s.steps.map((step, i) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12 }}
-                className="relative rounded-3xl border border-black/5 bg-white p-7 text-center shadow-sm transition-colors hover:border-cyan-400/30 hover:shadow-md"
-              >
-                <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-orange-500 font-heading text-lg font-black text-white shadow-lg shadow-cyan-500/20">
-                  {i + 1}
-                </div>
-                <h4
-                  className={cn(
-                    "font-heading text-lg font-bold text-foreground",
-                    isRtl && "font-arabic-ui"
-                  )}
-                >
-                  {step.title}
-                </h4>
-                <p
-                  className={cn(
-                    "mt-2 text-sm leading-relaxed text-muted-foreground",
-                    isRtl && "font-arabic-ui"
-                  )}
-                >
-                  {step.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA */}
+        </div>        {/* Compact Stats & CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-14 flex flex-wrap items-center justify-center gap-4"
+          className="mt-10 flex flex-col lg:flex-row items-center justify-between gap-6 rounded-2xl border border-slate-200 bg-white p-4 md:p-5 shadow-sm"
         >
-          <Link href="/contact">
-            <motion.span
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className={cn(
-                "inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 via-cyan-500 to-orange-500 px-8 py-3.5 text-sm font-bold text-white shadow-[0_0_32px_-6px_rgba(6,182,212,0.55)]",
-                isRtl && "font-arabic-ui"
-              )}
-            >
-              {s.ctaPrimary}
-              <ArrowRight className={cn("size-4", isRtl && "rotate-180")} />
-            </motion.span>
-          </Link>
-          <Link href="/services">
-            <motion.span
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              className={cn(
-                "inline-block rounded-full border border-black/10 bg-white px-7 py-3.5 text-sm font-semibold text-foreground shadow-sm transition hover:border-cyan-400/40 hover:bg-cyan-50/50",
-                isRtl && "font-arabic-ui"
-              )}
-            >
-              {s.ctaSecondary}
-            </motion.span>
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+            {s.stats.map((stat: any) => (
+              <div key={stat.label} className="flex flex-col md:flex-row items-center md:items-baseline gap-1 md:gap-2">
+                <span className="font-heading text-xl md:text-2xl font-bold text-slate-800">{stat.value}<span className="text-purple-600">{stat.suffix}</span></span>
+                <span className={cn("text-[10px] md:text-xs font-semibold uppercase tracking-wider text-muted-foreground", isRtl && "font-arabic-ui normal-case tracking-normal")}>{stat.label}</span>
+              </div>
+            ))}
+          </div>
+          
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link href="/contact">
+              <span className={cn("inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 px-6 py-2.5 text-sm font-bold text-white shadow-sm transition hover:scale-105", isRtl && "font-arabic-ui")}>
+                {s.ctaPrimary}
+                <ArrowRight className={cn("size-3.5", isRtl && "rotate-180")} />
+              </span>
+            </Link>
+            <Link href="/services">
+              <span className={cn("inline-block rounded-full border border-black/10 bg-slate-50 px-6 py-2.5 text-sm font-semibold text-foreground shadow-sm transition hover:bg-slate-100", isRtl && "font-arabic-ui")}>
+                {s.ctaSecondary}
+              </span>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -18,12 +18,12 @@ export function AIServicesSection() {
   const services = messages.aiServices.items;
 
   return (
-    <section className="relative overflow-hidden border-b border-black/5 bg-background py-20 md:py-24">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(6,182,212,0.08),_transparent_50%)]" />
+    <section className="relative overflow-hidden border-b border-slate-200 bg-[#F8FAFC] py-20 md:py-24">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(139,92,246,0.08),_transparent_50%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-2xl">
-          <p className={cn("mb-2 text-sm font-semibold text-primary", isRtl && "font-arabic-ui")}>
+          <p className={cn("mb-2 text-sm font-semibold text-purple-600", isRtl && "font-arabic-ui")}>
             {t("aiServices.eyebrow")}
           </p>
           <h2
@@ -47,7 +47,7 @@ export function AIServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
-              className="group flex flex-col overflow-hidden rounded-[28px] border border-black/5 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+              className="group flex flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/10"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
@@ -79,8 +79,8 @@ export function AIServicesSection() {
                 <ul className="mt-6 space-y-3">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
-                      <div className="flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                        <CheckCircle2 className="size-3.5 text-primary" />
+                      <div className="flex size-5 shrink-0 items-center justify-center rounded-full bg-purple-500/10">
+                        <CheckCircle2 className="size-3.5 text-purple-600" />
                       </div>
                       <span
                         className={cn(
@@ -97,7 +97,7 @@ export function AIServicesSection() {
                 <Link
                   href="/contact"
                   className={cn(
-                    "mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition group-hover:gap-3",
+                    "mt-8 inline-flex items-center gap-2 text-sm font-semibold text-purple-600 transition group-hover:gap-3",
                     isRtl && "font-arabic-ui"
                   )}
                 >

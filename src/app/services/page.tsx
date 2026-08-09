@@ -40,6 +40,7 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { Marquee } from "@/components/ui/marquee";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { Sparkles } from "@/components/ui/sparkles";
+import { ServiceImageCarousel } from "@/components/ui/service-image-carousel";
 import { useLocale } from "@/i18n/locale-provider";
 import { cn } from "@/lib/utils";
 
@@ -51,52 +52,67 @@ type ServiceId =
   | "web"
   | "voice";
 
-type CityId = "makkah" | "madinah" | "jeddah" | "dammam" | "riyadh";
+type CityId = "uk" | "pakistan" | "dubai" | "usa" | "makkah";
 
 const serviceMeta: Record<
   ServiceId,
   {
     icon: typeof Code2;
-    image: string;
+    image: string | string[];
     accent: string;
     glow: string;
   }
 > = {
   software: {
     icon: Code2,
-    image: "/svc-software.webp",
+    image: [
+      "/svc-software.webp",
+      "/3d-pro-ai-programming-interface-machine-learning-development-smart-code-automation.png",
+      "/3d-dashboard.png",
+      "/saas-wWz-Cr0F.png"
+    ],
     accent: "from-cyan-500 to-blue-600",
-    glow: "bg-cyan-400/20",
+    glow: "bg-cyan-500/10",
   },
   automations: {
     icon: Bot,
-    image: "/svc-automations.webp",
+    image: [
+      "/smiling-chatbot-and-user-chatting-customer-support-automation-virtual-assistant-consultation.gif",
+      "/svc-automations.webp",
+      "/3d-casual-life-chatting-with-chatbot.gif",
+      "/robot-assistant-and-phone-with-messages-virtual-support-automation.png"
+    ],
     accent: "from-orange-500 to-amber-500",
-    glow: "bg-orange-400/20",
+    glow: "bg-orange-500/10",
   },
   apps: {
     icon: SparklesIcon,
     image: "/svc-apps.webp",
     accent: "from-emerald-500 to-teal-600",
-    glow: "bg-emerald-400/20",
+    glow: "bg-emerald-500/10",
   },
   pipelines: {
     icon: Database,
     image: "/svc-pipelines.webp",
     accent: "from-sky-500 to-indigo-500",
-    glow: "bg-sky-400/20",
+    glow: "bg-sky-500/10",
   },
   web: {
     icon: Globe,
-    image: "/svc-web.webp",
+    image: [
+      "/svc-web.webp",
+      "/web/3205857-removebg-preview.png",
+      "/web/3479661-removebg-preview.png",
+      "/web/5012925-removebg-preview.png"
+    ],
     accent: "from-violet-500 to-purple-600",
-    glow: "bg-violet-400/20",
+    glow: "bg-violet-500/10",
   },
   voice: {
     icon: Mic,
     image: "/svc-voice.webp",
     accent: "from-amber-500 to-orange-600",
-    glow: "bg-amber-400/20",
+    glow: "bg-amber-500/10",
   },
 };
 
@@ -107,11 +123,11 @@ const cityMeta: Record<
     icons: (typeof Hotel)[];
   }
 > = {
-  makkah: { image: "/clock.jpg", icons: [Hotel, Store, Stethoscope, Plane] },
-  madinah: { image: "/madina.jpg", icons: [Hotel, Stethoscope, Plane, Store] },
-  jeddah: { image: "/transport.jpg", icons: [Ship, Store, Building2, Stethoscope] },
-  dammam: { image: "/dammam.jpg", icons: [Factory, Building2, Ship, Stethoscope] },
-  riyadh: { image: "/riyadh.jpg", icons: [Building2, Network, Stethoscope, Store] },
+  uk: { image: "/uk.PNG", icons: [Building2, Network, Globe, Database] },
+  pakistan: { image: "/pakistan.PNG", icons: [Code2, Database, Workflow, CheckCircle2] },
+  dubai: { image: "/dubai.jpg", icons: [Hotel, Store, Ship, Plane] },
+  usa: { image: "/america.PNG", icons: [Building2, Store, Network, Database] },
+  makkah: { image: "/makkah.jpg", icons: [Hotel, Store, Stethoscope, Plane] },
 };
 
 const painIcons = [PhoneCall, Boxes, Zap, Layers] as const;
@@ -124,7 +140,7 @@ const BeamNode = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-14 items-center justify-center rounded-2xl border border-white/10 bg-[#12151c] text-white shadow-xl",
+        "z-10 flex size-14 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-800 shadow-sm",
         className
       )}
     >
@@ -145,7 +161,7 @@ function WorkflowBeam() {
   return (
     <div
       ref={containerRef}
-      className="relative flex h-[280px] w-full items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-[#07090e] p-6"
+      className="relative flex h-[280px] w-full items-center justify-center overflow-hidden rounded-3xl border border-slate-200 bg-white/50 p-6 backdrop-blur-sm"
     >
       <div className="flex w-full max-w-3xl items-center justify-between gap-2">
         <BeamNode ref={a}>
@@ -170,7 +186,7 @@ function WorkflowBeam() {
       <AnimatedBeam containerRef={containerRef} fromRef={d} toRef={e} gradientStartColor="#d946ef" gradientStopColor="#34d399" />
       <div
         className={cn(
-          "pointer-events-none absolute inset-x-0 bottom-4 flex justify-between px-4 text-[10px] font-medium uppercase tracking-wider text-white/40 sm:px-8 sm:text-xs",
+          "pointer-events-none absolute inset-x-0 bottom-4 flex justify-between px-4 text-[10px] font-bold uppercase tracking-wider text-slate-400 sm:px-8 sm:text-xs",
           isRtl && "font-arabic-ui normal-case tracking-normal"
         )}
       >
@@ -186,7 +202,7 @@ function WorkflowBeam() {
 
 export default function Services() {
   const { t, messages, isRtl } = useLocale();
-  const [activeCity, setActiveCity] = useState<CityId>("makkah");
+  const [activeCity, setActiveCity] = useState<CityId>("uk");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const services = useMemo(
@@ -233,22 +249,22 @@ export default function Services() {
   return (
     <div className="overflow-hidden pb-24">
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-[#05070b] pt-28 pb-20">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(6,182,212,0.2),_transparent_55%),radial-gradient(ellipse_at_bottom_right,_rgba(249,115,22,0.14),_transparent_45%)]" />
+      <section className="relative isolate overflow-hidden bg-background pt-28 pb-20">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(139,92,246,0.1),_transparent_55%),radial-gradient(ellipse_at_bottom_right,_rgba(6,182,212,0.1),_transparent_45%)]" />
         <Sparkles
           className="absolute inset-0"
           density={45}
           speed={0.6}
           opacity={0.35}
-          color="#06b6d4"
+          color="#8b5cf6"
         />
         <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 px-4 lg:grid-cols-2 lg:gap-12">
           <div className={cn("text-center lg:text-start", isRtl && "lg:text-end")}>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 shadow-sm">
               <MapPin className="size-3.5 text-primary" />
               <AnimatedShinyText
                 className={cn(
-                  "mx-0 max-w-none text-sm text-white/70 dark:text-white/70",
+                  "mx-0 max-w-none text-sm text-slate-600",
                   isRtl && "font-arabic-ui"
                 )}
               >
@@ -258,17 +274,17 @@ export default function Services() {
 
             <h1
               className={cn(
-                "font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl",
+                "font-heading text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl",
                 isRtl && "font-arabic-ui"
               )}
             >
               {t("servicesPage.title")}{" "}
-              <Cover className="text-neutral-900">{t("servicesPage.titleHighlight")}</Cover>
+              <Cover className="text-white">{t("servicesPage.titleHighlight")}</Cover>
             </h1>
 
             <p
               className={cn(
-                "mx-auto mt-6 max-w-xl text-lg font-medium text-white/65 md:text-xl lg:mx-0",
+                "mx-auto mt-6 max-w-xl text-lg font-medium text-slate-600 md:text-xl lg:mx-0",
                 isRtl && "font-arabic-ui"
               )}
             >
@@ -279,7 +295,7 @@ export default function Services() {
               <Link href="/contact" className="inline-block">
                 <InteractiveHoverButton
                   className={cn(
-                    "border-white/15 bg-white text-black hover:bg-white",
+                    "border-slate-200 bg-slate-900 text-white hover:bg-slate-800",
                     isRtl && "font-arabic-ui"
                   )}
                 >
@@ -289,7 +305,7 @@ export default function Services() {
               <a
                 href="#cities"
                 className={cn(
-                  "inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10",
+                  "inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50 hover:text-slate-900",
                   isRtl && "font-arabic-ui"
                 )}
               >
@@ -299,16 +315,16 @@ export default function Services() {
           </div>
 
           <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-            <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-cyan-400/15 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[28px] border border-white/20 bg-white/10 p-3 shadow-2xl backdrop-blur-xl">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-gradient-to-br from-slate-950 via-cyan-950/40 to-slate-950">
+            <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-purple-400/10 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white p-3 shadow-lg">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/robot.gif"
                   alt={isRtl ? "مساعد روبوت ذكي" : "AI robot assistant"}
                   className="absolute inset-0 h-full w-full object-contain object-center p-4 md:p-6"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                 <div className="absolute bottom-4 start-4 end-4 flex flex-wrap gap-2">
                   {(isRtl
                     ? ["وكلاء ذكاء", "شات بوت", "برمجيات مخصصة"]
@@ -317,7 +333,7 @@ export default function Services() {
                     <span
                       key={label}
                       className={cn(
-                        "rounded-full border border-white/20 bg-black/40 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md",
+                        "rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] font-bold text-slate-700 shadow-sm backdrop-blur-md",
                         isRtl && "font-arabic-ui"
                       )}
                     >
@@ -433,17 +449,25 @@ export default function Services() {
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/70 via-white/20 to-transparent" />
 
                 <Link href={`/services/${service.id}`} className="relative z-10 block">
-                  <div className="relative flex aspect-[16/11] items-center justify-center overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+                  <div className="relative flex aspect-[16/11] items-center justify-center overflow-hidden bg-slate-50">
                     <div className={cn("absolute inset-0 opacity-40 blur-2xl", service.glow)} />
                     <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/90 to-transparent" />
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      width={420}
-                      height={300}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="relative z-10 h-[78%] w-auto max-w-[88%] object-contain drop-shadow-[0_18px_30px_rgba(0,0,0,0.45)] transition duration-500 group-hover:scale-[1.04]"
-                    />
+                    {Array.isArray(service.image) ? (
+                      <ServiceImageCarousel 
+                        images={service.image} 
+                        title={service.title} 
+                        className="relative z-10 h-[78%] w-[88%] transition duration-500 group-hover:scale-[1.04]"
+                      />
+                    ) : (
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        width={420}
+                        height={300}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="relative z-10 h-[78%] w-auto max-w-[88%] object-contain drop-shadow-xl transition duration-500 group-hover:scale-[1.04]"
+                      />
+                    )}
                     <div
                       className={cn(
                         "absolute bottom-4 start-4 z-20 flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-lg ring-1 ring-white/30",
@@ -452,7 +476,7 @@ export default function Services() {
                     >
                       <Icon className="size-5" />
                     </div>
-                    <span className="absolute end-4 top-4 z-20 rounded-full border border-white/20 bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white/90 backdrop-blur-md">
+                    <span className="absolute end-4 top-4 z-20 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-slate-700 shadow-sm backdrop-blur-md">
                       0{index + 1}
                     </span>
                   </div>
@@ -515,27 +539,91 @@ export default function Services() {
         </div>
       </section>
 
+      {/* INDUSTRY SECTORS (Moved from Home) */}
+      <section className="relative mx-auto max-w-7xl px-4 pb-24">
+        <div className="mb-12 text-center">
+          <Badge className={cn("mb-4 bg-primary/10 text-primary", isRtl && "font-arabic-ui")}>
+            {messages.home.showcase.sectorsEyebrow}
+          </Badge>
+          <h2
+            className={cn(
+              "font-heading text-3xl font-bold tracking-tight text-foreground md:text-5xl",
+              isRtl && "font-arabic-ui"
+            )}
+          >
+            {messages.home.showcase.sectorsTitle}
+          </h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {messages.home.showcase.sectors.map((sector, i) => (
+            <motion.div
+              key={sector.id}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.08 * i }}
+              className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-3xl border border-black/5 shadow-lg"
+            >
+              <Image
+                src={sector.id === "hospitality" ? "/saudi-hotels.PNG" : "/law-saudia.PNG"}
+                alt={sector.imageAlt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover transition duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+              <div className="relative z-10 p-8">
+                <span
+                  className={cn(
+                    "mb-3 inline-block rounded-full border border-purple-300/40 bg-purple-500/30 px-3 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white backdrop-blur-sm",
+                    isRtl && "font-arabic-ui normal-case tracking-normal"
+                  )}
+                >
+                  {messages.home.showcase.sectorsEyebrow}
+                </span>
+                <h3
+                  className={cn(
+                    "font-heading text-2xl font-bold text-white md:text-3xl",
+                    isRtl && "font-arabic-ui"
+                  )}
+                >
+                  {sector.title}
+                </h3>
+                <p
+                  className={cn(
+                    "mt-2 text-base leading-relaxed text-white/80",
+                    isRtl && "font-arabic-ui"
+                  )}
+                >
+                  {sector.desc}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* CITY SOLUTIONS */}
-      <section id="cities" className="relative overflow-hidden bg-[#05070b] py-24 text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(6,182,212,0.12),_transparent_60%)]" />
+      <section id="cities" className="relative overflow-hidden bg-background py-24 text-slate-900">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(139,92,246,0.08),_transparent_60%)]" />
         <DotPattern
           width={20}
           height={20}
           cr={0.8}
-          className="text-white/10 [mask-image:radial-gradient(ellipse_at_top,white,transparent_70%)]"
+          className="text-slate-200/50 [mask-image:radial-gradient(ellipse_at_top,white,transparent_70%)]"
         />
         {/* decorative vector lines */}
         <svg className="pointer-events-none absolute -right-20 top-20 h-[420px] w-[420px] opacity-20" viewBox="0 0 400 400" fill="none" aria-hidden>
           <circle cx="200" cy="200" r="160" stroke="#06b6d4" strokeWidth="1" />
-          <circle cx="200" cy="200" r="110" stroke="#f97316" strokeWidth="1" strokeDasharray="6 6" />
-          <path d="M200 40 L220 160 L340 200 L220 240 L200 360 L180 240 L60 200 L180 160 Z" stroke="white" strokeWidth="1" opacity="0.5" />
+          <circle cx="200" cy="200" r="110" stroke="#8b5cf6" strokeWidth="1" strokeDasharray="6 6" />
+          <path d="M200 40 L220 160 L340 200 L220 240 L200 360 L180 240 L60 200 L180 160 Z" stroke="#0f172a" strokeWidth="1" opacity="0.1" />
         </svg>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="mb-10 max-w-3xl">
             <Badge
               className={cn(
-                "mb-4 border-white/10 bg-white/10 text-primary",
+                "mb-4 border-slate-200 bg-white text-primary shadow-sm",
                 isRtl && "font-arabic-ui"
               )}
             >
@@ -550,13 +638,13 @@ export default function Services() {
               {t("servicesPage.citiesTitle")}
             </h2>
             <p
-              className={cn("mt-2 text-primary", isRtl && "font-arabic-ui")}
+              className={cn("mt-2 text-primary font-medium", isRtl && "font-arabic-ui")}
               dir={isRtl ? "rtl" : undefined}
             >
               {t("servicesPage.citiesSubtitleAr")}
             </p>
             <p
-              className={cn("mt-4 text-lg text-white/60", isRtl && "font-arabic-ui")}
+              className={cn("mt-4 text-lg text-slate-500", isRtl && "font-arabic-ui")}
             >
               {t("servicesPage.citiesBody")}
             </p>
@@ -571,8 +659,8 @@ export default function Services() {
                 className={cn(
                   "group relative flex min-w-[148px] flex-col overflow-hidden rounded-2xl border text-left transition",
                   activeCity === c.id
-                    ? "border-primary/60 shadow-lg shadow-primary/20 ring-1 ring-primary/40"
-                    : "border-white/10 hover:border-white/25"
+                    ? "border-primary/40 shadow-md ring-1 ring-primary/30"
+                    : "border-slate-200 hover:border-slate-300"
                 )}
               >
                 <div className="relative h-16 w-full overflow-hidden">
@@ -583,12 +671,12 @@ export default function Services() {
                     className="object-cover transition duration-500 group-hover:scale-105"
                     sizes="160px"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
                 </div>
                 <div
                   className={cn(
                     "px-3 py-2 text-sm font-semibold",
-                    activeCity === c.id ? "bg-primary text-white" : "bg-[#0c1017] text-white/75",
+                    activeCity === c.id ? "bg-primary text-white" : "bg-white text-slate-700",
                     isRtl && "font-arabic-ui"
                   )}
                 >
@@ -605,9 +693,9 @@ export default function Services() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.35 }}
-              className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0c1017] shadow-2xl"
+              className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-xl"
             >
-              <BorderBeam size={120} duration={10} colorFrom="#06b6d4" colorTo="#f97316" borderWidth={1.5} />
+              <BorderBeam size={120} duration={10} colorFrom="#8b5cf6" colorTo="#06b6d4" borderWidth={1.5} />
 
               <div className="grid lg:grid-cols-12">
                 {/* Image panel */}
@@ -620,14 +708,14 @@ export default function Services() {
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c1017] via-[#0c1017]/50 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#0c1017]/35 lg:to-[#0c1017]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-white/35 lg:to-white" />
                   <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8">
                     <p className="font-arabic-ui text-sm font-semibold text-primary" dir="rtl">
                       {city.arabic}
                     </p>
                     <h3
                       className={cn(
-                        "font-heading text-3xl font-bold md:text-4xl",
+                        "font-heading text-3xl font-bold md:text-4xl text-slate-900",
                         isRtl && "font-arabic-ui"
                       )}
                     >
@@ -635,7 +723,7 @@ export default function Services() {
                     </h3>
                     <p
                       className={cn(
-                        "mt-2 max-w-sm text-sm text-white/75",
+                        "mt-2 max-w-sm text-sm text-slate-600 font-medium",
                         isRtl && "font-arabic-ui"
                       )}
                     >
@@ -645,9 +733,9 @@ export default function Services() {
                       {city.icons.map((Icon, i) => (
                         <div
                           key={i}
-                          className="flex size-10 items-center justify-center rounded-xl border border-white/20 bg-white/10 backdrop-blur"
+                          className="flex size-10 items-center justify-center rounded-xl border border-slate-200 bg-white/80 backdrop-blur shadow-sm"
                         >
-                          <Icon className="size-4 text-cyan-300" />
+                          <Icon className="size-4 text-primary" />
                         </div>
                       ))}
                     </div>
@@ -658,7 +746,7 @@ export default function Services() {
                 <div className="lg:col-span-7 p-6 md:p-8 lg:p-10">
                   <p
                     className={cn(
-                      "rounded-2xl border border-primary/20 bg-primary/10 p-4 text-sm leading-relaxed text-cyan-50",
+                      "rounded-2xl border border-primary/10 bg-primary/5 p-4 text-sm leading-relaxed text-slate-800 font-medium",
                       isRtl && "font-arabic-ui"
                     )}
                   >
@@ -670,7 +758,7 @@ export default function Services() {
                       <Badge
                         key={ind}
                         className={cn(
-                          "border-white/10 bg-white/5 text-white/80",
+                          "border-slate-200 bg-slate-50 text-slate-700 shadow-sm",
                           isRtl && "font-arabic-ui"
                         )}
                       >
@@ -680,10 +768,10 @@ export default function Services() {
                   </div>
 
                   <div className="mt-8 grid gap-5 md:grid-cols-2">
-                    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
+                    <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
                       <h4
                         className={cn(
-                          "mb-4 flex items-center gap-2 font-heading text-base font-semibold text-orange-300",
+                          "mb-4 flex items-center gap-2 font-heading text-base font-semibold text-orange-600",
                           isRtl && "font-arabic-ui"
                         )}
                       >
@@ -694,7 +782,7 @@ export default function Services() {
                           <li
                             key={pain}
                             className={cn(
-                              "flex gap-3 text-sm leading-relaxed text-white/70",
+                              "flex gap-3 text-sm leading-relaxed text-slate-600 font-medium",
                               isRtl && "font-arabic-ui"
                             )}
                           >
@@ -704,10 +792,10 @@ export default function Services() {
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
+                    <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
                       <h4
                         className={cn(
-                          "mb-4 flex items-center gap-2 font-heading text-base font-semibold text-cyan-300",
+                          "mb-4 flex items-center gap-2 font-heading text-base font-semibold text-cyan-600",
                           isRtl && "font-arabic-ui"
                         )}
                       >
@@ -718,7 +806,7 @@ export default function Services() {
                           <li
                             key={sol}
                             className={cn(
-                              "flex gap-3 text-sm leading-relaxed text-white/70",
+                              "flex gap-3 text-sm leading-relaxed text-slate-600 font-medium",
                               isRtl && "font-arabic-ui"
                             )}
                           >
@@ -733,7 +821,7 @@ export default function Services() {
                   <Link
                     href="/contact"
                     className={cn(
-                      "mt-8 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-cyan-50",
+                      "mt-8 inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary shadow-sm",
                       isRtl && "font-arabic-ui"
                     )}
                   >

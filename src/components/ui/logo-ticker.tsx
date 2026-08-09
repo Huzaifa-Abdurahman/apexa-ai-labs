@@ -37,18 +37,13 @@ const LOGOS = [
   "/logos/logo (2).png",
 ] as const
 
-/** Dark/monochrome marks that need invert to read on the black bar */
-const INVERT_LOGOS = new Set([
-  "/logos/ns_logo_dark.svg",
-  "/logos/black-logo-Picsart-AiImageEnhancer.webp",
-  "/logos/logo-black.webp",
-  "/logos/81bbdfeb78d658d5808328353ff0aab82b19e959-123x55.svg",
-  "/logos/JPH-Logo-03.webp",
-  "/logos/logo.CH_b5oXy.webp",
+/** White/monochrome marks that need invert to read on the light bar */
+const INVERT_ON_LIGHT_LOGOS = new Set([
+  "/logos/logo-white-BcgA8pIv.png",
 ])
 
 function LogoMark({ src }: { src: string }) {
-  const invert = INVERT_LOGOS.has(src)
+  const invert = INVERT_ON_LIGHT_LOGOS.has(src)
   return (
     <div className="mx-5 flex h-12 shrink-0 items-center justify-center sm:mx-7 sm:h-14 md:h-16">
       <Image
@@ -76,7 +71,7 @@ export function LogoTicker() {
     <div className="relative w-full overflow-hidden py-10 md:py-12">
       {/* Fancy atmosphere */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-orange-400/35 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-purple-400/35 to-transparent" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(6,182,212,0.12),_transparent_55%)]" />
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.04]"
@@ -90,8 +85,8 @@ export function LogoTicker() {
       <div className="relative z-10 mb-6 flex flex-col items-center justify-center gap-1 px-4 text-center">
         <p
           className={cn(
-            "text-xs font-medium uppercase tracking-[0.22em] text-white/50",
-            isRtl && "font-arabic-ui text-sm font-semibold normal-case tracking-normal text-cyan-300/80"
+            "text-xs font-medium uppercase tracking-[0.22em] text-slate-500",
+            isRtl && "font-arabic-ui text-sm font-semibold normal-case tracking-normal text-purple-600/80"
           )}
         >
           {t("ticker.label")}
@@ -99,8 +94,8 @@ export function LogoTicker() {
       </div>
 
       <div className="relative z-10">
-        <div className="pointer-events-none absolute inset-y-0 start-0 z-10 w-16 bg-gradient-to-r from-black via-black/80 to-transparent sm:w-28 rtl:bg-gradient-to-l" />
-        <div className="pointer-events-none absolute inset-y-0 end-0 z-10 w-16 bg-gradient-to-l from-black via-black/80 to-transparent sm:w-28 rtl:bg-gradient-to-r" />
+        <div className="pointer-events-none absolute inset-y-0 start-0 z-10 w-16 bg-gradient-to-r from-[#F8FAFC] via-[#F8FAFC]/80 to-transparent sm:w-28 rtl:bg-gradient-to-l" />
+        <div className="pointer-events-none absolute inset-y-0 end-0 z-10 w-16 bg-gradient-to-l from-[#F8FAFC] via-[#F8FAFC]/80 to-transparent sm:w-28 rtl:bg-gradient-to-r" />
 
         <Marquee pauseOnHover className="[--duration:48s] [--gap:0rem]">
           {rowA.map((src) => (
