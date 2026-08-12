@@ -24,7 +24,7 @@ export const DARK_GLOBE_CONFIG: COBEOptions = {
   markerColor: [0.02, 0.71, 0.83],
   glowColor: [0.2, 0.2, 0.2],
   markers: [
-    { location: [21.3891, 39.8579], size: 0.1 },
+    { location: [25.2048, 55.2708], size: 0.1 },
     { location: [24.5247, 39.5692], size: 0.06 },
     { location: [21.4858, 39.1925], size: 0.06 },
     { location: [26.4207, 50.0888], size: 0.05 },
@@ -48,7 +48,7 @@ export const WHITE_GLOBE_CONFIG: COBEOptions = {
   markerColor: [0.02, 0.71, 0.83],
   glowColor: [0.88, 0.91, 0.95],
   markers: [
-    { location: [21.3891, 39.8579], size: 0.1 }, // Makkah
+    { location: [25.2048, 55.2708], size: 0.1 }, // Dubai
     { location: [24.5247, 39.5692], size: 0.06 }, // Madinah
     { location: [21.4858, 39.1925], size: 0.06 }, // Jeddah
     { location: [26.4207, 50.0888], size: 0.05 }, // Dammam
@@ -59,7 +59,7 @@ export const WHITE_GLOBE_CONFIG: COBEOptions = {
 export function Globe({
   className,
   config = WHITE_GLOBE_CONFIG,
-  label = "We are here · مكة",
+  label = "We are here · Dubai",
 }: {
   className?: string
   config?: COBEOptions
@@ -93,8 +93,8 @@ export function Globe({
 
   const tooltipRef = useRef<HTMLDivElement>(null)
 
-  const targetLat = 21.3891 * (Math.PI / 180)
-  const targetLng = 39.8579 * (Math.PI / 180)
+  const targetLat = 25.2048 * (Math.PI / 180)
+  const targetLng = 55.2708 * (Math.PI / 180)
 
   useEffect(() => {
     const onResize = () => {

@@ -10,6 +10,7 @@ import {
   SITE_URL,
   WHATSAPP_URL,
   absoluteUrl,
+  WHATSAPP_E164,
 } from "@/lib/seo";
 
 function JsonLd({ data }: { data: Record<string, unknown> | Record<string, unknown>[] }) {
@@ -52,8 +53,8 @@ export function SiteJsonLd() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 21.3891,
-      longitude: 39.8579,
+      latitude: 25.2048,
+      longitude: 55.2708,
     },
     areaServed: [
       {
@@ -83,7 +84,7 @@ export function SiteJsonLd() {
       "Arabic Natural Language Processing",
       "WhatsApp Business Automation",
       "Enterprise Resource Planning",
-      "Umrah and Hospitality Operations",
+      "Tourism and Hospitality Operations",
       "KSA Digital Transformation",
     ],
     hasOfferCatalog: {
@@ -139,7 +140,7 @@ export function SiteJsonLd() {
         "@type": "ContactPoint",
         contactType: "customer support",
         email: CONTACT_EMAIL_SECONDARY,
-        telephone: CONTACT_PHONES[1].e164,
+        telephone: WHATSAPP_E164,
         url: WHATSAPP_URL,
         availableLanguage: ["English", "Arabic"],
         areaServed: ["SA", "GB"],
@@ -181,7 +182,7 @@ export function SiteJsonLd() {
       "@type": "WebPage",
       "@id": `${SITE_URL}/#webpage`,
       url: SITE_URL,
-      name: `${SITE_NAME} | Best AI & Custom Software Company in Saudi Arabia`,
+      name: `${SITE_NAME} | AI & Custom Software Company (Dubai)`,
       isPartOf: { "@id": `${SITE_URL}/#website` },
       about: { "@id": `${SITE_URL}/#organization` },
       description: SITE_TAGLINE,
@@ -203,7 +204,7 @@ export function SiteJsonLd() {
         name: "Do you only serve businesses in Saudi Arabia?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Apexa AI Labs is based in Makkah and focused on KSA — Makkah, Madinah, Jeddah, Dammam, and Riyadh.",
+          text: "Apexa AI Labs operates from Dubai and serves Saudi Arabia and international clients — Makkah, Madinah, Jeddah, Dammam, and Riyadh included.",
         },
       },
       {
@@ -227,7 +228,7 @@ export function SiteJsonLd() {
         name: "Where is Apexa AI Labs located?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Our headquarters is in Makkah, Saudi Arabia. We serve operators across the Kingdom.",
+          text: "Our headquarters is in Dubai. We serve operators across Saudi Arabia and international markets.",
         },
       },
     ],

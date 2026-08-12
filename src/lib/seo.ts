@@ -8,10 +8,10 @@ export const SITE_NAME = "Apexa AI Labs";
 export const SITE_NAME_AR = "أبيكسا للذكاء الاصطناعي";
 
 export const SITE_TAGLINE =
-  "Makkah-based AI lab for custom software, AI automations, and scalable workflows across Saudi Arabia";
+  "Dubai-based AI lab for custom software, AI automations, and scalable workflows for operators across multiple markets";
 
 export const SITE_TAGLINE_AR =
-  "مختبر ذكاء اصطناعي من مكة للبرمجيات المخصصة والأتمتة وسير العمل في المملكة";
+  "مختبر ذكاء اصطناعي من دبي ولندن للبرمجيات المخصصة والأتمتة وسير العمل عبر الأسواق";
 
 export const CONTACT_EMAIL = "info@apexaailabs.com";
 export const CONTACT_EMAIL_SECONDARY = "galaxysoftwarehub@gmail.com";
@@ -22,18 +22,11 @@ export const WHATSAPP_UK_E164 = "+447449703113";
 export const WHATSAPP_PK_URL = "https://wa.me/923451569778";
 export const WHATSAPP_UK_URL = "https://wa.me/447449703113";
 
-/** Primary WhatsApp (Pakistan / main line) */
-export const WHATSAPP_E164 = WHATSAPP_PK_E164;
-export const WHATSAPP_URL = WHATSAPP_PK_URL;
+/** Primary WhatsApp (defaulting to UK main line) */
+export const WHATSAPP_E164 = WHATSAPP_UK_E164;
+export const WHATSAPP_URL = WHATSAPP_UK_URL;
 
 export const CONTACT_PHONES = [
-  {
-    e164: WHATSAPP_PK_E164,
-    display: "+92 345 156 9778",
-    label: "WhatsApp PK",
-    labelAr: "واتساب باكستان",
-    href: WHATSAPP_PK_URL,
-  },
   {
     e164: WHATSAPP_UK_E164,
     display: "+44 7449 703113",
@@ -45,12 +38,11 @@ export const CONTACT_PHONES = [
 
 /** Primary local SEO geo focus */
 export const HQ = {
-  city: "Makkah",
-  cityAr: "مكة المكرمة",
-  region: "Makkah Province",
-  country: "SA",
-  countryName: "Saudi Arabia",
-  countryNameAr: "المملكة العربية السعودية",
+  city: "Dubai",
+  region: "Dubai, UAE",
+  country: "AE",
+  countryName: "United Arab Emirates",
+  countryNameAr: "الإمارات العربية المتحدة",
 } as const;
 
 export const SERVICE_CITIES = [
@@ -167,10 +159,10 @@ export function buildMetadata({
       creator: "@apexa",
     },
     other: {
-      "geo.region": "SA-02",
-      "geo.placename": "Makkah",
-      "geo.position": "21.3891;39.8579",
-      ICBM: "21.3891, 39.8579",
+      "geo.region": "AE-01",
+      "geo.placename": "Dubai",
+      "geo.position": "25.2048;55.2708",
+      ICBM: "25.2048, 55.2708",
     },
   };
 }
@@ -190,21 +182,21 @@ export const PAGE_SEO = {
   },
   industries: {
     path: "/industries",
-    title: "AI Solutions for KSA Industries | Hotels, Umrah, Clinics, Logistics",
+    title: "AI Solutions for KSA Industries | Hotels, Hospitality, Clinics, Logistics",
     description:
-      "Pain-first AI and software for Hajj & Umrah agencies, hotels, healthcare, construction, logistics, manufacturing, law, and retail across Saudi Arabia. Built from Makkah for local seasons and Arabic customers.",
+      "Pain-first AI and software for travel and hospitality agencies, hotels, healthcare, construction, logistics, manufacturing, law, and retail across Saudi Arabia. Built with local seasonality and Arabic customers in mind.",
   },
   about: {
     path: "/about",
-    title: "About Apexa AI Labs | Makkah HQ AI Software Company",
+    title: "About Apexa AI Labs | Dubai HQ AI Software Company",
     description:
-      "Learn about Apexa AI Labs — a Makkah-based AI lab building practical custom software and intelligent automations for businesses across Saudi Arabia, with Arabic-first delivery and Vision 2030 alignment.",
+      "Learn about Apexa AI Labs — a Dubai-based AI lab building practical custom software and intelligent automations for global operators, with multilingual delivery and practical scaling.",
   },
   contact: {
     path: "/contact",
-    title: "Contact Apexa AI Labs | Book AI & Software Consultation in KSA",
+    title: "Contact Apexa AI Labs | Book AI & Software Consultation — Dubai",
     description:
-      "Contact Apexa AI Labs in Makkah. Tell us your city, industry, and bottleneck — get a clear AI + custom software plan for your Saudi business. WhatsApp and email available.",
+      "Contact Apexa AI Labs in Dubai. Tell us your city, industry, and bottleneck — get a clear AI + custom software plan. WhatsApp and email available.",
   },
   projects: {
     path: "/projects",

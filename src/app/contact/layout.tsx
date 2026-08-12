@@ -7,11 +7,11 @@ export const metadata: Metadata = buildMetadata({
   description: PAGE_SEO.contact.description,
   path: PAGE_SEO.contact.path,
   keywords: [
-    "contact AI company Saudi Arabia",
-    "book AI consultation Makkah",
-    "custom software quote KSA",
-    "WhatsApp Apexa AI Labs",
-    "تواصل أبيكسا مكة",
+    "contact AI company",
+    "book AI consultation Dubai",
+    "book AI consultation London",
+    "custom software quote",
+    "تواصل أبيكسا دبي",
   ],
 });
 

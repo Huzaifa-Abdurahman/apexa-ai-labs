@@ -37,14 +37,14 @@ export const legalEn = {
         id: "who",
         title: "1. Who we are (data controller)",
         paragraphs: [
-          "Apexa AI Labs is a Makkah-based AI and custom software company serving businesses across Saudi Arabia (including Makkah, Madinah, Jeddah, Dammam, and Riyadh) and, where agreed, international clients.",
+          "Apexa AI Labs is a Dubai-based AI and custom software company serving businesses across multiple markets and, where agreed, international clients.",
           "For personal data processed through this website and our client engagements, Apexa AI Labs is the data controller unless a written agreement states that we act only as a processor on behalf of a client.",
         ],
         bullets: [
           "Legal name (trading): Apexa AI Labs",
-          "Headquarters: Makkah, Kingdom of Saudi Arabia",
+          "Headquarters: Dubai, UAE · London, UK",
           "Email (privacy & data requests): info@apexaailabs.com",
-          "WhatsApp business contact: +92 345 156 9778",
+          "WhatsApp business contact: +44 7449 703113",
           "Website: https://apexa.ai",
         ],
       },

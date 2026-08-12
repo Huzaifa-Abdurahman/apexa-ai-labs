@@ -205,7 +205,7 @@ export default function About() {
           className="relative min-h-[320px] overflow-hidden rounded-[2rem] md:min-h-[420px]"
         >
           <Image
-            src="/makkah.jpg"
+            src="/dubai.jpg"
             alt={about.storyTitle}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -219,7 +219,7 @@ export default function About() {
                 isRtl && "font-arabic-ui"
               )}
             >
-              {t("common.makkah")}
+              {t("common.dubai")}
             </p>
             <p className={cn("mt-1 text-sm text-white/70", isRtl && "font-arabic-ui")}>
               {about.storyBadge}

@@ -127,7 +127,7 @@ const cityMeta: Record<
   pakistan: { image: "/pakistan.PNG", icons: [Code2, Database, Workflow, CheckCircle2] },
   dubai: { image: "/dubai.jpg", icons: [Hotel, Store, Ship, Plane] },
   usa: { image: "/america.PNG", icons: [Building2, Store, Network, Database] },
-  makkah: { image: "/makkah.jpg", icons: [Hotel, Store, Stethoscope, Plane] },
+  makkah: { image: "/uk.PNG", icons: [Hotel, Store, Stethoscope, Plane] },
 };
 
 const painIcons = [PhoneCall, Boxes, Zap, Layers] as const;
@@ -565,7 +565,9 @@ export default function Services() {
               className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-3xl border border-black/5 shadow-lg"
             >
               <Image
-                src={sector.id === "hospitality" ? "/saudi-hotels.PNG" : "/law-saudia.PNG"}
+                src={
+                  sector.id === "hospitality" ? "/uk.PNG" : "/law.jpg"
+                }
                 alt={sector.imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

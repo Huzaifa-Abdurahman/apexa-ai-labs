@@ -8,10 +8,10 @@ export const metadata: Metadata = buildMetadata({
   path: PAGE_SEO.about.path,
   keywords: [
     "Apexa AI Labs about",
-    "Makkah AI company",
-    "Saudi AI software team",
-    "Vision 2030 AI partner",
-    "شركة ذكاء اصطناعي مكة",
+    "Dubai AI company",
+    "London AI company",
+    "Global AI software team",
+    "شركة ذكاء اصطناعي دبي",
   ],
 });
 

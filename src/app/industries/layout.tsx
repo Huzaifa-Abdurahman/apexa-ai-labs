@@ -6,9 +6,9 @@ export const metadata: Metadata = buildMetadata({
   title: PAGE_SEO.industries.title,
   description: PAGE_SEO.industries.description,
   path: PAGE_SEO.industries.path,
-  keywords: [
+    keywords: [
     "AI for hotels Saudi Arabia",
-    "Umrah agency software",
+    "Tour operator software",
     "clinic AI appointment Saudi",
     "logistics software KSA",
     "construction software Saudi Arabia",

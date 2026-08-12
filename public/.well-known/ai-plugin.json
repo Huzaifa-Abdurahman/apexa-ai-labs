@@ -2,8 +2,8 @@
   "schema_version": "v1",
   "name_for_human": "Apexa AI Labs",
   "name_for_model": "apexa_ai_labs",
-  "description_for_human": "Makkah-based AI and custom software company for Saudi Arabia.",
-  "description_for_model": "Apexa AI Labs is a Makkah HQ company offering custom software development, AI automations, WhatsApp/voice agents, AI apps, pipelines, and workflows for businesses in Makkah, Madinah, Jeddah, Dammam, and Riyadh, Saudi Arabia. Arabic-first and English support.",
+  "description_for_human": "Dubai & London-based AI and custom software company serving multiple markets.",
+  "description_for_model": "Apexa AI Labs operates from Dubai & London offering custom software development, AI automations, WhatsApp/voice agents, AI apps, pipelines, and workflows for businesses in Saudi Arabia and international markets. Arabic-first and English support.",
   "auth": { "type": "none" },
   "api": {
     "type": "openapi",

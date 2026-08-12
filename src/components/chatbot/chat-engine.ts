@@ -13,7 +13,7 @@ const knowledge: { match: RegExp; reply: Reply }[] = [
   {
     match: /service|what do you|offer|خدمات|ماذا تقدم|حلول/i,
     reply: {
-      en: "We deliver: custom software (ERP/CRM), AI automations, AI apps, data pipelines, workflow automation, and voice + WhatsApp agents — Arabic-ready from our Makkah HQ.",
+      en: "We deliver: custom software (ERP/CRM), AI automations, AI apps, data pipelines, workflow automation, and voice + WhatsApp agents — Arabic-ready from our Dubai HQ.",
       ar: "نقدّم: برمجيات مخصصة (ERP/CRM)، أتمتة بالذكاء الاصطناعي، تطبيقات ذكية، أنابيب بيانات، سير عمل مؤتمت، ووكلاء صوت وواتساب — بدعم عربي من مقرنا في مكة.",
     },
   },
@@ -41,21 +41,21 @@ const knowledge: { match: RegExp; reply: Reply }[] = [
   {
     match: /contact|book|call|consult|تواصل|احجز|استشار/i,
     reply: {
-      en: "Happy to connect you. Open Contact to book a call, email info@apexaailabs.com or galaxysoftwarehub@gmail.com, or WhatsApp +92 345 156 9778 / +44 7449 703113 — our team replies quickly.",
+      en: "Happy to connect you. Open Contact to book a call, email info@apexaailabs.com or galaxysoftwarehub@gmail.com, or WhatsApp +44 7449 703113 — our team replies quickly.",
       ar: "يسعدنا التواصل. افتح صفحة تواصل لحجز مكالمة، أو راسل info@apexaailabs.com أو galaxysoftwarehub@gmail.com، أو واتساب +92 345 156 9778 / +44 7449 703113 — فريقنا يرد بسرعة.",
     },
   },
   {
     match: /umrah|hotel|clinic|hospital|logistics|industri|عمرة|فندق|عياد|لوجست|صناع/i,
     reply: {
-      en: "We specialize in pain-first solutions for Umrah/hotels, clinics, logistics, manufacturing, law, and retail. Visit Industries to explore your sector.",
+      en: "We specialize in pain-first solutions for hospitality/hotels, clinics, logistics, manufacturing, law, and retail. Visit Industries to explore your sector.",
       ar: "نتخصص في حلول تبدأ بالألم لوكالات العمرة/الفنادق والعيادات واللوجستيات والتصنيع والمحاماة والتجزئة. زر صفحة القطاعات لاستكشاف قطاعك.",
     },
   },
 ];
 
 const fallback: Reply = {
-  en: "Great question. Apexa AI Labs builds custom software and AI systems for Saudi businesses from Makkah. Ask about services, cities, WhatsApp AI, or say “contact” to reach the team.",
+  en: "Great question. Apexa AI Labs builds custom software and AI systems for businesses from Dubai. Ask about services, cities, WhatsApp AI, or say “contact” to reach the team.",
   ar: "سؤال ممتاز. أبيكسا تبني برمجيات وذكاء اصطناعي لأعمال المملكة من مكة. اسأل عن الخدمات أو المدن أو واتساب الذكي، أو قل «تواصل» للوصول للفريق.",
 };
 

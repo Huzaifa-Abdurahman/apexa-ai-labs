@@ -19,12 +19,12 @@ type Msg = {
 const copy = {
   en: {
     title: "Apexa AI Assistant",
-    subtitle: "Ask about AI, software & KSA solutions",
+    subtitle: "Ask about AI, software & global solutions",
     placeholder: "Ask anything about Apexa…",
     welcome:
-      "Hi — I'm your Apexa guide. Ask about custom software, AI agents, industries, or how we help teams in Makkah & across KSA.",
+      "Hi — I'm your Apexa guide. Ask about custom software, AI agents, industries, or how we help teams from Dubai to KSA.",
     typing: "Apexa is typing",
-    online: "Online · Makkah HQ",
+    online: "Online · Dubai HQ",
     suggestions: ["What services?", "WhatsApp AI", "Cities you serve", "Book a call"],
     contactCta: "Talk to a human",
     open: "Open Apexa AI chat",

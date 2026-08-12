@@ -52,48 +52,48 @@ type Industry = {
 
 const industries: Industry[] = [
   {
-    id: "hajj-umrah",
-    title: "Hajj & Umrah Agencies",
-    short: "Pilgrim packages & peak-season ops",
+    id: "tour-uk",
+    title: "Tour Operators & Travel Agencies (UK)",
+    short: "Bookings, itineraries & seasonal demand",
     icon: Users,
-    image: "/clock.jpg",
-    cities: ["Makkah", "Madinah", "Jeddah"],
+    image: "/uk.PNG",
+    cities: ["London", "Manchester", "Birmingham"],
     story:
-      "When thousands of pilgrims ask about packages, visas, rooms, and payments at once, your team lives inside WhatsApp. One missed message can mean a lost booking — and peak season never slows down for paperwork.",
+      "UK tour operators juggle bookings, supplier confirmations, and last-minute itinerary changes. Customers expect quick answers across phone, email, and chat — and seasonality creates sharp demand spikes.",
     pains: [
       {
-        title: "Inbox overload every peak season",
+        title: "High season inbox surges",
         detail:
-          "The same questions arrive hundreds of times a day: package price, hotel distance, visa status, transport timing. Staff copy-paste answers until midnight.",
+          "Questions about availability, refunds, and itinerary changes flood channels during peak travel weeks. Manual replies slow conversions.",
       },
       {
-        title: "Bookings scattered across chats & sheets",
+        title: "Disparate booking systems",
         detail:
-          "Pilgrim details, payments, and room allotments live in WhatsApp threads and Excel. Nobody has one clean view of who is confirmed.",
+          "Reservations, supplier confirmations, and payments are scattered across platforms and spreadsheets, making reconciliation slow and error-prone.",
       },
       {
-        title: "Visa & document chasing",
+        title: "Late changes and supplier coordination",
         detail:
-          "Missing passports, unclear visa stages, and last-minute document requests create stress for both agents and families.",
+          "Last-minute supplier updates or cancellations require rapid coordination and clear customer communication to avoid dissatisfaction.",
       },
       {
-        title: "Payment tracking is manual",
+        title: "Refunds & compliance",
         detail:
-          "Partial payments, refunds, and package upgrades are hard to reconcile when everything is tracked by hand.",
+          "Handling refunds, insurance claims, and regulatory requests requires accurate records and fast responses.",
       },
     ],
     breaksAtScale: [
-      "More agents do not fix a broken process — they multiply confusion",
-      "Customer experience drops exactly when demand (and revenue) is highest",
-      "Owners cannot see occupancy, cash, or open tickets in real time",
+      "Manual processes can't keep up with peak-week demand",
+      "Customers churn when confirmations are delayed",
+      "Operations lose visibility into supplier status and payments",
     ],
     solutions: [
-      "AI WhatsApp + voice agents for FAQs, packages, and status updates",
-      "Pilgrim / package portals with booking and document workflows",
-      "Custom CRM for agencies with payment and room tracking",
-      "Automation for reminders, confirmations, and handoffs to hotels/transport",
+      "AI chat & voice agents for instant booking checks and FAQs",
+      "Centralized booking portals with supplier workflows",
+      "Automated notifications for itinerary and payment updates",
+      "Refund and exception handling automation linked to finance systems",
     ],
-    outcomes: ["Faster replies", "Fewer missed bookings", "Cleaner operations", "Happier pilgrims"],
+    outcomes: ["Faster confirmations", "Fewer manual reconciliations", "Happier travellers", "Cleaner ops"],
   },
   {
     id: "hotels",
@@ -105,10 +105,10 @@ const industries: Industry[] = [
     story:
       "Guests expect instant answers about rooms, check-in, late arrival, and nearby services. Front desks are busy; phones ring; WhatsApp never stops. Slow replies become bad reviews.",
     pains: [
-      {
-        title: "Reception cannot answer every channel",
-        detail:
-          "Calls, walk-ins, Booking.com messages, and WhatsApp all compete for the same small team — especially at night and during Umrah peaks.",
+        {
+          title: "Reception cannot answer every channel",
+          detail:
+          "Calls, walk-ins, Booking.com messages, and WhatsApp all compete for the same small team — especially at night and during peak seasons.",
       },
       {
         title: "Check-in and house status feel disconnected",

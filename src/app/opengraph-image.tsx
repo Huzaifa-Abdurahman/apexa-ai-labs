@@ -31,7 +31,7 @@ export default function OpenGraphImage() {
               textTransform: "uppercase",
             }}
           >
-            Makkah · Saudi Arabia
+            Dubai
           </div>
           <div style={{ fontSize: 72, fontWeight: 800, lineHeight: 1.05, maxWidth: 980 }}>
             Apexa AI Labs

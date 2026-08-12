@@ -15,7 +15,7 @@ export const en = {
     closeMenu: "Close menu",
   },
   footer: {
-    tagline: "Makkah-based AI lab for custom software, automations, and scalable workflows across Saudi Arabia.",
+    tagline: "Dubai-based AI lab for custom software, automations, and scalable workflows.",
     solutions: "Solutions",
     industries: "Industries",
     cities: "Cities we serve",
@@ -28,7 +28,7 @@ export const en = {
     aiPipelines: "Live reports & insights",
     workflows: "Web development",
     aiApps: "Smart business apps",
-    umrahHotels: "Umrah & hotels",
+    umrahHotels: "Hospitality",
     healthcare: "Healthcare & clinics",
     logistics: "Logistics & transport",
     manufacturing: "Manufacturing",
@@ -53,7 +53,7 @@ export const en = {
     facebook: "Facebook",
     x: "X",
     instagram: "Instagram",
-    hq: "Makkah HQ · Saudi Arabia",
+    hq: "Dubai HQ · Global",
     product: "Solutions",
     overview: "Overview",
     pricing: "Consultation",
@@ -67,6 +67,7 @@ export const en = {
   },
   common: {
     apexa: "Apexa",
+    dubai: "Dubai",
     makkah: "Makkah",
     madinah: "Madinah",
     jeddah: "Jeddah",
@@ -91,16 +92,16 @@ export const en = {
     experienceTitle: "4+ Years of",
     experienceTitleHighlight: "Innovation",
     experienceP1:
-      "With roots in Makkah, Apexa AI Labs has spent 4+ years helping Saudi businesses move faster — with systems built around trust, clear delivery, and respect for how teams actually work.",
+      "With roots in Dubai, Apexa AI Labs has spent 4+ years helping businesses move faster — with systems built around trust, clear delivery, and respect for how teams actually work.",
     experienceP2:
-      "From Umrah & hospitality peaks to clinics, logistics, and enterprise ops in Jeddah, Dammam, and Riyadh — we design AI and custom software that feels local, reliable, and ready to scale.",
+      "From seasonal hospitality peaks to clinics, logistics, and enterprise ops in Jeddah, Dammam, and Riyadh — we design AI and custom software that feels local, reliable, and ready to scale.",
     learnStory: "Learn our story",
     statsYears: "Years",
     statsProjects: "Projects",
     statsCities: "Cities",
     statsCountries: "Countries",
     ksaOnly: "KSA only",
-    hqMakkah: "Makkah",
+    hqMakkah: "Dubai",
     dealAlt: "Apexa partnership in Saudi Arabia",
     whatsappCta: "Chat on WhatsApp",
     qrTitle: "Scan to connect",
@@ -174,15 +175,15 @@ export const en = {
       sectors: [
         {
           id: "hospitality",
-          title: "Hotels & Umrah operators",
-          desc: "Bookings, guest questions, and peak-season chaos — handled by AI while your team welcomes guests.",
-          imageAlt: "Grand hotel towers in Makkah, Saudi Arabia",
+          title: "Hospitality & Tourism (UK)",
+          desc: "Bookings, guest questions, and seasonal peaks — handled by AI while your team focuses on service and guest experience.",
+          imageAlt: "UK hospitality skyline and hotels",
         },
         {
           id: "legal",
           title: "Law firms & professional services",
           desc: "Client intake, appointment scheduling, and document follow-ups — organized and automatic.",
-          imageAlt: "Scales of justice in front of the Saudi flag",
+          imageAlt: "Scales of justice",
         },
       ],
       statsTitle: "The numbers behind the trust",
@@ -249,7 +250,7 @@ export const en = {
     hospitality: "Hospitality",
     healthcare: "Healthcare",
     logistics: "Logistics",
-    umrahOps: "Umrah Ops",
+    umrahOps: "Hospitality Ops",
     enterprise: "Enterprise",
   },
   capabilities: {
@@ -290,7 +291,7 @@ export const en = {
   scaling: {
     badge: "Vision 2030",
     title: "Accelerating your Vision 2030 goals with AI & software",
-    subtitle: "Built for national ambition — delivered with local precision from Makkah.",
+    subtitle: "Built for national ambition — delivered with local precision from Dubai.",
     partnersTitle: "Global Presence",
     partnersDesc: "International AI Innovation",
     viewPartnerships: "Explore global reach",
@@ -386,12 +387,12 @@ export const en = {
   faq: {
     title: "Frequently asked questions",
     sideTitle: "Need a fast engineering team in KSA?",
-    sideBody: "Talk to our Makkah team on WhatsApp — we’ll map your next step in minutes.",
+    sideBody: "Talk to our Dubai team on WhatsApp — we’ll map your next step in minutes.",
     chatWhatsapp: "Chat on WhatsApp",
     items: [
       {
         q: "Do you only serve businesses in Saudi Arabia?",
-        a: "Yes. Apexa AI Labs is based in Makkah and focused on KSA — Makkah, Madinah, Jeddah, Dammam, and Riyadh.",
+        a: "Apexa AI Labs operates from Dubai and serves Saudi Arabia and international clients — Makkah, Madinah, Jeddah, Dammam, and Riyadh included.",
       },
       {
         q: "Can AI handle Arabic voice and WhatsApp?",
@@ -419,14 +420,14 @@ export const en = {
     eyebrow: "Get in touch",
     title: "Contact us",
     subtitle:
-      "Tell us your city, industry, and the bottleneck slowing your team. We'll map a clear AI + software path from our Makkah base.",
+      "Tell us your city, industry, and the bottleneck slowing your team. We'll map a clear AI + software path from our Dubai bases.",
     whatsappLabel: "WhatsApp",
-    location: "Makkah, Saudi Arabia",
-    globeLabel: "Makkah HQ",
+    location: "Dubai, UAE · London, UK",
+    globeLabel: "Dubai HQ",
     formTitle: "Start a conversation",
     formSubtitle: "Begin the dialogue with us",
     successTitle: "Message received",
-    successBody: "Thank you — our Makkah team will get back to you shortly.",
+    successBody: "Thank you — our Dubai team will get back to you shortly.",
     fullName: "Full name",
     fullNamePh: "Your name",
     email: "Email",
@@ -443,20 +444,20 @@ export const en = {
   about: {
     eyebrow: "About Apexa",
     title: "Apexa AI Labs",
-    titleLine: "Makkah-based AI & software for Saudi operators",
+    titleLine: "Dubai-based AI & software for global operators",
     subtitle:
       "We build custom software, AI agents, and workflows that remove busywork — so your team can focus on customers, not inboxes.",
-    morphing: ["Knowledge", "Innovation", "Trust", "Excellence", "Makkah", "KSA"],
+    morphing: ["Knowledge", "Innovation", "Trust", "Excellence", "Dubai", "London"],
     ayahLabel: "Our work ethic",
     ayahRef: "At-Tawbah 9:105",
     ayahTranslation:
       "And say, “Do [as you will], for Allah will see your deeds, and [so will] His Messenger and the believers.”",
-    storyBadge: "Makkah HQ · Serving KSA",
+    storyBadge: "Dubai HQ · Global",
     storyTitle: "Close to the work that never sleeps",
     storyLead:
-      "Apexa started in Makkah to stay near the businesses that run under real pressure — hotels, clinics, logistics, law firms, and multi-city operations.",
+      "Apexa operates from Dubai and London to stay close to the global operators we serve — hotels, clinics, logistics, law firms, and multi-city operations.",
     storyBody:
-      "Peak season, Arabic customers, WhatsApp chaos, and systems that don’t talk to each other. We design for that reality first, then scale cleanly across Jeddah, Madinah, Dammam, and Riyadh.",
+      "Peak season, multilingual customers, messaging chaos, and systems that don’t talk to each other. We design for those realities first, then scale cleanly across markets.",
     storyPoints: [
       "Arabic-first delivery with English when needed",
       "Built for Vision 2030 operators, not demo decks",
@@ -512,7 +513,7 @@ export const en = {
       { step: "04", title: "Hand over", desc: "Training, support, and ownership — so the system stays yours." },
     ],
     teamTitle: "The people behind Apexa",
-    teamSubtitle: "A focused Makkah lab of builders who care about Saudi outcomes.",
+    teamSubtitle: "A focused Dubai lab of builders who care about operator outcomes.",
     teamRoles: [
       { role: "Product & strategy", desc: "Turns business pain into a clear build plan." },
       { role: "Engineering", desc: "Ships reliable software, integrations, and AI systems." },
@@ -524,7 +525,7 @@ export const en = {
       "Help Saudi businesses move from busywork to clarity — with AI, custom software, and workflows that scale without losing the human standard of service.",
     missionAr: "نساعد أعمال المملكة على الانتقال من الانشغال إلى الوضوح — بذكاء اصطناعي وبرمجيات مخصصة وسير عمل قابلة للتوسع.",
     ctaTitle: "Ready to remove one bottleneck?",
-    ctaBody: "Tell us your city and what’s slowing the team — we’ll map a practical next step from Makkah.",
+    ctaBody: "Tell us your city and what’s slowing the team — we’ll map a practical next step from our Dubai bases.",
     ctaServices: "Explore our services",
     ctaContact: "Book a discovery call",
   },
@@ -695,9 +696,9 @@ export const en = {
         id: "makkah",
         name: "Makkah, KSA",
         arabic: "Multilingual",
-        tagline: "Pilgrim hospitality & seasonal operations",
-        imageAlt: "Pilgrim hospitality operations in Makkah",
-        industries: ["Hotels & Umrah ops", "Retail & gifts", "Clinics", "Transport"],
+        tagline: "Hospitality & seasonal operations",
+        imageAlt: "Hospitality operations",
+        industries: ["Hospitality & Tourism (UK)", "Retail & gifts", "Clinics", "Transport"],
         pains: [
           "Seasonal surges overwhelm booking desks and WhatsApp",
           "Multilingual guests need faster replies",
@@ -730,7 +731,7 @@ export const en = {
     faqs: [
       {
         q: "Do you only serve businesses in Saudi Arabia?",
-        a: "Yes. Apexa AI Labs is based in Makkah and focused on KSA — Makkah, Madinah, Jeddah, Dammam, and Riyadh. We design solutions around local industries, seasons, and operating realities.",
+        a: "Apexa AI Labs operates from Dubai and serves Saudi Arabia and international clients — Makkah, Madinah, Jeddah, Dammam, and Riyadh included. We design solutions around local industries, seasons, and operating realities.",
       },
       {
         q: "Can AI handle Arabic voice and WhatsApp conversations?",
@@ -747,7 +748,7 @@ export const en = {
     ],
   },
   industriesPage: {
-    badge: "KSA industries · Makkah-based · Pain-first solutions",
+    badge: "KSA industries · Dubai · Pain-first solutions",
     title: "We explain the pain",
     titleHighlight: "then we remove it",
     subtitle:
@@ -782,7 +783,7 @@ export const en = {
     whyBody:
       "Operators don’t buy “AI.” They buy fewer missed bookings, faster replies, cleaner ops, and nights that don’t end in WhatsApp chaos.",
     ctaTitle: "Tell us your industry pain",
-    ctaBody: "Share your city and bottleneck — we’ll map a practical plan from Makkah.",
+    ctaBody: "Share your city and bottleneck — we’ll map a practical plan from Dubai.",
     ctaPrimary: "Book a free consultation",
     ctaSecondary: "Explore services",
   },

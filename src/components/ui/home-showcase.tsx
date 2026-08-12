@@ -110,7 +110,7 @@ const CARD_ACCENTS: Record<string, string> = {
 
 const SECTOR_IMAGES: Record<string, string> = {
   hospitality: "/saudi-hotels.PNG",
-  legal: "/law-saudia.PNG",
+  legal: "/law.jpg",
 };
 
 function AssistantCarousel({ imageAlt }: { imageAlt: string }) {

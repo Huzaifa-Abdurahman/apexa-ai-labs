@@ -121,33 +121,28 @@ export default function Footer() {
         { label: t("footer.terms"), href: "/terms" },
       ],
     },
-    {
-      title: t("footer.getStarted"),
-      links: [
-        { label: t("footer.bookCall"), href: "/contact" },
         {
-          label: `${t("footer.whatsapp")} PK`,
-          href: CONTACT_PHONES[0].href,
-          external: true,
+          title: t("footer.getStarted"),
+          links: [
+            { label: t("footer.bookCall"), href: "/contact" },
+            {
+              label: `${t("footer.whatsapp")}`,
+              href: CONTACT_PHONES[0].href,
+              external: true,
+            },
+            {
+              label: CONTACT_EMAIL,
+              href: `mailto:${CONTACT_EMAIL}`,
+              external: true,
+            },
+            {
+              label: CONTACT_EMAIL_SECONDARY,
+              href: `mailto:${CONTACT_EMAIL_SECONDARY}`,
+              external: true,
+            },
+            { label: t("footer.hq"), href: "/contact" },
+          ],
         },
-        {
-          label: `${t("footer.whatsapp")} UK`,
-          href: CONTACT_PHONES[1].href,
-          external: true,
-        },
-        {
-          label: CONTACT_EMAIL,
-          href: `mailto:${CONTACT_EMAIL}`,
-          external: true,
-        },
-        {
-          label: CONTACT_EMAIL_SECONDARY,
-          href: `mailto:${CONTACT_EMAIL_SECONDARY}`,
-          external: true,
-        },
-        { label: t("footer.hq"), href: "/contact" },
-      ],
-    },
   ];
 
   const socials = [
@@ -264,7 +259,7 @@ export default function Footer() {
               isRtl && "font-arabic-ui"
             )}
           >
-            {isRtl ? "من مكة · لأعمال المملكة" : "From Makkah · For KSA business"}
+            {isRtl ? "دبي ولندن · للأعمال العالمية" : "From Dubai · For global business"}
           </p>
         </div>
       </div>

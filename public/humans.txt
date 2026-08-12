@@ -1,6 +1,6 @@
 /* TEAM */
 Company: Apexa AI Labs
-Location: Makkah, Saudi Arabia
+Location: Dubai & London
 Contact: contact@apexa.ai
 Site: https://apexa.ai
 
