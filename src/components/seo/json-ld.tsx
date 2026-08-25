@@ -34,11 +34,11 @@ export function SiteJsonLd() {
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
-      url: `${SITE_URL}/logo.png`,
+      url: `${SITE_URL}/logo-512.png`,
       width: 512,
       height: 512,
     },
-    image: `${SITE_URL}/logo.png`,
+    image: `${SITE_URL}/logo-512.png`,
     description: SITE_TAGLINE,
     email: [CONTACT_EMAIL, CONTACT_EMAIL_SECONDARY],
     telephone: CONTACT_PHONES.map((p) => p.e164),
@@ -53,14 +53,19 @@ export function SiteJsonLd() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 25.2048,
-      longitude: 55.2708,
+      latitude: 51.5074,
+      longitude: -0.1278,
     },
     areaServed: [
       {
         "@type": "Country",
-        name: "Saudi Arabia",
-        sameAs: "https://www.wikidata.org/wiki/Q851",
+        name: "United Kingdom",
+        sameAs: "https://www.wikidata.org/wiki/Q145",
+      },
+      {
+        "@type": "Country",
+        name: "United States",
+        sameAs: "https://www.wikidata.org/wiki/Q30",
       },
       ...SERVICE_CITIES.map((city) => ({
         "@type": "City",
@@ -80,12 +85,12 @@ export function SiteJsonLd() {
     knowsAbout: [
       "Artificial Intelligence",
       "Custom Software Development",
-      "Saudi Arabia Vision 2030",
+      "UK digital transformation",
       "Arabic Natural Language Processing",
       "WhatsApp Business Automation",
       "Enterprise Resource Planning",
       "Tourism and Hospitality Operations",
-      "KSA Digital Transformation",
+      "USA market operations",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -97,8 +102,8 @@ export function SiteJsonLd() {
             "@type": "Service",
             name: "Custom Software Development",
             description:
-              "Bespoke ERP, CRM, portals, and internal tools for Saudi businesses.",
-            areaServed: "SA",
+              "Bespoke ERP, CRM, portals, and internal tools for UK and USA businesses.",
+            areaServed: ["GB", "US"],
             provider: { "@id": `${SITE_URL}/#organization` },
           },
         },
@@ -109,7 +114,7 @@ export function SiteJsonLd() {
             name: "AI Automations & Voice Agents",
             description:
               "Arabic-ready voice and WhatsApp AI agents connected to real business systems.",
-            areaServed: "SA",
+            areaServed: ["GB", "US"],
             provider: { "@id": `${SITE_URL}/#organization` },
           },
         },
@@ -119,8 +124,8 @@ export function SiteJsonLd() {
             "@type": "Service",
             name: "Live Reports, Insights & Workflow Automation",
             description:
-              "Data pipelines and process automation for scalable KSA operations.",
-            areaServed: "SA",
+              "Data pipelines and process automation for scalable UK and USA operations.",
+            areaServed: ["GB", "US"],
             provider: { "@id": `${SITE_URL}/#organization` },
           },
         },
@@ -134,7 +139,7 @@ export function SiteJsonLd() {
         telephone: CONTACT_PHONES[0].e164,
         url: absoluteUrl("/contact"),
         availableLanguage: ["English", "Arabic"],
-        areaServed: "SA",
+        areaServed: ["GB", "US"],
       },
       {
         "@type": "ContactPoint",
@@ -143,7 +148,7 @@ export function SiteJsonLd() {
         telephone: WHATSAPP_E164,
         url: WHATSAPP_URL,
         availableLanguage: ["English", "Arabic"],
-        areaServed: ["SA", "GB"],
+        areaServed: ["GB", "US"],
       },
     ],
     sameAs: [
@@ -152,7 +157,7 @@ export function SiteJsonLd() {
       absoluteUrl("/services"),
     ],
     priceRange: "$$",
-    currenciesAccepted: "SAR",
+    currenciesAccepted: "GBP, USD",
     paymentAccepted: "Bank Transfer, Card",
   };
 
@@ -182,14 +187,14 @@ export function SiteJsonLd() {
       "@type": "WebPage",
       "@id": `${SITE_URL}/#webpage`,
       url: SITE_URL,
-      name: `${SITE_NAME} | AI & Custom Software Company (Dubai)`,
+      name: `${SITE_NAME} | AI & Custom Software Company (London)`,
       isPartOf: { "@id": `${SITE_URL}/#website` },
       about: { "@id": `${SITE_URL}/#organization` },
       description: SITE_TAGLINE,
       inLanguage: ["en", "ar"],
       primaryImageOfPage: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/logo.png`,
+        url: `${SITE_URL}/logo-512.png`,
       },
     },
   ];
@@ -204,7 +209,7 @@ export function SiteJsonLd() {
         name: "Do you only serve businesses in Saudi Arabia?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Apexa AI Labs operates from Dubai and serves Saudi Arabia and international clients — Makkah, Madinah, Jeddah, Dammam, and Riyadh included.",
+          text: "Apexa AI Labs operates from London and serves UK and USA clients, with multilingual delivery for international teams.",
         },
       },
       {
@@ -220,7 +225,7 @@ export function SiteJsonLd() {
         name: "What services does Apexa AI Labs offer?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Custom software development, AI automations, AI apps, AI data pipelines, automation workflows, and voice/integration layers for Saudi businesses.",
+          text: "Custom software development, AI automations, AI apps, AI data pipelines, automation workflows, and voice/integration layers for UK and USA businesses.",
         },
       },
       {
@@ -228,7 +233,7 @@ export function SiteJsonLd() {
         name: "Where is Apexa AI Labs located?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Our headquarters is in Dubai. We serve operators across Saudi Arabia and international markets.",
+          text: "Our headquarters is in London, UK. We serve operators across UK and USA markets.",
         },
       },
     ],

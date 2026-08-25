@@ -56,9 +56,18 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico" },
-      { url: "/logo.png", type: "image/png" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/logo-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/logo-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/logo-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/logo-64x64.png", type: "image/png", sizes: "64x64" },
+      { url: "/logo-128x128.png", type: "image/png", sizes: "128x128" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/logo.png" }],
+    apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
     shortcut: ["/favicon.ico"],
   },
   verification: {

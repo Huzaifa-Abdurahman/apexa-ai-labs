@@ -146,10 +146,10 @@ export default function Footer() {
   ];
 
   const socials = [
-    { label: t("footer.linkedin"), href: "#" },
-    { label: t("footer.facebook"), href: "#" },
+    { label: t("footer.linkedin"), href: "https://www.linkedin.com/company/apexa-ai-labs/?viewAsMember=true" },
+    { label: t("footer.facebook"), href: "https://www.facebook.com/profile.php?id=61584158120444" },
     { label: t("footer.x"), href: "#" },
-    { label: t("footer.instagram"), href: "#" },
+    { label: t("footer.instagram"), href: "http://instagram.com/apexaailabs/" },
   ];
 
   return (
@@ -205,10 +205,11 @@ export default function Footer() {
             <span className="relative flex size-12 items-center justify-center sm:size-14">
               <span className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400 to-orange-500 opacity-90 shadow-lg shadow-cyan-500/20 transition group-hover:scale-105" />
               <Image
-                src="/logo.png"
+                src="/favicon-32x32.png"
                 alt=""
                 width={40}
                 height={40}
+                sizes="(max-width: 768px) 32px, 40px"
                 className="relative z-10 size-8 object-contain brightness-0 invert sm:size-9"
               />
             </span>
@@ -246,6 +247,8 @@ export default function Footer() {
               <a
                 key={s.label}
                 href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-colors hover:text-primary"
               >
                 {s.label}
@@ -259,7 +262,7 @@ export default function Footer() {
               isRtl && "font-arabic-ui"
             )}
           >
-            {isRtl ? "دبي ولندن · للأعمال العالمية" : "From Dubai · For global business"}
+            {isRtl ? "من لندن · للمملكة المتحدة وأمريكا" : "From London HQ · Serving UK and USA"}
           </p>
         </div>
       </div>

@@ -7,6 +7,7 @@ import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-
 import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { useLocale } from "@/i18n/locale-provider";
 import { cn } from "@/lib/utils";
+import { WHATSAPP_UK_URL } from "@/lib/seo";
 import type { Locale } from "@/i18n/config";
 
 export default function Navbar() {
@@ -95,11 +96,12 @@ export default function Navbar() {
               aria-label="Apexa AI Labs — Home"
             >
               <Image
-                src="/logo.png"
+                src="/logo-128x128.png"
                 alt="Apexa AI Labs"
                 width={180}
                 height={60}
                 priority
+                sizes="(max-width: 768px) 132px, 180px"
                 className="h-10 w-auto object-contain object-left transition duration-300 group-hover:opacity-80"
               />
             </Link>
@@ -168,7 +170,9 @@ export default function Navbar() {
 
             {/* CTA */}
             <Link
-              href="/contact"
+              href={WHATSAPP_UK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 "group hidden sm:flex items-center gap-3 bg-[#0095FF] hover:bg-[#0080FF] text-white rounded-full pl-5 pr-1.5 py-1.5 transition-all shadow-[0_4px_14px_0_rgba(0,149,255,0.39)] hover:shadow-[0_6px_20px_rgba(0,149,255,0.23)] hover:-translate-y-0.5",
                 isRtl && "font-arabic-ui pr-5 pl-1.5"
@@ -219,7 +223,9 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <Link
-                  href="/contact"
+                  href={WHATSAPP_UK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
                     "mt-4 mx-2 flex items-center justify-between bg-[#0095FF] hover:bg-[#0080FF] text-white rounded-full pl-6 pr-2 py-2 transition-all",

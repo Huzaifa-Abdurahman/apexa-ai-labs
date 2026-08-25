@@ -11,9 +11,11 @@ import { HomeShowcase } from "@/components/ui/home-showcase";
 import { CapabilitiesSection } from "@/components/ui/capabilities-section";
 import { ScalingCompanies } from "@/components/ui/scaling-companies";
 import { AnimatedTestimonialsDemo } from "@/components/ui/animated-testimonials-demo";
+import { SuccessStoriesSection } from "@/components/ui/success-stories-section";
 import QRCode from "react-qr-code";
 import { useLocale } from "@/i18n/locale-provider";
 import { cn } from "@/lib/utils";
+import { WHATSAPP_UK_URL } from "@/lib/seo";
 
 export default function Home() {
   const { t, isRtl } = useLocale();
@@ -40,6 +42,7 @@ export default function Home() {
 
       <HomeShowcase />
 
+      <SuccessStoriesSection />
       <ScalingCompanies />
       <CapabilitiesSection />
       <section className="py-24 bg-[#F8FAFC] border-y border-slate-200">
@@ -98,7 +101,7 @@ export default function Home() {
 
                   <div className="p-3 sm:p-4 bg-white border border-slate-200 rounded-3xl flex sm:inline-flex flex-row items-center gap-4 shadow-xl relative overflow-hidden group w-full sm:w-auto text-start">
                     <div className="bg-white p-1.5 rounded-xl shrink-0 relative z-10 shadow-sm border border-slate-100">
-                      <QRCode value="https://wa.me/923451569778" size={64} level="H" />
+                      <QRCode value={WHATSAPP_UK_URL} size={64} level="H" />
                     </div>
                     <div>
                       <h3

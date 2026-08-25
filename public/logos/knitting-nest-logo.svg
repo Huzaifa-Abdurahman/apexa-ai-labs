@@ -1,0 +1,50 @@
+<svg width="640" height="640" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="80" x2="560" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDF7F0"/>
+      <stop offset="1" stop-color="#F2E6D8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#B89062" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <circle cx="320" cy="320" r="280" fill="url(#bg)" stroke="#E2CDB0" stroke-width="6"/>
+  <circle cx="320" cy="320" r="245" fill="none" stroke="#E3D5BD" stroke-width="2.5" stroke-dasharray="2 10"/>
+  <path d="M156 268C180 188 241 146 320 146C399 146 460 188 484 268" stroke="#DCC0A2" stroke-width="6" stroke-linecap="round"/>
+  <path d="M175 388C214 443 267 475 320 475C373 475 426 443 465 388" stroke="#DCC0A2" stroke-width="6" stroke-linecap="round"/>
+  <path d="M202 192C212 168 228 150 268 140" stroke="#D7B58C" stroke-width="5" stroke-linecap="round"/>
+  <path d="M438 192C428 168 412 150 372 140" stroke="#D7B58C" stroke-width="5" stroke-linecap="round"/>
+  <path d="M122 356C102 332 98 291 112 267" stroke="#D7B58C" stroke-width="5" stroke-linecap="round"/>
+  <path d="M518 356C538 332 542 291 528 267" stroke="#D7B58C" stroke-width="5" stroke-linecap="round"/>
+
+  <g filter="url(#shadow)">
+    <ellipse cx="320" cy="356" rx="110" ry="56" fill="#F2DAB4" stroke="#B88A4A" stroke-width="3"/>
+    <ellipse cx="250" cy="340" rx="36" ry="22" fill="#D7AD76"/>
+    <ellipse cx="390" cy="340" rx="36" ry="22" fill="#D7AD76"/>
+    <path d="M255 252C255 214 284 184 320 184C356 184 385 214 385 252V315H255V252Z" fill="#F6E9D8" stroke="#B88A4A" stroke-width="3"/>
+    <path d="M275 265C275 235 295 214 320 214C345 214 365 235 365 265V305H275V265Z" fill="#F0D3A7" stroke="#B88A4A" stroke-width="3"/>
+    <path d="M250 290C230 310 220 340 222 376C224 408 244 436 271 445C295 454 318 437 326 415C334 391 331 356 311 332L250 290Z" fill="#F3D3A1" stroke="#B88A4A" stroke-width="3"/>
+    <path d="M390 290C410 310 420 340 418 376C416 408 396 436 369 445C345 454 322 437 314 415C306 391 309 356 329 332L390 290Z" fill="#F3D3A1" stroke="#B88A4A" stroke-width="3"/>
+    <path d="M220 362C188 341 171 317 169 284C168 255 183 230 212 218" stroke="#D8B88A" stroke-width="8" stroke-linecap="round"/>
+    <path d="M420 362C452 341 469 317 471 284C472 255 457 230 428 218" stroke="#D8B88A" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="285" cy="356" r="9" fill="#9D6F3F"/>
+    <circle cx="355" cy="356" r="9" fill="#9D6F3F"/>
+    <circle cx="320" cy="318" r="20" fill="#E7C497"/>
+    <circle cx="320" cy="318" r="12" fill="#D1A36E"/>
+    <path d="M298 320C308 302 332 302 342 320" stroke="#9D6F3F" stroke-width="3" stroke-linecap="round"/>
+    <path d="M250 247C266 222 292 208 320 208C348 208 374 222 390 247" stroke="#D8B17F" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.8">
+    <path d="M166 207C177 197 190 194 200 204C211 214 210 227 200 236C190 245 178 247 166 238C156 231 154 216 166 207Z" fill="#B9C87B"/>
+    <path d="M145 182C154 169 162 160 175 160C188 161 193 168 194 178C188 191 179 196 167 194C158 192 150 188 145 182Z" fill="#A7B86B"/>
+    <path d="M496 207C485 197 472 194 462 204C451 214 452 227 462 236C472 245 484 247 496 238C506 231 508 216 496 207Z" fill="#B9C87B"/>
+    <path d="M517 182C508 169 500 160 487 160C474 161 469 168 468 178C474 191 483 196 495 194C504 192 512 188 517 182Z" fill="#A7B86B"/>
+  </g>
+
+  <g>
+    <text x="320" y="270" text-anchor="middle" font-size="48" font-family="Georgia, 'Times New Roman', serif" font-style="italic" fill="#5A3A2B">The</text>
+    <text x="320" y="352" text-anchor="middle" font-size="74" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="700" fill="#5A3A2B">Knitting Nest</text>
+    <text x="320" y="420" text-anchor="middle" font-size="22" letter-spacing="5" font-family="Georgia, 'Times New Roman', serif" fill="#7D5B43">HANDMADE BABY WEAR</text>
+  </g>
+</svg>

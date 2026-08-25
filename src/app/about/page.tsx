@@ -22,6 +22,27 @@ import { useLocale } from "@/i18n/locale-provider"
 const valueIcons = [Lightbulb, HeartHandshake, ShieldCheck]
 const focusIcons = [Code2, Bot, Globe2]
 
+const teamProfiles = [
+  {
+    name: "Huzaifa",
+    role: "CEO",
+    image: "/huzaifa.png",
+    highlight: "Vision, strategy, and growth leadership",
+  },
+  {
+    name: "Jhon",
+    role: "CTO",
+    image: "/jhon.jfif",
+    highlight: "Technology and product execution",
+  },
+  {
+    name: "Leo Arthur",
+    role: "Social Manager",
+    image: "/leo.png",
+    highlight: "Brand, community, and audience growth",
+  },
+]
+
 export default function About() {
   const { t, messages, isRtl } = useLocale()
   const about = messages.about
@@ -205,8 +226,8 @@ export default function About() {
           className="relative min-h-[320px] overflow-hidden rounded-[2rem] md:min-h-[420px]"
         >
           <Image
-            src="/dubai.jpg"
-            alt={about.storyTitle}
+            src="/uk.PNG"
+            alt="London headquarters"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
@@ -219,7 +240,7 @@ export default function About() {
                 isRtl && "font-arabic-ui"
               )}
             >
-              {t("common.dubai")}
+              London HQ
             </p>
             <p className={cn("mt-1 text-sm text-white/70", isRtl && "font-arabic-ui")}>
               {about.storyBadge}
@@ -401,7 +422,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* TEAM ROLES — readable, no fake profiles */}
+      {/* TEAM */}
       <section className="mx-auto max-w-7xl px-4 py-16 md:py-20">
         <div className="mb-10 max-w-2xl">
           <h2
@@ -422,35 +443,44 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          {about.teamRoles.map((item, i) => (
+        <div className="grid gap-6 md:grid-cols-3">
+          {teamProfiles.map((person, i) => (
             <motion.div
-              key={item.role}
+              key={person.name}
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="flex gap-4 rounded-2xl border border-black/5 bg-white p-5 shadow-sm"
+              className="overflow-hidden rounded-[1.75rem] border border-black/5 bg-white shadow-sm"
             >
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-cyan-50 text-sm font-bold text-cyan-700">
-                {String(i + 1).padStart(2, "0")}
+              <div className="relative h-80 w-full overflow-hidden bg-slate-100">
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
               </div>
-              <div>
+              <div className="p-5">
+                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-700">
+                  {person.role}
+                </div>
                 <h3
                   className={cn(
-                    "font-heading text-base font-bold text-foreground",
+                    "mt-3 font-heading text-2xl font-bold text-foreground",
                     isRtl && "font-arabic-ui"
                   )}
                 >
-                  {item.role}
+                  {person.name}
                 </h3>
                 <p
                   className={cn(
-                    "mt-1 text-sm leading-relaxed text-muted-foreground",
+                    "mt-2 text-sm leading-relaxed text-muted-foreground",
                     isRtl && "font-arabic-ui"
                   )}
                 >
-                  {item.desc}
+                  {person.highlight}
                 </p>
               </div>
             </motion.div>

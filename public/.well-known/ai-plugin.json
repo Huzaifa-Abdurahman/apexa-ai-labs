@@ -9,7 +9,7 @@
     "type": "openapi",
     "url": "https://apexa.ai/llms.txt"
   },
-  "logo_url": "https://apexa.ai/logo.png",
+  "logo_url": "https://apexa.ai/logo-512.png",
   "contact_email": "contact@apexa.ai",
   "legal_info_url": "https://apexa.ai/about"
 }
