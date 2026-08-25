@@ -43,7 +43,7 @@ export function SiteJsonLd() {
     email: [CONTACT_EMAIL, CONTACT_EMAIL_SECONDARY],
     telephone: CONTACT_PHONES.map((p) => p.e164),
     foundingDate: "2022",
-    slogan: "American-standard software with Arabic-first delivery",
+    slogan: "Universal-standard software delivery",
     knowsLanguage: ["en", "ar"],
     address: {
       "@type": "PostalAddress",
@@ -113,7 +113,7 @@ export function SiteJsonLd() {
             "@type": "Service",
             name: "AI Automations & Voice Agents",
             description:
-              "Arabic-ready voice and WhatsApp AI agents connected to real business systems.",
+              "Multi-language ready voice and WhatsApp AI agents connected to real business systems.",
             areaServed: ["GB", "US"],
             provider: { "@id": `${SITE_URL}/#organization` },
           },

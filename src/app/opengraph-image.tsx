@@ -37,7 +37,7 @@ export default function OpenGraphImage() {
             Apexa AI Labs
           </div>
           <div style={{ fontSize: 34, fontWeight: 500, opacity: 0.95, maxWidth: 900 }}>
-            Best AI & custom software partner for KSA businesses
+            Best AI & custom software partner for UK businesses
           </div>
         </div>
         <div
@@ -49,7 +49,7 @@ export default function OpenGraphImage() {
             opacity: 0.9,
           }}
         >
-          <div>AI Automations · Custom Software · Arabic-ready</div>
+          <div>AI Automations · Custom Software · English-ready</div>
           <div>apexa.ai</div>
         </div>
       </div>
