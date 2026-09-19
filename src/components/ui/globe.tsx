@@ -24,11 +24,11 @@ export const DARK_GLOBE_CONFIG: COBEOptions = {
   markerColor: [0.02, 0.71, 0.83],
   glowColor: [0.2, 0.2, 0.2],
   markers: [
-    { location: [25.2048, 55.2708], size: 0.1 },
-    { location: [24.5247, 39.5692], size: 0.06 },
-    { location: [21.4858, 39.1925], size: 0.06 },
-    { location: [26.4207, 50.0888], size: 0.05 },
-    { location: [24.7136, 46.6753], size: 0.07 },
+    { location: [51.5074, -0.1278], size: 0.1 }, // London
+    { location: [53.4808, -2.2426], size: 0.06 }, // Manchester
+    { location: [52.4862, -1.8904], size: 0.06 }, // Birmingham
+    { location: [40.7128, -74.006], size: 0.07 }, // New York
+    { location: [29.7601, -95.3701], size: 0.06 }, // Houston
   ],
 }
 
@@ -48,18 +48,18 @@ export const WHITE_GLOBE_CONFIG: COBEOptions = {
   markerColor: [0.02, 0.71, 0.83],
   glowColor: [0.88, 0.91, 0.95],
   markers: [
-    { location: [25.2048, 55.2708], size: 0.1 }, // Dubai
-    { location: [24.5247, 39.5692], size: 0.06 }, // Madinah
-    { location: [21.4858, 39.1925], size: 0.06 }, // Jeddah
-    { location: [26.4207, 50.0888], size: 0.05 }, // Dammam
-    { location: [24.7136, 46.6753], size: 0.07 }, // Riyadh
+    { location: [51.5074, -0.1278], size: 0.1 }, // London
+    { location: [53.4808, -2.2426], size: 0.06 }, // Manchester
+    { location: [52.4862, -1.8904], size: 0.06 }, // Birmingham
+    { location: [40.7128, -74.006], size: 0.07 }, // New York
+    { location: [29.7601, -95.3701], size: 0.06 }, // Houston
   ],
 }
 
 export function Globe({
   className,
   config = WHITE_GLOBE_CONFIG,
-  label = "We are here · Dubai",
+  label = "We are here · London",
 }: {
   className?: string
   config?: COBEOptions

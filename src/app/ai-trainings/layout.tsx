@@ -3,19 +3,19 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { PAGE_SEO, SITE_NAME, buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: PAGE_SEO.contact.title,
-  description: PAGE_SEO.contact.description,
-  path: PAGE_SEO.contact.path,
+  title: PAGE_SEO.aiTrainings.title,
+  description: PAGE_SEO.aiTrainings.description,
+  path: PAGE_SEO.aiTrainings.path,
   keywords: [
-    "contact AI company",
-    "book AI consultation London",
-    "AI development agency London",
-    "custom software quote",
-    "تواصل أبيكسا لندن",
+    "AI consulting London",
+    "AI training UK",
+    "AI implementation agency London",
+    "AI team enablement UK",
+    "تدريب الذكاء الاصطناعي لندن",
   ],
 });
 
-export default function ContactLayout({
+export default function AiTrainingsLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -25,7 +25,7 @@ export default function ContactLayout({
       <BreadcrumbJsonLd
         items={[
           { name: SITE_NAME, path: "/" },
-          { name: "Contact", path: "/contact" },
+          { name: "AI Trainings", path: "/ai-trainings" },
         ]}
       />
       {children}

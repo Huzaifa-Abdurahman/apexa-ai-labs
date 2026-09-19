@@ -121,7 +121,7 @@ export function ProjectsShowcase() {
             {[
               { value: "100+", label: t("projectsPage.statProjects") },
               { value: "10", label: t("projectsPage.statIndustries") },
-              { value: "KSA+", label: t("projectsPage.statReach") },
+              { value: "UK+US", label: t("projectsPage.statReach") },
             ].map((stat) => (
               <div
                 key={stat.label}

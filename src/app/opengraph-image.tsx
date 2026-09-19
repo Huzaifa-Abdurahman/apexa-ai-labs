@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Apexa AI Labs — AI & Custom Software in Saudi Arabia";
+export const alt = "Apexa AI Labs — AI & Custom Software Development Agency in London, UK";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -31,13 +31,13 @@ export default function OpenGraphImage() {
               textTransform: "uppercase",
             }}
           >
-            Dubai
+            London, UK
           </div>
           <div style={{ fontSize: 72, fontWeight: 800, lineHeight: 1.05, maxWidth: 980 }}>
             Apexa AI Labs
           </div>
           <div style={{ fontSize: 34, fontWeight: 500, opacity: 0.95, maxWidth: 900 }}>
-            Best AI & custom software partner for UK businesses
+            The best AI & software development agency in London
           </div>
         </div>
         <div
@@ -49,8 +49,8 @@ export default function OpenGraphImage() {
             opacity: 0.9,
           }}
         >
-          <div>AI Automations · Custom Software · English-ready</div>
-          <div>apexa.ai</div>
+          <div>AI Automations · Custom Software · Voice &amp; WhatsApp AI Agents</div>
+          <div>apexaailabs.com</div>
         </div>
       </div>
     ),

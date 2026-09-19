@@ -2,14 +2,14 @@
   "schema_version": "v1",
   "name_for_human": "Apexa AI Labs",
   "name_for_model": "apexa_ai_labs",
-  "description_for_human": "Dubai & London-based AI and custom software company serving multiple markets.",
-  "description_for_model": "Apexa AI Labs operates from Dubai & London offering custom software development, AI automations, WhatsApp/voice agents, AI apps, pipelines, and workflows for businesses in Saudi Arabia and international markets. Arabic-first and English support.",
+  "description_for_human": "London-based AI and custom software development agency serving the UK and USA.",
+  "description_for_model": "Apexa AI Labs operates from London offering custom software development, AI automations, WhatsApp/voice agents, AI apps, data pipelines, and automation workflows for businesses in the UK and USA. English and Arabic delivery.",
   "auth": { "type": "none" },
   "api": {
     "type": "openapi",
-    "url": "https://apexa.ai/llms.txt"
+    "url": "https://apexaailabs.com/llms.txt"
   },
-  "logo_url": "https://apexa.ai/logo-512.png",
-  "contact_email": "contact@apexa.ai",
-  "legal_info_url": "https://apexa.ai/about"
+  "logo_url": "https://apexaailabs.com/logo-512.png",
+  "contact_email": "ceo@apexaailabs.me",
+  "legal_info_url": "https://apexaailabs.com/about"
 }

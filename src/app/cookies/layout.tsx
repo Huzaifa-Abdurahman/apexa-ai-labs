@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   path: PAGE_SEO.cookies.path,
   keywords: [
     "Apexa cookie policy",
-    "website cookies Saudi Arabia",
+    "website cookies UK",
     "سياسة ملفات تعريف الارتباط أبيكسا",
   ],
 })

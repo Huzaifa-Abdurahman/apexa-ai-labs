@@ -8,10 +8,10 @@ export const metadata: Metadata = buildMetadata({
   path: PAGE_SEO.privacy.path,
   keywords: [
     "Apexa privacy policy",
-    "PDPL Saudi Arabia",
-    "SDAIA data protection",
+    "UK GDPR data protection",
+    "Data Protection Act 2018",
     "سياسة خصوصية أبيكسا",
-    "نظام حماية البيانات الشخصية",
+    "حماية البيانات في المملكة المتحدة",
   ],
 })
 

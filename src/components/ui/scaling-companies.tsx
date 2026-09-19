@@ -9,15 +9,15 @@ import { BorderBeam } from "@/components/ui/border-beam";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/i18n/locale-provider";
 
-const partnerImages = ["/s1.PNG", "/s2.PNG", "/s3.PNG", "/usa-ai.PNG", "/pak-ai.PNG", "/uae-ai.PNG", "/uk-ai.PNG"];
+const partnerImages = ["/s1.PNG", "/s2.PNG", "/s3.PNG", "/usa-ai.PNG", "/uk-ai.PNG"];
 
 const companyLogos = [
-  { name: "Aramco", src: "https://www.google.com/s2/favicons?domain=aramco.com&sz=128" },
-  { name: "NEOM", src: "https://www.google.com/s2/favicons?domain=neom.com&sz=128" },
-  { name: "SDAIA", src: "https://www.google.com/s2/favicons?domain=sdaia.gov.sa&sz=128" },
-  { name: "STC", src: "https://www.google.com/s2/favicons?domain=stc.com.sa&sz=128" },
-  { name: "SABIC", src: "https://www.google.com/s2/favicons?domain=sabic.com&sz=128" },
-  { name: "Vision 2030", src: "https://www.google.com/s2/favicons?domain=vision2030.gov.sa&sz=128" },
+  { name: "Hospitality" },
+  { name: "Healthcare" },
+  { name: "Logistics" },
+  { name: "Manufacturing" },
+  { name: "Retail" },
+  { name: "Law" },
 ];
 
 const technologies = [
@@ -171,7 +171,7 @@ export function ScalingCompanies() {
                   exit={{ opacity: 0, scale: 1.05 }}
                   transition={{ duration: 0.45 }}
                   className="h-full w-full object-contain"
-                  alt="Saudi partner"
+                  alt="Apexa AI Labs presence"
                 />
               </AnimatePresence>
             </div>
@@ -231,7 +231,7 @@ export function ScalingCompanies() {
                     key={logo.name}
                     className="mx-2 flex items-center gap-2 whitespace-nowrap rounded-2xl border border-slate-100 bg-slate-50 px-4 py-2.5"
                   >
-                    <img src={logo.src} alt="" className="size-4 object-contain" />
+                    <span className="size-1.5 rounded-full bg-primary" />
                     <span className="text-sm font-semibold text-slate-700">{logo.name}</span>
                   </div>
                 ))}
@@ -244,13 +244,13 @@ export function ScalingCompanies() {
             className="relative flex flex-col justify-center overflow-hidden rounded-[28px] border border-slate-200 bg-white p-8 text-slate-900 shadow-sm"
           >
             <div className="absolute inset-0 opacity-15">
-              <img src="/ksa.jfif" alt="" className="h-full w-full object-cover grayscale" />
+              <img src="/uk-ai.PNG" alt="" className="h-full w-full object-cover grayscale" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent" />
             <div className="relative z-10">
               <div className="mb-4 flex items-center gap-2 text-cyan-600">
                 <Zap className="size-4" />
-                <h4 className="text-xs font-bold tracking-[0.2em] uppercase">Vision 2030</h4>
+                <h4 className="text-xs font-bold tracking-[0.2em] uppercase">Our Vision</h4>
               </div>
               <p className={cn("font-serif text-lg italic leading-relaxed text-slate-700", isRtl && "font-arabic-ui not-italic")}>
                 “{t("scaling.visionQuote")}”

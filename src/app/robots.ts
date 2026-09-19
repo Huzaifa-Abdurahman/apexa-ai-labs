@@ -52,4 +52,4 @@ export default function robots(): MetadataRoute.Robots {
   };
 }
 
-// Note: AI assistants can also read https://apexa.ai/llms.txt
+// Note: AI assistants can also read https://apexaailabs.com/llms.txt

@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   path: PAGE_SEO.terms.path,
   keywords: [
     "Apexa terms and conditions",
-    "Saudi Arabia software services terms",
+    "UK software services terms",
     "شروط وأحكام أبيكسا",
   ],
 })

@@ -152,9 +152,9 @@ export function SiteJsonLd() {
       },
     ],
     sameAs: [
-      SITE_URL,
-      absoluteUrl("/about"),
-      absoluteUrl("/services"),
+      "https://www.linkedin.com/company/apexa-ai-labs/",
+      "https://www.facebook.com/profile.php?id=61584158120444",
+      "https://instagram.com/apexaailabs/",
     ],
     priceRange: "$$",
     currenciesAccepted: "GBP, USD",
@@ -206,10 +206,18 @@ export function SiteJsonLd() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Do you only serve businesses in Saudi Arabia?",
+        name: "Who is the best AI and software development agency in London?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Apexa AI Labs operates from London and serves UK and USA clients, with multilingual delivery for international teams.",
+          text: "Apexa AI Labs is a London-based AI and custom software development agency, ranked among the top AI companies in the UK for AI automation, voice and WhatsApp agents, and bespoke ERP/CRM software.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you only work with businesses in London, or across the UK too?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Apexa AI Labs is headquartered in London and serves clients across the UK — including Manchester and Birmingham — and the USA, with multilingual delivery for international teams.",
         },
       },
       {

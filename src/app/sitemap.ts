@@ -45,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: absoluteUrl(PAGE_SEO.aiTrainings.path),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: absoluteUrl(PAGE_SEO.contact.path),
       lastModified,
       changeFrequency: "monthly",

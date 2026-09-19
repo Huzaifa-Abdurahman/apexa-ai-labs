@@ -18,11 +18,11 @@ export default function Contact() {
   const { t, isRtl } = useLocale();
 
   const cities = [
-    t("common.makkah"),
-    t("common.madinah"),
-    t("common.jeddah"),
-    t("common.dammam"),
-    t("common.riyadh"),
+    t("common.london"),
+    t("common.manchester"),
+    t("common.birmingham"),
+    t("common.newYork"),
+    t("common.houston"),
   ];
 
   return (

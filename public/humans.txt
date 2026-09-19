@@ -1,13 +1,13 @@
 /* TEAM */
 Company: Apexa AI Labs
-Location: Dubai & London
-Contact: contact@apexa.ai
-Site: https://apexa.ai
+Location: London, United Kingdom
+Contact: ceo@apexaailabs.me
+Site: https://apexaailabs.com
 
 /* THANKS */
-Focus: AI automations, custom software, Arabic-ready systems for KSA
+Focus: AI automation, custom software development, voice & WhatsApp AI agents for UK and USA businesses
 
 /* SITE */
 Standards: HTML5, Next.js, Schema.org JSON-LD
 Languages: English, Arabic
-Locales: en-SA, ar-SA
+Locales: en-GB, ar

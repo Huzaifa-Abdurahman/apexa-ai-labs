@@ -82,7 +82,7 @@ export default function Footer() {
     {
       title: t("footer.industries"),
       links: [
-        { label: t("footer.umrahHotels"), href: "/industries" },
+        { label: t("footer.hotelsHospitality"), href: "/industries" },
         { label: t("footer.healthcare"), href: "/industries" },
         { label: t("footer.logistics"), href: "/industries" },
         { label: t("footer.manufacturing"), href: "/industries" },
@@ -93,11 +93,11 @@ export default function Footer() {
     {
       title: t("footer.cities"),
       links: [
-        { label: t("common.makkah"), href: "/services#cities" },
-        { label: t("common.madinah"), href: "/services#cities" },
-        { label: t("common.jeddah"), href: "/services#cities" },
-        { label: t("common.dammam"), href: "/services#cities" },
-        { label: t("common.riyadh"), href: "/services#cities" },
+        { label: t("common.london"), href: "/services#cities" },
+        { label: t("common.manchester"), href: "/services#cities" },
+        { label: t("common.birmingham"), href: "/services#cities" },
+        { label: t("common.newYork"), href: "/services#cities" },
+        { label: t("common.houston"), href: "/services#cities" },
       ],
     },
     {

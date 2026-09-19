@@ -31,21 +31,21 @@ export const legalEn = {
     effectiveDate: "31 July 2026",
     lastUpdated: "31 July 2026",
     intro:
-      "This Privacy Policy explains how Apexa AI Labs (“Apexa”, “we”, “us”, or “our”) collects, uses, stores, shares, and protects personal data when you visit apexa.ai, contact us, or use our software, AI, automation, and related services. We designed this Policy to meet international privacy expectations and the Personal Data Protection Law of the Kingdom of Saudi Arabia (PDPL) issued by Royal Decree No. (M/19) dated 9/2/1443H, as amended, together with implementing regulations and guidance from the Saudi Data & AI Authority (SDAIA) / National Data Management Office.",
+      "This Privacy Policy explains how Apexa AI Labs (“Apexa”, “we”, “us”, or “our”) collects, uses, stores, shares, and protects personal data when you visit apexaailabs.com, contact us, or use our software, AI, automation, and related services. We designed this Policy to meet the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018, together with guidance from the Information Commissioner's Office (ICO).",
     sections: [
       {
         id: "who",
         title: "1. Who we are (data controller)",
         paragraphs: [
-          "Apexa AI Labs is a Dubai-based AI and custom software company serving businesses across multiple markets and, where agreed, international clients.",
+          "Apexa AI Labs is a London-based AI and custom software company serving businesses across the UK, USA, and, where agreed, international clients.",
           "For personal data processed through this website and our client engagements, Apexa AI Labs is the data controller unless a written agreement states that we act only as a processor on behalf of a client.",
         ],
         bullets: [
           "Legal name (trading): Apexa AI Labs",
-          "Headquarters: Dubai, UAE · London, UK",
+          "Headquarters: London, United Kingdom",
           "Email (privacy & data requests): info@apexaailabs.com",
           "WhatsApp business contact: +44 7449 703113",
-          "Website: https://apexa.ai",
+          "Website: https://apexaailabs.com",
         ],
       },
       {
@@ -100,7 +100,7 @@ export const legalEn = {
         id: "sensitive",
         title: "4. Sensitive personal data",
         paragraphs: [
-          "We do not intentionally collect sensitive personal data (as defined under the PDPL) through our public website. Please do not submit health, biometric, religious, criminal, or similarly sensitive data unless we expressly request it under a written engagement with appropriate safeguards.",
+          "We do not intentionally collect special category personal data (as defined under UK GDPR) through our public website. Please do not submit health, biometric, religious, criminal, or similarly sensitive data unless we expressly request it under a written engagement with appropriate safeguards.",
           "If a client engagement requires processing sensitive data inside a custom system, we will document the lawful basis, purpose limitation, access controls, and security measures in the contract.",
         ],
       },
@@ -126,21 +126,21 @@ export const legalEn = {
           "Operating, securing, and improving our website and products",
           "Sending service-related notices and, where permitted, marketing updates",
           "Analytics to understand demand and improve content (with appropriate consent/controls where required)",
-          "Complying with Saudi law, responding to lawful requests, and protecting our legal rights",
+          "Complying with UK law, responding to lawful requests, and protecting our legal rights",
           "Preventing fraud, abuse, and security incidents",
         ],
       },
       {
         id: "legal-bases",
-        title: "7. Legal bases (PDPL & international alignment)",
+        title: "7. Legal bases (UK GDPR)",
         paragraphs: [
-          "Depending on the context, we rely on one or more of the following bases recognized under the PDPL and aligned with international practice:",
+          "Depending on the context, we rely on one or more of the following bases recognized under the UK GDPR:",
         ],
         bullets: [
           "Consent — where you opt in (for example, non-essential cookies or certain marketing)",
           "Contractual necessity — to take steps at your request before a contract or to perform a contract",
           "Legitimate interest — improving services, securing systems, and B2B relationship management, balanced against your rights",
-          "Legal obligation — where Saudi or other applicable law requires retention or disclosure",
+          "Legal obligation — where UK or other applicable law requires retention or disclosure",
         ],
         paragraphsAfter: [
           "Where consent is the basis, you may withdraw it at any time without affecting the lawfulness of processing before withdrawal.",
@@ -155,7 +155,7 @@ export const legalEn = {
         bullets: [
           "Service providers (hosting, email, analytics, communications) under confidentiality and processing instructions",
           "Professional advisers (legal, accounting) under duty of confidentiality",
-          "Authorities when required by Saudi law or a valid legal process",
+          "Authorities when required by UK law or a valid legal process",
           "Business successors in a merger, acquisition, or restructuring, with continued protection",
         ],
         paragraphsAfter: [
@@ -166,8 +166,8 @@ export const legalEn = {
         id: "transfers",
         title: "9. Cross-border transfers",
         paragraphs: [
-          "As a Saudi-focused provider, we prefer processing and hosting arrangements that support Kingdom data considerations. Some tools (for example global cloud or analytics providers) may involve transfer or remote access outside Saudi Arabia.",
-          "Where personal data is transferred outside the Kingdom, we take steps consistent with the PDPL and SDAIA guidance — including assessing the destination, using contractual safeguards, and applying technical and organizational measures appropriate to the risk.",
+          "As a UK-based provider, we prefer processing and hosting arrangements that support UK data considerations. Some tools (for example global cloud or analytics providers) may involve transfer or remote access outside the UK.",
+          "Where personal data is transferred outside the UK, we take steps consistent with UK GDPR and ICO guidance — including assessing the destination, using contractual safeguards such as the UK's International Data Transfer Agreement, and applying technical and organizational measures appropriate to the risk.",
         ],
       },
       {
@@ -178,7 +178,7 @@ export const legalEn = {
         ],
         bullets: [
           "Enquiry records: typically up to 24 months after last meaningful contact, unless a longer period is needed for a live opportunity or dispute",
-          "Contract and billing records: for the engagement term plus periods required by Saudi commercial/tax rules",
+          "Contract and billing records: for the engagement term plus periods required by UK commercial/tax rules",
           "Website logs and security records: for shorter operational windows unless investigating an incident",
           "Marketing preferences: until you unsubscribe or we delete inactive contacts",
         ],
@@ -191,12 +191,12 @@ export const legalEn = {
         title: "11. Security measures",
         paragraphs: [
           "We apply technical and organizational measures appropriate to the nature of the data and processing risk, including access controls, encryption in transit where standard, least-privilege practices, vendor diligence, and staff awareness. No method of transmission or storage is 100% secure; we work to reduce risk continuously and to respond promptly to incidents.",
-          "If a personal data breach occurs that requires notification under the PDPL or related rules, we will notify the competent authority and affected individuals as required.",
+          "If a personal data breach occurs that requires notification under UK GDPR or related rules, we will notify the ICO and affected individuals as required.",
         ],
       },
       {
         id: "rights",
-        title: "12. Your rights under Saudi PDPL",
+        title: "12. Your rights under UK GDPR",
         paragraphs: [
           "Subject to legal exceptions, you may request to:",
         ],
@@ -207,10 +207,10 @@ export const legalEn = {
           "Request destruction of data no longer needed (subject to lawful retention)",
           "Withdraw consent where processing is consent-based",
           "Object to certain processing in circumstances provided by law",
-          "Lodge a complaint with the competent Saudi authority (SDAIA / relevant supervisory channel)",
+          "Lodge a complaint with the Information Commissioner's Office (ICO)",
         ],
         paragraphsAfter: [
-          "To exercise rights, email info@apexaailabs.com with the subject “PDPL Data Request”. We may need to verify your identity before responding. We aim to respond within the timeframes required by applicable law.",
+          "To exercise rights, email info@apexaailabs.com with the subject “Data Protection Request”. We may need to verify your identity before responding. We aim to respond within the timeframes required by applicable law.",
         ],
       },
       {
@@ -242,7 +242,7 @@ export const legalEn = {
     ],
     contactHeading: "Contact for privacy matters",
     contactBody:
-      "Apexa AI Labs — Makkah, Kingdom of Saudi Arabia. Email: info@apexaailabs.com. WhatsApp: +92 345 156 9778. For data subject requests, please include enough detail for us to locate your records.",
+      "Apexa AI Labs — London, United Kingdom. Email: info@apexaailabs.com. WhatsApp: +44 7449 703113. For data subject requests, please include enough detail for us to locate your records.",
   } satisfies LegalDoc,
 
   terms: {
@@ -251,13 +251,13 @@ export const legalEn = {
     effectiveDate: "31 July 2026",
     lastUpdated: "31 July 2026",
     intro:
-      "These Terms & Conditions (“Terms”) govern access to and use of the Apexa AI Labs website (https://apexa.ai) and form the baseline commercial and legal framework for our consulting, custom software, AI agents, automations, websites, and related services. By using our website or engaging our services, you agree to these Terms. Separate statements of work (SOWs), proposals, or master service agreements may add or modify project-specific terms.",
+      "These Terms & Conditions (“Terms”) govern access to and use of the Apexa AI Labs website (https://apexaailabs.com) and form the baseline commercial and legal framework for our consulting, custom software, AI agents, automations, websites, and related services. By using our website or engaging our services, you agree to these Terms. Separate statements of work (SOWs), proposals, or master service agreements may add or modify project-specific terms.",
     sections: [
       {
         id: "parties",
         title: "1. Parties and acceptance",
         paragraphs: [
-          "“Apexa”, “we”, or “us” means Apexa AI Labs, headquartered in Makkah, Kingdom of Saudi Arabia. “You” means the individual browsing the site or the business entity entering into a service engagement.",
+          "“Apexa”, “we”, or “us” means Apexa AI Labs, headquartered in London, United Kingdom. “You” means the individual browsing the site or the business entity entering into a service engagement.",
           "If you accept on behalf of a company, you represent that you have authority to bind that company.",
         ],
       },
@@ -279,7 +279,7 @@ export const legalEn = {
           "Attempt unauthorized access, scanning, scraping beyond reasonable indexing, or disruption of the site",
           "Upload malware or abusive content",
           "Misrepresent your identity or affiliation",
-          "Use the site in violation of Saudi law, including cybercrime and anti-spam rules",
+          "Use the site in violation of UK law, including cybercrime and anti-spam rules",
         ],
       },
       {
@@ -295,7 +295,7 @@ export const legalEn = {
         title: "5. Fees, invoices, and taxes",
         paragraphs: [
           "Fees are as stated in the applicable proposal or SOW. Unless otherwise agreed, invoices are payable within the stated period. Late payments may pause work and accrue lawful late charges where permitted.",
-          "Prices may be exclusive of VAT or other taxes applicable under Saudi law. You are responsible for taxes that apply to your purchase except taxes based on our income.",
+          "Prices may be exclusive of VAT or other taxes applicable under UK law. You are responsible for taxes that apply to your purchase except taxes based on our income.",
         ],
       },
       {
@@ -332,21 +332,21 @@ export const legalEn = {
         id: "privacy",
         title: "10. Privacy and data protection",
         paragraphs: [
-          "Personal data is handled as described in our Privacy Policy and Cookie Policy. For client systems processing personal data, the parties will allocate controller/processor roles and implement PDPL-aligned safeguards in the contract.",
+          "Personal data is handled as described in our Privacy Policy and Cookie Policy. For client systems processing personal data, the parties will allocate controller/processor roles and implement UK GDPR-aligned safeguards in the contract.",
         ],
       },
       {
         id: "warranty",
         title: "11. Warranties",
         paragraphs: [
-          "We warrant that services will be performed in a professional and workmanlike manner consistent with industry practice for similar KSA technology engagements. Except as expressly stated in a signed agreement, the website and services are provided “as is” to the fullest extent permitted by law.",
+          "We warrant that services will be performed in a professional and workmanlike manner consistent with industry practice for similar UK technology engagements. Except as expressly stated in a signed agreement, the website and services are provided “as is” to the fullest extent permitted by law.",
         ],
       },
       {
         id: "liability",
         title: "12. Limitation of liability",
         paragraphs: [
-          "To the maximum extent permitted under the laws of the Kingdom of Saudi Arabia, Apexa is not liable for indirect, incidental, special, consequential, or lost-profit damages arising from website use or services, even if advised of the possibility.",
+          "To the maximum extent permitted under the laws of England and Wales, Apexa is not liable for indirect, incidental, special, consequential, or lost-profit damages arising from website use or services, even if advised of the possibility.",
           "Except for liability that cannot be limited by law (such as proven fraud or willful misconduct), our aggregate liability for a claim relating to a paid engagement is limited to the fees paid to Apexa for that engagement in the three (3) months preceding the claim.",
         ],
       },
@@ -368,7 +368,7 @@ export const legalEn = {
         id: "law",
         title: "15. Governing law and disputes",
         paragraphs: [
-          "These Terms are governed by the laws of the Kingdom of Saudi Arabia. Courts in Makkah (or another Saudi venue agreed in writing) have exclusive jurisdiction, without prejudice to mandatory consumer protections that may apply to eligible individuals under Saudi law.",
+          "These Terms are governed by the laws of England and Wales. Courts of England and Wales (or another UK venue agreed in writing) have exclusive jurisdiction, without prejudice to mandatory consumer protections that may apply to eligible individuals under UK law.",
           "Parties should first attempt good-faith negotiation. Nothing prevents either party from seeking urgent injunctive relief to protect IP or confidential information.",
         ],
       },
@@ -385,7 +385,7 @@ export const legalEn = {
     ],
     contactHeading: "Questions about these Terms",
     contactBody:
-      "Contact Apexa AI Labs at info@apexaailabs.com or WhatsApp +92 345 156 9778. Makkah, Kingdom of Saudi Arabia.",
+      "Contact Apexa AI Labs at info@apexaailabs.com or WhatsApp +44 7449 703113. London, United Kingdom.",
   } satisfies LegalDoc,
 
   cookies: {
@@ -394,7 +394,7 @@ export const legalEn = {
     effectiveDate: "31 July 2026",
     lastUpdated: "31 July 2026",
     intro:
-      "This Cookie Policy explains how Apexa AI Labs uses cookies and similar technologies on https://apexa.ai. It should be read with our Privacy Policy and is designed to align with Saudi PDPL transparency expectations and widely recognized international cookie practices (including consent for non-essential cookies).",
+      "This Cookie Policy explains how Apexa AI Labs uses cookies and similar technologies on https://apexaailabs.com. It should be read with our Privacy Policy and is designed to align with UK GDPR / PECR transparency expectations and widely recognized international cookie practices (including consent for non-essential cookies).",
     sections: [
       {
         id: "what",
@@ -455,7 +455,7 @@ export const legalEn = {
         id: "third",
         title: "5. Third-party cookies",
         paragraphs: [
-          "Some cookies may be set by trusted providers (for example analytics, hosting, or embedded media). Those providers process data under their own policies. We select vendors with security and privacy diligence appropriate to a Saudi-focused business.",
+          "Some cookies may be set by trusted providers (for example analytics, hosting, or embedded media). Those providers process data under their own policies. We select vendors with security and privacy diligence appropriate to a UK-based business.",
         ],
       },
       {
@@ -474,10 +474,10 @@ export const legalEn = {
         ],
       },
       {
-        id: "ksa",
-        title: "7. Saudi Arabia considerations",
+        id: "uk",
+        title: "7. UK considerations",
         paragraphs: [
-          "We treat cookie identifiers that can reasonably identify a person as personal data under the PDPL when applicable. We aim for clear notice, purpose limitation, and user choice for non-essential cookies, consistent with SDAIA expectations for transparent processing.",
+          "We treat cookie identifiers that can reasonably identify a person as personal data under UK GDPR when applicable. We aim for clear notice, purpose limitation, and user choice for non-essential cookies, consistent with ICO expectations for transparent processing under the Privacy and Electronic Communications Regulations (PECR).",
         ],
       },
       {
@@ -490,6 +490,6 @@ export const legalEn = {
     ],
     contactHeading: "Cookie & privacy contact",
     contactBody:
-      "Questions about cookies or privacy: info@apexaailabs.com · WhatsApp +92 345 156 9778 · Apexa AI Labs, Makkah, KSA.",
+      "Questions about cookies or privacy: info@apexaailabs.com · WhatsApp +44 7449 703113 · Apexa AI Labs, London, UK.",
   } satisfies LegalDoc,
 } as const

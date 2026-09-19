@@ -7,15 +7,15 @@ export const metadata: Metadata = buildMetadata({
   description: PAGE_SEO.industries.description,
   path: PAGE_SEO.industries.path,
     keywords: [
-    "AI for hotels Saudi Arabia",
+    "AI for hotels UK",
     "Tour operator software",
-    "clinic AI appointment Saudi",
-    "logistics software KSA",
-    "construction software Saudi Arabia",
-    "retail automation Riyadh",
-    "manufacturing ERP Dammam",
+    "clinic AI appointment UK",
+    "logistics software UK",
+    "construction software UK",
+    "retail automation London",
+    "manufacturing ERP Birmingham",
     "حلول ذكاء اصطناعي للفنادق",
-    "برمجيات العمرة",
+    "برمجيات لندن",
   ],
 });
 

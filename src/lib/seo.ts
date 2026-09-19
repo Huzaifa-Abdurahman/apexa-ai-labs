@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 /** Canonical production URL — override with NEXT_PUBLIC_SITE_URL */
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://apexa.ai";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://apexaailabs.com";
 
 export const SITE_NAME = "Apexa AI Labs";
 export const SITE_NAME_AR = "أبيكسا للذكاء الاصطناعي";
@@ -156,7 +156,6 @@ export function buildMetadata({
       title: fullTitle,
       description,
       images: [DEFAULT_OG_IMAGE],
-      creator: "@apexa",
     },
     other: {
       "geo.region": "GB-ENG",
@@ -198,6 +197,12 @@ export const PAGE_SEO = {
     description:
       "Contact Apexa AI Labs in London. Tell us your city, industry, and bottleneck — get a clear AI + custom software plan. WhatsApp and email available.",
   },
+  aiTrainings: {
+    path: "/ai-trainings",
+    title: "AI Consulting, Implementation & Training | Apexa AI Labs London",
+    description:
+      "AI consulting, hands-on implementation, and team training/placement from Apexa AI Labs — London-based, delivering AI roadmaps and enablement for UK and USA operators.",
+  },
   projects: {
     path: "/projects",
     title: "Projects & Portfolio | Websites and Digital Products by Apexa",
@@ -214,12 +219,12 @@ export const PAGE_SEO = {
     path: "/terms",
     title: "Terms & Conditions | Apexa AI Labs",
     description:
-      "Terms governing use of apexa.ai and Apexa AI Labs services — custom software, AI agents, and digital delivery.",
+      "Terms governing use of apexaailabs.com and Apexa AI Labs services — custom software, AI agents, and digital delivery.",
   },
   cookies: {
     path: "/cookies",
     title: "Cookie Policy | Apexa AI Labs",
     description:
-      "How Apexa AI Labs uses cookies and similar technologies on apexa.ai, with transparency aligned to UK and international cookie practices.",
+      "How Apexa AI Labs uses cookies and similar technologies on apexaailabs.com, with transparency aligned to UK and international cookie practices.",
   },
 } as const;

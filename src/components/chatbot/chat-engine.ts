@@ -6,22 +6,22 @@ const knowledge: { match: RegExp; reply: Reply }[] = [
   {
     match: /hello|hi|hey|السلام|مرحبا|أهلا|اهلا/i,
     reply: {
-      en: "Hello! I'm Apexa's AI assistant. I can help with our AI automations, custom software, WhatsApp/voice agents, and KSA city solutions. What do you need?",
-      ar: "مرحباً! أنا مساعد أبيكسا الذكي. أساعدك حول الأتمتة والبرمجيات المخصصة ووكلاء واتساب/الصوت وحلول مدن المملكة. كيف أقدر أخدمك؟",
+      en: "Hello! I'm Apexa's AI assistant. I can help with our AI automations, custom software, WhatsApp/voice agents, and UK & USA city solutions. What do you need?",
+      ar: "مرحباً! أنا مساعد أبيكسا الذكي. أساعدك حول الأتمتة والبرمجيات المخصصة ووكلاء واتساب/الصوت وحلول مدن بريطانيا وأمريكا. كيف أقدر أخدمك؟",
     },
   },
   {
     match: /service|what do you|offer|خدمات|ماذا تقدم|حلول/i,
     reply: {
-      en: "We deliver: custom software (ERP/CRM), AI automations, AI apps, data pipelines, workflow automation, and voice + WhatsApp agents — Arabic-ready from our Dubai HQ.",
-      ar: "نقدّم: برمجيات مخصصة (ERP/CRM)، أتمتة بالذكاء الاصطناعي، تطبيقات ذكية، أنابيب بيانات، سير عمل مؤتمت، ووكلاء صوت وواتساب — بدعم عربي من مقرنا في مكة.",
+      en: "We deliver: custom software (ERP/CRM), AI automations, AI apps, data pipelines, workflow automation, and voice + WhatsApp agents — Arabic-ready from our London HQ.",
+      ar: "نقدّم: برمجيات مخصصة (ERP/CRM)، أتمتة بالذكاء الاصطناعي، تطبيقات ذكية، أنابيب بيانات، سير عمل مؤتمت، ووكلاء صوت وواتساب — بدعم عربي من مقرنا في لندن.",
     },
   },
   {
-    match: /makkah|madinah|jeddah|dammam|riyadh|مكة|المدينة|جدة|الدمام|الرياض|ksa|saudi|سعود/i,
+    match: /london|manchester|birmingham|new york|houston|لندن|مانشستر|برمنغهام|نيويورك|هيوستن|uk\b|usa\b/i,
     reply: {
-      en: "We serve Makkah, Madinah, Jeddah, Dammam, and Riyadh only — with solutions mapped to each city's industries and peak seasons.",
-      ar: "نخدم مكة والمدينة وجدة والدمام والرياض فقط — بحلول ملائمة لقطاعات كل مدينة ومواسم الذروة فيها.",
+      en: "We're headquartered in London and serve London, Manchester, Birmingham, New York, and Houston — with solutions mapped to each city's industries and peak seasons.",
+      ar: "مقرنا في لندن، ونخدم لندن ومانشستر وبرمنغهام ونيويورك وهيوستن — بحلول ملائمة لقطاعات كل مدينة ومواسم الذروة فيها.",
     },
   },
   {
@@ -46,17 +46,17 @@ const knowledge: { match: RegExp; reply: Reply }[] = [
     },
   },
   {
-    match: /umrah|hotel|clinic|hospital|logistics|industri|عمرة|فندق|عياد|لوجست|صناع/i,
+    match: /hotel|clinic|hospital|logistics|industri|فندق|عياد|لوجست|صناع/i,
     reply: {
-      en: "We specialize in pain-first solutions for hospitality/hotels, clinics, logistics, manufacturing, law, and retail. Visit Industries to explore your sector.",
-      ar: "نتخصص في حلول تبدأ بالألم لوكالات العمرة/الفنادق والعيادات واللوجستيات والتصنيع والمحاماة والتجزئة. زر صفحة القطاعات لاستكشاف قطاعك.",
+      en: "We specialize in pain-first solutions for hotels & hospitality, clinics, logistics, manufacturing, law, and retail. Visit Industries to explore your sector.",
+      ar: "نتخصص في حلول تبدأ بالألم للفنادق والضيافة والعيادات واللوجستيات والتصنيع والمحاماة والتجزئة. زر صفحة القطاعات لاستكشاف قطاعك.",
     },
   },
 ];
 
 const fallback: Reply = {
-  en: "Great question. Apexa AI Labs builds custom software and AI systems for businesses from Dubai. Ask about services, cities, WhatsApp AI, or say “contact” to reach the team.",
-  ar: "سؤال ممتاز. أبيكسا تبني برمجيات وذكاء اصطناعي لأعمال المملكة من مكة. اسأل عن الخدمات أو المدن أو واتساب الذكي، أو قل «تواصل» للوصول للفريق.",
+  en: "Great question. Apexa AI Labs builds custom software and AI systems for businesses from London. Ask about services, cities, WhatsApp AI, or say “contact” to reach the team.",
+  ar: "سؤال ممتاز. أبيكسا تبني برمجيات وذكاء اصطناعي للأعمال من لندن. اسأل عن الخدمات أو المدن أو واتساب الذكي، أو قل «تواصل» للوصول للفريق.",
 };
 
 export function getBotReply(input: string, locale: ChatLocale): string {

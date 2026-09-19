@@ -22,9 +22,9 @@ const copy = {
     subtitle: "Ask about AI, software & global solutions",
     placeholder: "Ask anything about Apexa…",
     welcome:
-      "Hi — I'm your Apexa guide. Ask about custom software, AI agents, industries, or how we help teams from Dubai to KSA.",
+      "Hi — I'm your Apexa guide. Ask about custom software, AI agents, industries, or how we help teams across the UK and USA.",
     typing: "Apexa is typing",
-    online: "Online · Dubai HQ",
+    online: "Online · London HQ",
     suggestions: ["What services?", "WhatsApp AI", "Cities you serve", "Book a call"],
     contactCta: "Talk to a human",
     open: "Open Apexa AI chat",
@@ -32,12 +32,12 @@ const copy = {
   },
   ar: {
     title: "مساعد أبيكسا الذكي",
-    subtitle: "اسأل عن الذكاء الاصطناعي والبرمجيات وحلول المملكة",
+    subtitle: "اسأل عن الذكاء الاصطناعي والبرمجيات وحلول بريطانيا وأمريكا",
     placeholder: "اسأل أي شيء عن أبيكسا…",
     welcome:
-      "مرحباً — أنا مرشدك في أبيكسا. اسأل عن البرمجيات المخصصة أو وكلاء الذكاء أو القطاعات أو كيف نساعد الفرق في مكة والمملكة.",
+      "مرحباً — أنا مرشدك في أبيكسا. اسأل عن البرمجيات المخصصة أو وكلاء الذكاء أو القطاعات أو كيف نساعد الفرق في بريطانيا وأمريكا.",
     typing: "أبيكسا تكتب",
-    online: "متصل · مقر مكة",
+    online: "متصل · مقر لندن",
     suggestions: ["ما خدماتكم؟", "واتساب ذكي", "المدن", "احجز مكالمة"],
     contactCta: "تحدث مع فريقنا",
     open: "فتح محادثة أبيكسا",
