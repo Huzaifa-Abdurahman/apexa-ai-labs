@@ -91,19 +91,28 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               href="/"
-              className="group flex items-center"
+              className="group flex items-center gap-2.5"
               onClick={() => setMobileMenuOpen(false)}
               aria-label="Apexa AI Labs — Home"
             >
-              <Image
-                src="/logo-128x128.png"
-                alt="Apexa AI Labs"
-                width={180}
-                height={60}
-                priority
-                sizes="(max-width: 768px) 132px, 180px"
-                className="h-10 w-auto object-contain object-left transition duration-300 group-hover:opacity-80"
-              />
+              <span className="relative flex size-10 shrink-0 items-center justify-center rounded-[11px] bg-gradient-to-br from-purple-600 to-cyan-500 shadow-[0_4px_14px_-2px_rgba(139,92,246,0.45)] transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_6px_18px_-2px_rgba(6,182,212,0.5)]">
+                <Image
+                  src="/logo-mark-white.png"
+                  alt=""
+                  width={64}
+                  height={64}
+                  priority
+                  className="h-[22px] w-auto object-contain"
+                />
+              </span>
+              <span className="flex flex-col leading-none">
+                <span className="font-heading text-[19px] font-black tracking-tight text-slate-900">
+                  Apexa
+                </span>
+                <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                  AI Labs
+                </span>
+              </span>
             </Link>
           </div>
 
