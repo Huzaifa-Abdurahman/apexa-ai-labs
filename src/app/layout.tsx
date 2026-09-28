@@ -72,8 +72,7 @@ export const metadata: Metadata = {
     shortcut: ["/favicon.ico"],
   },
   verification: {
-    // Add Search Console / Bing codes via env when available
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    google: "googleb3b3180046683e05",
     other: {
       ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
         ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
@@ -111,6 +110,9 @@ export default function RootLayout({
       )}
     >
       <head>
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="googleb3b3180046683e05" />
+        
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-787HMHTLKV"
