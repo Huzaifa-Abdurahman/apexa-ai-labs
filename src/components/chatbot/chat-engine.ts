@@ -18,10 +18,10 @@ const knowledge: { match: RegExp; reply: Reply }[] = [
     },
   },
   {
-    match: /london|manchester|birmingham|new york|houston|لندن|مانشستر|برمنغهام|نيويورك|هيوستن|uk\b|usa\b/i,
+    match: /london|manchester|birmingham|miami|لندن|مانشستر|برمنغهام|ميامي|uk\b|usa\b/i,
     reply: {
-      en: "We're headquartered in London and serve London, Manchester, Birmingham, New York, and Houston — with solutions mapped to each city's industries and peak seasons.",
-      ar: "مقرنا في لندن، ونخدم لندن ومانشستر وبرمنغهام ونيويورك وهيوستن — بحلول ملائمة لقطاعات كل مدينة ومواسم الذروة فيها.",
+      en: "We're headquartered in London and serve London, Manchester, Birmingham, and Miami — with solutions mapped to each city's industries and peak seasons.",
+      ar: "مقرنا في لندن، ونخدم لندن ومانشستر وبرمنغهام وميامي — بحلول ملائمة لقطاعات كل مدينة ومواسم الذروة فيها.",
     },
   },
   {
@@ -41,8 +41,8 @@ const knowledge: { match: RegExp; reply: Reply }[] = [
   {
     match: /contact|book|call|consult|تواصل|احجز|استشار/i,
     reply: {
-      en: "Happy to connect you. Open Contact to book a call, email info@apexaailabs.com or galaxysoftwarehub@gmail.com, or WhatsApp +44 7449 703113 — our team replies quickly.",
-      ar: "يسعدنا التواصل. افتح صفحة تواصل لحجز مكالمة، أو راسل info@apexaailabs.com أو galaxysoftwarehub@gmail.com، أو واتساب +92 345 156 9778 / +44 7449 703113 — فريقنا يرد بسرعة.",
+      en: "Happy to connect you. Open Contact to book a call, email info@apexaailabs.com, or WhatsApp +44 7449 703113 — our team replies quickly.",
+      ar: "يسعدنا التواصل. افتح صفحة تواصل لحجز مكالمة، أو راسل info@apexaailabs.com، أو واتساب +44 7449 703113 — فريقنا يرد بسرعة.",
     },
   },
   {

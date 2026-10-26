@@ -27,8 +27,7 @@ export const DARK_GLOBE_CONFIG: COBEOptions = {
     { location: [51.5074, -0.1278], size: 0.1 }, // London
     { location: [53.4808, -2.2426], size: 0.06 }, // Manchester
     { location: [52.4862, -1.8904], size: 0.06 }, // Birmingham
-    { location: [40.7128, -74.006], size: 0.07 }, // New York
-    { location: [29.7601, -95.3701], size: 0.06 }, // Houston
+    { location: [25.7617, -80.1918], size: 0.07 }, // Miami
   ],
 }
 
@@ -51,8 +50,7 @@ export const WHITE_GLOBE_CONFIG: COBEOptions = {
     { location: [51.5074, -0.1278], size: 0.1 }, // London
     { location: [53.4808, -2.2426], size: 0.06 }, // Manchester
     { location: [52.4862, -1.8904], size: 0.06 }, // Birmingham
-    { location: [40.7128, -74.006], size: 0.07 }, // New York
-    { location: [29.7601, -95.3701], size: 0.06 }, // Houston
+    { location: [25.7617, -80.1918], size: 0.07 }, // Miami
   ],
 }
 

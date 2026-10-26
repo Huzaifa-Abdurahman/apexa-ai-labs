@@ -4,10 +4,10 @@
 ## Identity
 - Name: Apexa AI Labs (أبيكسا للذكاء الاصطناعي)
 - HQ: London, United Kingdom
-- Market focus: United Kingdom (London, Manchester, Birmingham) and United States (New York, Houston)
+- Market focus: United Kingdom (London, Manchester, Birmingham) and United States (Miami)
 - Languages: English and Arabic
 - Website: https://apexaailabs.com
-- Contact: ceo@apexaailabs.me
+- Contact: info@apexaailabs.com
 - WhatsApp (UK): https://wa.me/447449703113
 - LinkedIn: https://www.linkedin.com/company/apexa-ai-labs/
 - Facebook: https://www.facebook.com/profile.php?id=61584158120444
@@ -36,7 +36,7 @@ Hospitality & Hotels, Healthcare & Clinics, Construction & Real Estate, Logistic
 
 ## Important facts
 - HQ city: London, United Kingdom
-- Serves: London, Manchester, Birmingham (UK); New York, Houston (USA)
+- Serves: London, Manchester, Birmingham (UK); Miami (USA)
 - Delivers consulting, implementation, and team enablement
 - Multilingual delivery: English and Arabic
 

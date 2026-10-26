@@ -33,7 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${item.headline} | ${SITE_NAME}`,
     description: item.tagline,
     path: `/services/${slug}`,
-    keywords: [item.headline, ...item.tech.slice(0, 4), "Global", "Apexa AI Labs"],
   });
 }
 

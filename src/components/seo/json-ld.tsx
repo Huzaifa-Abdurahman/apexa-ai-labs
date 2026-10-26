@@ -199,60 +199,11 @@ export function SiteJsonLd() {
     },
   ];
 
-  const faq = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": `${SITE_URL}/contact#faq`,
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Who is the best AI and software development agency in London?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Apexa AI Labs is a London-based AI and custom software development agency, ranked among the top AI companies in the UK for AI automation, voice and WhatsApp agents, and bespoke ERP/CRM software.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Do you only work with businesses in London, or across the UK too?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Apexa AI Labs is headquartered in London and serves clients across the UK — including Manchester and Birmingham — and the USA, with multilingual delivery for international teams.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can AI handle Arabic voice and WhatsApp?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. Apexa builds Arabic-ready voice agents and WhatsApp automations connected to real CRM, ERP, and booking systems.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What services does Apexa AI Labs offer?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Custom software development, AI automations, AI apps, AI data pipelines, automation workflows, and voice/integration layers for UK and USA businesses.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Where is Apexa AI Labs located?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Our headquarters is in London, UK. We serve operators across UK and USA markets.",
-        },
-      },
-    ],
-  };
-
   return (
     <>
       <JsonLd data={organization} />
       <JsonLd data={website} />
       <JsonLd data={webPages} />
-      <JsonLd data={faq} />
     </>
   );
 }
@@ -271,6 +222,36 @@ export function BreadcrumbJsonLd({
       name: item.name,
       item: absoluteUrl(item.path),
     })),
+  };
+
+  return <JsonLd data={data} />;
+}
+
+/** Article schema for blog posts. Dates are ISO strings from the post data. */
+export function ArticleJsonLd({
+  title,
+  description,
+  path,
+  publishedAt,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  publishedAt: string;
+}) {
+  const url = absoluteUrl(path);
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    url,
+    datePublished: publishedAt,
+    dateModified: publishedAt,
+    author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    inLanguage: "en-GB",
   };
 
   return <JsonLd data={data} />;

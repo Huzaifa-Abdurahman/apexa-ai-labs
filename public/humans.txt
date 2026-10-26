@@ -1,7 +1,7 @@
 /* TEAM */
 Company: Apexa AI Labs
 Location: London, United Kingdom
-Contact: ceo@apexaailabs.me
+Contact: info@apexaailabs.com
 Site: https://apexaailabs.com
 
 /* THANKS */

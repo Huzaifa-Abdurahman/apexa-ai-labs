@@ -52,7 +52,7 @@ type ServiceId =
   | "web"
   | "voice";
 
-type CityId = "uk" | "uk-regions" | "usa" | "houston";
+type CityId = "uk" | "uk-regions" | "usa" | "miami";
 
 const serviceMeta: Record<
   ServiceId,
@@ -126,7 +126,7 @@ const cityMeta: Record<
   uk: { image: "/uk.PNG", icons: [Building2, Network, Globe, Database] },
   "uk-regions": { image: "/uk-ai.PNG", icons: [Factory, Stethoscope, Store, Workflow] },
   usa: { image: "/america.PNG", icons: [Building2, Store, Network, Database] },
-  houston: { image: "/usa-ai.PNG", icons: [Ship, Plane, Factory, CheckCircle2] },
+  miami: { image: "/usa-ai.PNG", icons: [Ship, Plane, Factory, CheckCircle2] },
 };
 
 const painIcons = [PhoneCall, Boxes, Zap, Layers] as const;

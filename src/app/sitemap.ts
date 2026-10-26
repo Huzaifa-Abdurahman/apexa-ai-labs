@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SERVICE_SLUGS } from "@/lib/service-slugs";
 import { absoluteUrl, PAGE_SEO } from "@/lib/seo";
+import { BLOG_POSTS } from "@/content/blog-posts";
+import { LOCATION_PAGES } from "@/content/locations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -50,6 +52,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: absoluteUrl(PAGE_SEO.blog.path),
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    ...LOCATION_PAGES.map((page) => ({
+      url: absoluteUrl(`/locations/${page.slug}`),
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    })),
+    ...BLOG_POSTS.map((post) => ({
+      url: absoluteUrl(`/blog/${post.slug}`),
+      lastModified: new Date(`${post.publishedAt}T00:00:00Z`),
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    })),
     {
       url: absoluteUrl(PAGE_SEO.contact.path),
       lastModified,

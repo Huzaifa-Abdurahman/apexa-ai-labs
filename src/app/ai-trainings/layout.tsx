@@ -6,13 +6,6 @@ export const metadata: Metadata = buildMetadata({
   title: PAGE_SEO.aiTrainings.title,
   description: PAGE_SEO.aiTrainings.description,
   path: PAGE_SEO.aiTrainings.path,
-  keywords: [
-    "AI consulting London",
-    "AI training UK",
-    "AI implementation agency London",
-    "AI team enablement UK",
-    "تدريب الذكاء الاصطناعي لندن",
-  ],
 });
 
 export default function AiTrainingsLayout({

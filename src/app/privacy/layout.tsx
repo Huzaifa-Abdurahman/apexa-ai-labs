@@ -6,13 +6,6 @@ export const metadata: Metadata = buildMetadata({
   title: PAGE_SEO.privacy.title,
   description: PAGE_SEO.privacy.description,
   path: PAGE_SEO.privacy.path,
-  keywords: [
-    "Apexa privacy policy",
-    "UK GDPR data protection",
-    "Data Protection Act 2018",
-    "سياسة خصوصية أبيكسا",
-    "حماية البيانات في المملكة المتحدة",
-  ],
 })
 
 export default function PrivacyLayout({ children }: { children: React.ReactNode }) {

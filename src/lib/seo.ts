@@ -13,8 +13,8 @@ export const SITE_TAGLINE =
 export const SITE_TAGLINE_AR =
   "مختبر ذكاء اصطناعي مقره المملكة المتحدة للبرمجيات المخصصة والأتمتة وسير العمل عبر الأسواق";
 
-export const CONTACT_EMAIL = "ceo@apexaailabs.me";
-export const CONTACT_EMAIL_SECONDARY = "ceo@apexaailabs.me";
+export const CONTACT_EMAIL = "info@apexaailabs.com";
+export const CONTACT_EMAIL_SECONDARY = "info@apexaailabs.com";
 export const CONTACT_EMAILS = [CONTACT_EMAIL, CONTACT_EMAIL_SECONDARY] as const;
 
 export const WHATSAPP_PK_E164 = "+923451569778";
@@ -49,26 +49,7 @@ export const SERVICE_CITIES = [
   "London",
   "Manchester",
   "Birmingham",
-  "New York",
-  "Houston",
-] as const;
-
-/** High-intent keywords for Google + AI answer engines */
-export const PRIMARY_KEYWORDS = [
-  "AI company United Kingdom",
-  "custom software development UK",
-  "AI automation London",
-  "software development company UK",
-  "AI WhatsApp agents UK",
-  "Voice AI UK",
-  "ERP CRM development UK",
-  "best AI lab London",
-  "UK business AI solutions",
-  "Arabic AI software company",
-  "أبيكسا ذكاء اصطناعي بريطانيا",
-  "تطوير برمجيات لندن",
-  "شركة ذكاء اصطناعي في المملكة المتحدة",
-  "أتمتة الأعمال في المملكة المتحدة",
+  "Miami",
 ] as const;
 
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/opengraph-image`;
@@ -77,7 +58,6 @@ type BuildMetaInput = {
   title: string;
   description: string;
   path?: string;
-  keywords?: string[];
   noIndex?: boolean;
 };
 
@@ -90,7 +70,6 @@ export function buildMetadata({
   title,
   description,
   path = "/",
-  keywords = [...PRIMARY_KEYWORDS],
   noIndex = false,
 }: BuildMetaInput): Metadata {
   const url = absoluteUrl(path);
@@ -100,7 +79,6 @@ export function buildMetadata({
     // absolute avoids double suffixes from root title.template
     title: { absolute: fullTitle },
     description,
-    keywords: keywords.join(", "),
     authors: [{ name: SITE_NAME, url: SITE_URL }],
     creator: SITE_NAME,
     publisher: SITE_NAME,
@@ -128,11 +106,6 @@ export function buildMetadata({
         },
     alternates: {
       canonical: url,
-      languages: {
-        en: url,
-        ar: url,
-        "x-default": url,
-      },
     },
     openGraph: {
       type: "website",
@@ -220,6 +193,12 @@ export const PAGE_SEO = {
     title: "Terms & Conditions | Apexa AI Labs",
     description:
       "Terms governing use of apexaailabs.com and Apexa AI Labs services — custom software, AI agents, and digital delivery.",
+  },
+  blog: {
+    path: "/blog",
+    title: "AI Compliance, WhatsApp & Data Privacy Insights | Apexa AI Labs",
+    description:
+      "Practical guides from Apexa AI Labs on UK GDPR for AI chatbots, WhatsApp AI agents, custom software buying in Miami, healthcare voice agents and private AI for business.",
   },
   cookies: {
     path: "/cookies",

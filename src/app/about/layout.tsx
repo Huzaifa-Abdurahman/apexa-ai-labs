@@ -6,13 +6,6 @@ export const metadata: Metadata = buildMetadata({
   title: PAGE_SEO.about.title,
   description: PAGE_SEO.about.description,
   path: PAGE_SEO.about.path,
-  keywords: [
-    "Apexa AI Labs about",
-    "London AI company",
-    "UK AI software agency",
-    "best AI agency London",
-    "شركة ذكاء اصطناعي لندن",
-  ],
 });
 
 export default function AboutLayout({

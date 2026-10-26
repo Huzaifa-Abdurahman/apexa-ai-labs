@@ -6,13 +6,6 @@ export const metadata: Metadata = buildMetadata({
   title: PAGE_SEO.contact.title,
   description: PAGE_SEO.contact.description,
   path: PAGE_SEO.contact.path,
-  keywords: [
-    "contact AI company",
-    "book AI consultation London",
-    "AI development agency London",
-    "custom software quote",
-    "تواصل أبيكسا لندن",
-  ],
 });
 
 export default function ContactLayout({

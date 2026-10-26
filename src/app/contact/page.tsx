@@ -21,8 +21,7 @@ export default function Contact() {
     t("common.london"),
     t("common.manchester"),
     t("common.birmingham"),
-    t("common.newYork"),
-    t("common.houston"),
+    t("common.miami"),
   ];
 
   return (

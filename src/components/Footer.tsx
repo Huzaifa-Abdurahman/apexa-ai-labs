@@ -96,8 +96,7 @@ export default function Footer() {
         { label: t("common.london"), href: "/services#cities" },
         { label: t("common.manchester"), href: "/services#cities" },
         { label: t("common.birmingham"), href: "/services#cities" },
-        { label: t("common.newYork"), href: "/services#cities" },
-        { label: t("common.houston"), href: "/services#cities" },
+        { label: t("common.miami"), href: "/services#cities" },
       ],
     },
     {

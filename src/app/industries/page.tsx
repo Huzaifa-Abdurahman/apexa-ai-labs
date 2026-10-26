@@ -101,7 +101,7 @@ const industries: Industry[] = [
     short: "Guest experience under pressure",
     icon: Hotel,
     image: "/hotel.jpg",
-    cities: ["London", "Manchester", "New York"],
+    cities: ["London", "Manchester", "Miami"],
     story:
       "Guests expect instant answers about rooms, check-in, late arrival, and nearby services. Front desks are busy; phones ring; WhatsApp never stops. Slow replies become bad reviews.",
     pains: [
@@ -145,7 +145,7 @@ const industries: Industry[] = [
     short: "Appointments, no-shows & follow-ups",
     icon: Stethoscope,
     image: "/health.jpg",
-    cities: ["London", "Birmingham", "Houston"],
+    cities: ["London", "Birmingham", "Miami"],
     story:
       "Patients call to book, reschedule, ask for results, or confirm insurance. Reception is the bottleneck. No-shows waste doctor time, and follow-ups fall through the cracks.",
     pains: [
@@ -189,7 +189,7 @@ const industries: Industry[] = [
     short: "Sites, approvals & client updates",
     icon: Building2,
     image: "/contruction.jpg",
-    cities: ["London", "Manchester", "Houston"],
+    cities: ["London", "Manchester", "Miami"],
     story:
       "Projects live on WhatsApp photos, verbal updates, and delayed Excel reports. Approvals wait. Clients ask “what’s the status?” and nobody has a single truthful answer.",
     pains: [
@@ -233,7 +233,7 @@ const industries: Industry[] = [
     short: "Fleet, routes & delivery updates",
     icon: Truck,
     image: "/transport.jpg",
-    cities: ["London", "Birmingham", "New York", "Houston"],
+    cities: ["London", "Birmingham", "Miami"],
     story:
       "Customers only care about one question: where is my delivery? Drivers, dispatchers, and support teams answer that question all day — often with incomplete information.",
     pains: [
@@ -277,7 +277,7 @@ const industries: Industry[] = [
     short: "Inventory, production & quality",
     icon: Factory,
     image: "/manufacturing.jpg",
-    cities: ["Birmingham", "Manchester", "Houston"],
+    cities: ["Birmingham", "Manchester", "Miami"],
     story:
       "Production plans change daily, but inventory and machine status still live in paper logs or outdated systems. By the time a shortage is visible, the line is already waiting.",
     pains: [
@@ -321,7 +321,7 @@ const industries: Industry[] = [
     short: "Cases, clients & documents",
     icon: Scale,
     image: "/law.jpg",
-    cities: ["London", "Manchester", "New York"],
+    cities: ["London", "Manchester", "Miami"],
     story:
       "Clients want updates. Lawyers need documents. Reception books appointments. Without a system, cases live in email folders and memory — and billable work gets interrupted by admin.",
     pains: [
@@ -365,7 +365,7 @@ const industries: Industry[] = [
     short: "Stock, orders & customer care",
     icon: Store,
     image: "/ecom.jpg",
-    cities: ["London", "Manchester", "Birmingham", "New York"],
+    cities: ["London", "Manchester", "Birmingham", "Miami"],
     story:
       "Customers buy across Instagram, WhatsApp, the website, and the store. Stock goes out of sync. Support answers “is this available?” all day while sales slip away.",
     pains: [

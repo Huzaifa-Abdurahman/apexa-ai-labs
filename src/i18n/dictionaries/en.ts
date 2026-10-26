@@ -6,6 +6,7 @@ export const en = {
     services: "Services",
     industries: "Industries",
     projects: "Projects",
+    insights: "Insights",
     contact: "Contact",
     bookCall: "Book a call",
     language: "Language",
@@ -70,8 +71,7 @@ export const en = {
     london: "London",
     manchester: "Manchester",
     birmingham: "Birmingham",
-    newYork: "New York",
-    houston: "Houston",
+    miami: "Miami",
     exploreServices: "Explore services",
     viewServices: "View services",
     contactUs: "Contact us",
@@ -106,7 +106,7 @@ export const en = {
     qrTitle: "Scan to connect",
     testimonialsTitle: "Trusted Across the UK and USA",
     testimonialsSubtitle:
-      "Delivering excellence to clients across London, Manchester, Birmingham, New York, and Houston.",
+      "Delivering excellence to clients across London, Manchester, Birmingham, and Miami.",
     recordLabel: "Our record",
     experienceProjects: "Experience & Projects",
     focusLabel: "Focus",
@@ -238,7 +238,7 @@ export const en = {
     locationsLabel: "Where we operate",
     locations: [
       { id: "uk", name: "United Kingdom", city: "London · Manchester · Birmingham" },
-      { id: "usa", name: "USA", city: "New York · Houston" },
+      { id: "usa", name: "USA", city: "Miami" },
     ],
   },
   ticker: {
@@ -530,7 +530,7 @@ export const en = {
     title: "AI & software that makes UK operations",
     titleHighlight: "faster",
     subtitle:
-      "From London to Manchester, Birmingham, New York, and Houston — we build custom software, AI automations, voice agents, and workflows that remove pain and scale your business.",
+      "From London to Manchester, Birmingham, and Miami — we build custom software, AI automations, voice agents, and workflows that remove pain and scale your business.",
     bookCta: "Book a discovery call",
     exploreCities: "Explore our solutions",
     statsCities: "Cities we serve",
@@ -549,7 +549,7 @@ export const en = {
     citiesTitle: "Solutions mapped to your market",
     citiesSubtitleAr: "Solutions for every market need",
     citiesBody:
-      "London enterprises operate differently than Manchester manufacturing or Houston logistics. We design AI and software tailored for the exact problems in front of you.",
+      "London enterprises operate differently than Manchester manufacturing or Miami healthcare. We design AI and software tailored for the exact problems in front of you.",
     painTitle: "Pain points we remove",
     solveTitle: "How Apexa solves it",
     talkCity: "Talk about {city} solutions",
@@ -656,10 +656,10 @@ export const en = {
       },
       {
         id: "usa",
-        name: "New York, USA",
+        name: "Miami, USA",
         arabic: "Multilingual",
         tagline: "Scale, speed, and market dominance",
-        imageAlt: "New York City operations",
+        imageAlt: "Miami operations",
         industries: ["Finance", "Media", "Retail", "Healthcare", "Tech"],
         pains: [
           "Scaling customer support without massive overhead",
@@ -670,23 +670,6 @@ export const en = {
           "Advanced business intelligence dashboards",
         ],
         focus: "Accelerate growth through data and automation.",
-      },
-      {
-        id: "houston",
-        name: "Houston, USA",
-        arabic: "Multilingual",
-        tagline: "Energy, logistics & healthcare operations",
-        imageAlt: "Houston energy and logistics operations",
-        industries: ["Energy", "Logistics", "Healthcare", "Manufacturing", "Transport"],
-        pains: [
-          "Seasonal surges overwhelm booking desks and support lines",
-          "Teams need faster replies across channels",
-        ],
-        solutions: [
-          "AI voice + chat agents for FAQs and scheduling",
-          "Custom ops software with live inventory and dispatch",
-        ],
-        focus: "Scale operations seamlessly during peak demand.",
       },
     ],
     painsResolved: [
@@ -710,7 +693,7 @@ export const en = {
     faqs: [
       {
         q: "Do you only serve businesses in London?",
-        a: "Apexa AI Labs is headquartered in London and serves UK and USA clients — including Manchester, Birmingham, New York, and Houston. We design solutions around local industries, seasons, and operating realities.",
+        a: "Apexa AI Labs is headquartered in London and serves UK and USA clients — including Manchester, Birmingham, and Miami. We design solutions around local industries, seasons, and operating realities.",
       },
       {
         q: "Can AI handle Arabic voice and WhatsApp conversations?",

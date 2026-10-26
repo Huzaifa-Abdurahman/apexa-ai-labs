@@ -6,11 +6,6 @@ export const metadata: Metadata = buildMetadata({
   title: PAGE_SEO.cookies.title,
   description: PAGE_SEO.cookies.description,
   path: PAGE_SEO.cookies.path,
-  keywords: [
-    "Apexa cookie policy",
-    "website cookies UK",
-    "سياسة ملفات تعريف الارتباط أبيكسا",
-  ],
 })
 
 export default function CookiesLayout({ children }: { children: React.ReactNode }) {

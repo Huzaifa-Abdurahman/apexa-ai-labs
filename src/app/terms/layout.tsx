@@ -6,11 +6,6 @@ export const metadata: Metadata = buildMetadata({
   title: PAGE_SEO.terms.title,
   description: PAGE_SEO.terms.description,
   path: PAGE_SEO.terms.path,
-  keywords: [
-    "Apexa terms and conditions",
-    "UK software services terms",
-    "شروط وأحكام أبيكسا",
-  ],
 })
 
 export default function TermsLayout({ children }: { children: React.ReactNode }) {

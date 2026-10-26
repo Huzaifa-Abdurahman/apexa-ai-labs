@@ -60,6 +60,7 @@ export default function Navbar() {
     { name: "AI Trainings", href: "/ai-trainings", hasDropdown: false },
     { name: t("nav.industries"), href: "/industries", hasDropdown: false },
     { name: t("nav.projects"), href: "/projects", hasDropdown: false },
+    { name: t("nav.insights"), href: "/blog", hasDropdown: false },
     { name: t("nav.contact"), href: "/contact", hasDropdown: false },
   ];
 
